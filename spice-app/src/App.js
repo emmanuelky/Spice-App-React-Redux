@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
 
-      <div className="">
+      <div className=" bg-gray-900 min-h-screen ">
         <Route path="/" exact component={HomePage} />
         <Route path="/profile" exact component={ProfilePage} />
         <Route path="/music" exact component={Music} />
