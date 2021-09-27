@@ -1,28 +1,46 @@
 {
   "users": [
     {
-      "id": "0",
+      "userid": "daf70eb8-9590-4065-bd79-cdf2e9068964",
       "usernames": "roockyjohnny",
       "firstname": "John",
       "surname": "Smith",
       "email": "smith@gmail.com",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "profileimage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       "followers": [],
       "following": [],
-      "posts": [],
-      "likes": []
+      "id": 1
     },
     {
-      "id": "1",
-      "usernames": "emmanuelky",
-      "firstname": "Emmanuel",
-      "surname": "Iyere",
-      "email": "ky4real@gmail.com",
-      "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+      "userid": "9f0b0410-a455-49df-9529-7c524c516ea9",
+      "usernames": "remmyjohnny",
+      "firstname": "John",
+      "surname": "Smith",
+      "email": "smith@gmail.com",
+      "profileimage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       "followers": [],
       "following": [],
-      "posts": [],
-      "likes": []
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "postid": "68647cfa-6725-4bc4-bf72-ef1bef2846ab",
+      "postmessage": "wondegdtdgrful",
+      "postimage": [
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ],
+      "likes": [],
+      "id": 1
+    },
+    {
+      "postid": "1f7aa2a8-42d9-40e0-b1fc-065ff42d045c",
+      "postmessage": "wondegdtdgrful",
+      "postimage": [
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      ],
+      "likes": [],
+      "id": 2
     }
   ],
   "music": [],
