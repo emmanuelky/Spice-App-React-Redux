@@ -19,13 +19,13 @@ const HomePage = () => {
                 <Col md={3}>
                     {/* <div className="flex flex-wrap min-h-screen  justify-around mx-5 my-3"> */}
 
-                    <div className="md:flex   border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
+                    <div className="md:flex   border-l-left bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
                         <SideBarLeft />
 
                     </div>
                 </Col>
                 <Col md={6}>
-                    <div className=" border rounded-lg my-2 mx-2" >
+                    <div className=" border-l border-r border-gray-800 rounded-lg my-2 mx-2" >
                         <Feeds />
 
 

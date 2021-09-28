@@ -1,7 +1,8 @@
 import React from 'react'
 import { Form, Container, Row, Col } from "react-bootstrap";
-import { FcVideoCall, FcStackOfPhotos } from "react-icons/fc";
-import { FcAdvertising } from "react-icons/fc";
+import { FcVideoCall, FcAddImage, FcAdvertising } from "react-icons/fc";
+
+
 
 
 
@@ -18,7 +19,7 @@ const PostInputBar = () => {
                         <Form.Control
                             className="text-area rounded-full"
                             as="textarea"
-                            placeholder="What is spicy about today!"
+                            placeholder="Spice us your day!"
                             rows={4}
 
                         />
@@ -26,7 +27,7 @@ const PostInputBar = () => {
                 </Row>
                 <Row className='px-4'>
                     <div className=" my-4 flex flex-wrap justify-around ">
-                        <div className="mx-3 cursor-pointer  text-light text-xl p-2 flex border-blue-600 border-b-2 hover:border-green-900 rounded-full ">
+                        <div className="mx-3 cursor-pointer  text-light text-xl  flex border-blue-200 border-b-2 hover:border-green-900 rounded">
                             <Col md={3}>
                                 <span className=" ">
                                     <FcVideoCall />
@@ -34,16 +35,16 @@ const PostInputBar = () => {
 
                             </Col>
                         </div>
-                        <div className="mx-3 cursor-pointer  text-light text-xl p-2 flex border-blue-600 border-b-2 hover:border-green-900 rounded-full ">
+                        <div className="mx-3 cursor-pointer  text-light text-xl  flex border-blue-200 border-b-2 hover:border-green-900 rounded">
                             <Col md={3}>
 
                                 <span className=" ">
-                                    <FcStackOfPhotos />
+                                    <FcAddImage />
 
                                 </span>
                             </Col>
                         </div>
-                        <div className="mx-3 cursor-pointer  text-light text-xl p-2 flex border-blue-600 border-b-2 hover:border-green-900 rounded-full ">
+                        <div className="mx-3 cursor-pointer  text-light text-xl flex border-blue-200 border-b-2 hover:border-green-900 rounded">
                             <Col md={3}>
 
                                 <span className="">
@@ -56,7 +57,7 @@ const PostInputBar = () => {
                             <Col md={3}>
 
                                 <span className="text-center cursor-pointer">
-                                    Post
+                                    post
                                 </span>
                             </Col>
                         </div>
