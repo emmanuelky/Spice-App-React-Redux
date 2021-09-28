@@ -1,19 +1,24 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { postsReducer } from '../reducers/postReducer'
+import thunk from 'redux-thunk'
 
-
-const initialState = {
-    feeds: {
-        posts: [],
-    },
-    user: {
-        profile: [],
-        posts: [],
-        likes: [],
-        followers: [],
-    }
+export const initialState = {
+    posts: [],
+    // user: {
+    //     profile: [],
+    //     posts: [],
+    //     likes: [],
+    //     followers: [],
+    // }
 }
 
+const allReducers = combineReducers({
+    posts: postsReducer,
+})
 
 
 
-const store = createStore(combineReducers, initialState, applyMiddleware(thunk))
+
+const store = createStore(allReducers, initialState, applyMiddleware(thunk))
+
+export default store

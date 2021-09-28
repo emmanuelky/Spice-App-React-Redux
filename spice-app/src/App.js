@@ -5,6 +5,7 @@ import Music from './components/Music';
 import Movies from './components/Movies';
 
 
+
 function App() {
   return (
     <Router>

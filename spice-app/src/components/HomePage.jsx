@@ -8,42 +8,45 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const HomePage = () => {
     return (
-        <Container fluid>
-            <Row>
+        <div className='mx-5'>
 
-                <div className="mb-5" >
-                    <MyNavBar />
+            <Container fluid>
+                <Row className='sticky-top '>
+
+                    <div className="mb-5 " >
+                        <MyNavBar />
+                    </div>
+                </Row>
+                <Row className=''>
+                    <Col md={3}>
+                        <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
+
+                            <SideBarLeft />
+
+                        </div>
+                    </Col>
+                    <Col md={6}>
+                        <div className=" border-l border-r border-gray-800 rounded-lg my-2 mx-2" >
+                            <Feeds />
+
+
+                        </div>
+                    </Col>
+                    <Col md={3}>
+                        <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
+
+                            <SideBarRight />
+
+                        </div>
+                    </Col>
+                    {/* </div> */}
+                </Row>
+                <div className="flex mx-auto flex-col justify-center border mt-3 border-blue-600 border-b-2 rounded " >
+                    <h4>footer</h4>
                 </div>
-            </Row>
-            <Row className=''>
-                <Col md={3}>
-                    <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
 
-                        <SideBarLeft />
-
-                    </div>
-                </Col>
-                <Col md={6}>
-                    <div className=" border-l border-r border-gray-800 rounded-lg my-2 mx-2" >
-                        <Feeds />
-
-
-                    </div>
-                </Col>
-                <Col md={3}>
-                    <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
-
-                        <SideBarRight />
-
-                    </div>
-                </Col>
-                {/* </div> */}
-            </Row>
-            <div className="flex mx-auto flex-col justify-center border mt-3 border-blue-600 border-b-2 rounded " >
-                <h4>footer</h4>
-            </div>
-
-        </Container>
+            </Container>
+        </div>
     )
 }
 
