@@ -33,6 +33,8 @@
     {
       "createdAt": "2020-12-01T21:48:26.995Z",
       "text": "wonderful",
+      "postImage": "",
+      "likes": [],
       "updatedAt": "2020-12-01T21:50:50.616Z",
       "user": {
         "city": "berlin",
