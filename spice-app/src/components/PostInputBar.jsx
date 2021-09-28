@@ -8,7 +8,7 @@ import { FcVideoCall, FcAddImage, FcAdvertising } from "react-icons/fc";
 
 const PostInputBar = () => {
     return (
-        <Container fluid className=" my-4 justify-center mx-5 border-blue-500 border-b-2 rounded-full" >
+        <Container fluid className="mb-5 justify-center mx-auto border-grey-100 border pt-4 rounded-2xl" >
 
             <Form onSubmit >
                 <Row>
@@ -19,15 +19,15 @@ const PostInputBar = () => {
                         <Form.Control
                             className="text-area rounded-full"
                             as="textarea"
-                            placeholder="Spice us your day!"
+                            placeholder="Spice up your day!"
                             rows={4}
 
                         />
                     </Form.Group>
                 </Row>
                 <Row className='px-4'>
-                    <div className=" my-4 flex flex-wrap justify-around ">
-                        <div className="mx-3 cursor-pointer  text-light text-xl  flex border-blue-200 border-b-2 hover:border-green-900 rounded">
+                    <div className=" my-4 flex flex-wrap justify-around align-items-center ">
+                        <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600 flex  p-1 hover:bg-green-100 rounded-lg">
                             <Col md={3}>
                                 <span className=" ">
                                     <FcVideoCall />
@@ -35,7 +35,7 @@ const PostInputBar = () => {
 
                             </Col>
                         </div>
-                        <div className="mx-3 cursor-pointer  text-light text-xl  flex border-blue-200 border-b-2 hover:border-green-900 rounded">
+                        <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600  flex  p-1 hover:bg-green-100 rounded-lg">
                             <Col md={3}>
 
                                 <span className=" ">
@@ -44,7 +44,7 @@ const PostInputBar = () => {
                                 </span>
                             </Col>
                         </div>
-                        <div className="mx-3 cursor-pointer  text-light text-xl flex border-blue-200 border-b-2 hover:border-green-900 rounded">
+                        <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600 flex  p-1 hover:bg-green-100 rounded-lg">
                             <Col md={3}>
 
                                 <span className="">

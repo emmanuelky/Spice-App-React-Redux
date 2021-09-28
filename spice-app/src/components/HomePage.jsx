@@ -17,9 +17,8 @@ const HomePage = () => {
             </Row>
             <Row className=''>
                 <Col md={3}>
-                    {/* <div className="flex flex-wrap min-h-screen  justify-around mx-5 my-3"> */}
+                    <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
 
-                    <div className="md:flex   border-l-left bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
                         <SideBarLeft />
 
                     </div>

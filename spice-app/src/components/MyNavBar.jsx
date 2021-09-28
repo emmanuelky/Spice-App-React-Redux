@@ -18,7 +18,7 @@ const MyNavBar = () => {
                 </Link>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav ">
                     <Nav className="mx-auto">
                         <Nav.Link href="/" className="text-light text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full ">Feeds</Nav.Link>
                         <Nav.Link href="/music" className="text-light mx-5 text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Music</Nav.Link>
