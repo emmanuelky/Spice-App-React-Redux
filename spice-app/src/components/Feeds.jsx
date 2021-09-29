@@ -8,6 +8,7 @@ import { FcLike } from "react-icons/fc";
 import { FcSms } from "react-icons/fc";
 import { useSelector, useDispatch, } from 'react-redux'
 import { fetchPosts } from '../redux/actions'
+// import { format, formatDistanceStrict, formatDistanceToNow, compareDesc } from 'date-fns'
 
 
 const Feeds = () => {
@@ -18,20 +19,27 @@ const Feeds = () => {
     const ID = uuidv4()
 
 
+
+
     useEffect(() => {
 
         dispatch(fetchPosts())
     }, [])
+
+
+
+    // const fixDate = formatDistanceToNow(new Date(), { includeSeconds: true })
+    // console.log(fixDate)
+
+
 
     return (
         <div className='flex flex-col bg-gray-900' >
             <div className='flex mb-4'>
                 <PostInputBar />
             </div>
-            {allPosts?.map((post) => (
+            {allPosts?.reverse().map((post) => (
                 <>
-
-
                     <div className='flex flex-col align-items-center border-green-100  hover:bg-grey-50 rounded-lg'>
 
                         <Card style={{}} className='w-100 h-100 mb-5' >
@@ -42,7 +50,7 @@ const Feeds = () => {
                                     <div className="text-xs flex align-items-center ">
                                         <div>
 
-                                            <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.user.image} alt="" />
+                                            <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.postImage} alt="" />
                                         </div>
                                         <div className='mx-1 '>
 

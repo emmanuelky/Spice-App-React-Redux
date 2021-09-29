@@ -38,10 +38,130 @@
       },
       "username": "meeC",
       "id": "454657"
+    },
+    {
+      "createdAt": "2021-Sep-29th 06:50 AM",
+      "text": "",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "2021-Sep-29th 06:50 AM",
+      "user": {
+        "city": "berlin",
+        "about": "wget",
+        "createdAt": "2021-Sep-29th 06:50 AM",
+        "email": "aria@yahoo.com",
+        "image": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+        "name": "Emmanuel",
+        "surname": "Iyere",
+        "updatedAt": "2021-Sep-29th 06:50 AM",
+        "username": "emmanuelky",
+        "followers": [],
+        "following": [],
+        "id": "bc47e982-09f8-486c-b995-78291dcc81ea"
+      },
+      "username": "meeC",
+      "id": "bc47e982-09f8-486c-b995-78291dcc81ea"
+    },
+    {
+      "createdAt": "2021-Sep-29th 06:53 AM",
+      "text": "",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "2021-Sep-29th 06:53 AM",
+      "user": {
+        "city": "berlin",
+        "about": "wget",
+        "createdAt": "2021-Sep-29th 06:53 AM",
+        "email": "aria@yahoo.com",
+        "image": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+        "name": "Emmanuel",
+        "surname": "Iyere",
+        "updatedAt": "2021-Sep-29th 06:53 AM",
+        "username": "emmanuelky",
+        "followers": [],
+        "following": [],
+        "id": "e4222f23-7666-4303-83cb-31b658e93722"
+      },
+      "username": "meeC",
+      "id": "e4222f23-7666-4303-83cb-31b658e93722"
+    },
+    {
+      "createdAt": "2021-Sep-29th 06:53 AM",
+      "text": "",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "2021-Sep-29th 06:53 AM",
+      "user": {
+        "city": "berlin",
+        "about": "wget",
+        "createdAt": "2021-Sep-29th 06:53 AM",
+        "email": "aria@yahoo.com",
+        "image": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+        "name": "Emmanuel",
+        "surname": "Iyere",
+        "updatedAt": "2021-Sep-29th 06:53 AM",
+        "username": "emmanuelky",
+        "followers": [],
+        "following": [],
+        "id": "f1d1e852-2372-4e4c-abd5-397c544bb705"
+      },
+      "username": "meeC",
+      "id": "f1d1e852-2372-4e4c-abd5-397c544bb705"
+    },
+    {
+      "createdAt": "2021-Sep-29th 06:54 AM",
+      "text": "",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "2021-Sep-29th 06:54 AM",
+      "user": {
+        "city": "berlin",
+        "about": "wget",
+        "createdAt": "2021-Sep-29th 06:54 AM",
+        "email": "aria@yahoo.com",
+        "image": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+        "name": "Emmanuel",
+        "surname": "Iyere",
+        "updatedAt": "2021-Sep-29th 06:54 AM",
+        "username": "emmanuelky",
+        "followers": [],
+        "following": [],
+        "id": "918c60a2-8523-42ae-8aad-623bd85532c2"
+      },
+      "username": "meeC",
+      "id": "918c60a2-8523-42ae-8aad-623bd85532c2"
+    },
+    {
+      "createdAt": "2021-Sep-29th 06:59 AM",
+      "text": "hi",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "2021-Sep-29th 06:59 AM",
+      "user": {
+        "city": "berlin",
+        "about": "wget",
+        "createdAt": "2021-Sep-29th 06:59 AM",
+        "email": "aria@yahoo.com",
+        "image": "",
+        "name": "Emmanuel",
+        "surname": "Iyere",
+        "updatedAt": "2021-Sep-29th 06:59 AM",
+        "username": "emmanuelky",
+        "followers": [],
+        "following": [],
+        "id": "9349b784-7d54-44a4-9224-a37aa58bc384"
+      },
+      "username": "meeC",
+      "id": "9349b784-7d54-44a4-9224-a37aa58bc384"
+    },
+    {
+      "createdAt": "2021-Sep-29th 07:04 AM",
+      "text": "its 4 am already!\n",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "2021-Sep-29th 07:04 AM",
+      "username": "meeC",
+      "id": "41076327-7adf-4bc1-af32-ea58769d8cb1"
     }
-  ],
-  "music": [],
-  "movies": [],
-  "news": [],
-  "crytocurrency": []
+  ]
 }

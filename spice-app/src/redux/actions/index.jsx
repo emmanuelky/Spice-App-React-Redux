@@ -11,3 +11,16 @@ export const fetchPosts = () => {
 
     }
 }
+
+
+export const addPosts = (post) => {
+    return async (dispatch, getState) => {
+
+        const posts = await axios.post(`${process.env.REACT_APP_BASE_URL}/posts/`, post)
+        // const postsArray = posts.data
+        dispatch({
+            type: 'ADD_POST',
+            payload: posts
+        })
+    }
+}
