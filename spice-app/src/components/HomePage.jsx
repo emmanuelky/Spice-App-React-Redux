@@ -23,13 +23,13 @@ const HomePage = () => {
                     </div>
                 </Row>
 
-                <Row className='sticky-top '>
+                {/* <Row className='sticky-top '>
 
                     <div className="mb-5 " >
                         <SignUp />
                         <Login />
                     </div>
-                </Row>
+                </Row> */}
                 <Row className=''>
                     <Col md={3}>
                         <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
