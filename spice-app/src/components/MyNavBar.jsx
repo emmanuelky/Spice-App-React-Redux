@@ -12,7 +12,7 @@ const MyNavBar = () => {
             <Navbar expand="lg" className='border-b-2 border-gray-900 pt-1 sticky-top'  >
                 <Container>
                     <Link to="/">
-                        <Navbar className="text-light align-self-center text-3xl border-t-2 border-b-2 border-dashed p-2">SpIcE <AiOutlineDingding className=" text-grey-700 " /> </Navbar>
+                        <Navbar className="text-light align-self-center text-3xl border-t-2 border-b-2 border-dashed p-2">SpIcE-It <AiOutlineDingding className=" text-grey-700 " /> </Navbar>
                     </Link>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />

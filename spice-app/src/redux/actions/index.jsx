@@ -24,3 +24,34 @@ export const addPosts = (post) => {
         })
     }
 }
+
+
+
+
+export const fetchUsers = () => {
+    return async (dispatch, getState) => {
+        const users = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/`)
+        const usersArray = users.data
+        // console.log(usersArray)
+        dispatch({
+            type: 'FETCH_USERS',
+            payload: usersArray,
+        })
+
+    }
+}
+
+
+
+
+export const addUser = (user) => {
+    return async (dispatch, getState) => {
+
+        const users = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/`, user)
+
+        dispatch({
+            type: 'ADD_USER',
+            payload: users
+        })
+    }
+}

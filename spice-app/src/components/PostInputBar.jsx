@@ -4,22 +4,47 @@ import { FcVideoCall, FcAddImage, FcAdvertising } from "react-icons/fc";
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'
 import { useSelector, useDispatch, } from 'react-redux'
-import { addPosts } from '../redux/actions'
-
-
-
-
+import { fetchPosts, fetchUsers, addPosts } from '../redux/actions'
 
 
 const PostInputBar = () => {
 
-    const [message, setMeassage] = useState('')
-
+    const [message, setMessage] = useState('')
     const dispatch = useDispatch()
 
+
+    const allDBUsers = useSelector(state => state.users.users)
+    // console.log(allDBUsers)
+
+
+
+    useEffect(() => {
+        dispatch(fetchUsers())
+    }, [])
+
     const ID = uuidv4()
-    const currentDate = format(new Date(), 'yyyy-MMM-do HH:mm b')
-    console.log(currentDate)
+    const currentDate = format(new Date(), 'HH:mm b, do-MMM-yyyy')
+    // console.log(currentDate)
+
+    const allUsers = {
+        city: "Najia",
+        bio: "wget",
+        createdAt: currentDate,
+        email: "arianrazab@yahoo.com",
+        image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+        firstName: "Emmanuel",
+        lastName: "Iyere",
+        updatedAt: currentDate,
+        username: "johniyere",
+        followers: [],
+        following: [],
+        id: ID
+    }
+
+
+
+
+
 
     const allPost = {
         createdAt: currentDate,
@@ -27,32 +52,36 @@ const PostInputBar = () => {
         postImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         likes: [],
         updatedAt: currentDate,
-        // user: {
-        //     city: "berlin",
-        //     about: "wget",
-        //     createdAt: currentDate,
-        //     email: "aria@yahoo.com",
-        //     image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
-        //     name: "Emmanuel",
-        //     surname: "Iyere",
-        //     updatedAt: currentDate,
-        //     username: "emmanuelky",
-        //     followers: [],
-        //     following: [],
-        //     id: ID
-        // },
-        username: "meeC",
-        id: ID
+        user: {
+            city: allUsers.city,
+            bio: allUsers.bio,
+            createdAt: currentDate,
+            email: allUsers.email,
+            image: allUsers.image,
+            firstName: allUsers.firstName,
+            lastName: allUsers.lastName,
+            updatedAt: currentDate,
+            username: allUsers.username,
+            followers: allUsers.followers,
+            following: allUsers.following,
+            id: ID
+        },
+        username: allUsers.username,
+        id: allUsers.id
     }
 
-    // useEffect(() => {
-    //     dispatch(addPosts(allPost))
-    // }, [])
 
     const handleInputChange = (e) => {
+
+        setMessage(e.target.value)
+
+    }
+
+    const handleAddPosts = (e) => {
         e.preventDefault();
-        setMeassage(e.target.value)
-        // console.log(message)
+        dispatch(addPosts(allPost))
+        setMessage('')
+        dispatch(fetchPosts())
     }
 
 
@@ -60,7 +89,7 @@ const PostInputBar = () => {
     return (
         <Container fluid className="mb-5 justify-center mx-auto border-grey-100 border pt-4 rounded-2xl" >
 
-            <Form onSubmit={() => dispatch(addPosts(allPost))} >
+            <Form onSubmit >
                 <Row>
                     <Form.Group
                         className="mb-1"
@@ -73,6 +102,7 @@ const PostInputBar = () => {
                             rows={4}
                             value={message}
                             onChange={(e) => handleInputChange(e)}
+
                         />
                     </Form.Group>
                 </Row>
@@ -104,10 +134,10 @@ const PostInputBar = () => {
                                 </span>
                             </Col>
                         </div>
-                        <div className="mx-3 mt-1 text-center text-light text-xl p-2 flex border-green-500 border-b-2 border-t-2 hover:border-green-900 rounded-full ">
+                        <div onClick={(e) => handleAddPosts(e)} className="mx-3 mt-1 text-center text-light text-xl p-2 flex border-green-500 border-b-2 border-t-2 hover:border-green-900 rounded-full ">
                             <Col md={3}>
 
-                                <span onClick={() => dispatch(addPosts(allPost))} className="text-center cursor-pointer">
+                                <span className="text-center cursor-pointer">
                                     post
                                 </span>
                             </Col>

@@ -3,18 +3,20 @@ import { v4 as uuidv4 } from 'uuid';
 import PostInputBar from './PostInputBar'
 import { Card } from 'react-bootstrap'
 import { RiWalkFill } from "react-icons/ri";
-// import { RiHeart2Line } from "react-icons/ri";
 import { FcLike } from "react-icons/fc";
 import { FcSms } from "react-icons/fc";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts } from '../redux/actions'
-// import { format, formatDistanceStrict, formatDistanceToNow, compareDesc } from 'date-fns'
+import { fetchPosts, } from '../redux/actions'
+
 
 
 const Feeds = () => {
 
     const allPosts = useSelector(state => state.posts.posts)
-    console.log(allPosts)
+
+    // console.log(allPosts)
+
+
     const dispatch = useDispatch()
     const ID = uuidv4()
 
@@ -22,9 +24,11 @@ const Feeds = () => {
 
 
     useEffect(() => {
-
         dispatch(fetchPosts())
+
     }, [])
+
+
 
 
 
@@ -50,7 +54,7 @@ const Feeds = () => {
                                     <div className="text-xs flex align-items-center ">
                                         <div>
 
-                                            <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.postImage} alt="" />
+                                            {/* <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.postImage} alt="" /> */}
                                         </div>
                                         <div className='mx-1 '>
 
@@ -59,9 +63,9 @@ const Feeds = () => {
                                     </div>
 
                                     <div className='flex'>
-                                        <span className="text-xs ">
-                                            {post.createdAt}
-                                        </span>
+                                        <i className="text-xs text-muted ">
+                                            posted at  {post.createdAt}
+                                        </i>
                                     </div>
                                 </div>
                                 <Card.Text className=' text-center'>

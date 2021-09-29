@@ -4,9 +4,14 @@ import SideBarLeft from './SideBarLeft'
 import SideBarRight from './SideBarRight'
 import Feeds from './Feeds'
 import { Container, Row, Col } from 'react-bootstrap'
+import SignUp from './SignUp'
+import Login from './Login'
 
 
 const HomePage = () => {
+
+    const [loggedIn, setLoggedIn] = useState(false)
+
     return (
         <div className='mx-5'>
 
@@ -15,6 +20,14 @@ const HomePage = () => {
 
                     <div className="mb-5 " >
                         <MyNavBar />
+                    </div>
+                </Row>
+
+                <Row className='sticky-top '>
+
+                    <div className="mb-5 " >
+                        <SignUp />
+                        <Login />
                     </div>
                 </Row>
                 <Row className=''>
