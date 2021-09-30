@@ -4,7 +4,10 @@ import { usersReducer } from '../reducers/userReducer'
 import thunk from 'redux-thunk'
 
 export const initialState = {
-    posts: [],
+    posts: {
+        posts: [],
+        likes: [],
+    },
     users: {
         users: [],
         loggedin: true,

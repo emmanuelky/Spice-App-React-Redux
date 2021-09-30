@@ -12,19 +12,13 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const HomePage = () => {
 
-    // const loggedinuser = useSelector(state => state.users.loggedin)
-    // console.log(loggedinuser)
-    const currentuser = useSelector(state => state.users.currentUser)
-    console.log(currentuser)
 
 
     return (
         <div className='mx-5'>
 
             {
-                // loggedinuser
-                //     ? <Login />
-                //     : 
+
                 (<Container fluid>
                     <Row className='sticky-top '>
 
@@ -33,12 +27,6 @@ const HomePage = () => {
                         </div>
                     </Row>
 
-                    {/* <Row className='sticky-top '>
-
-                    <div className="mb-5 " >
-                        <SignUp />
-                    </div>
-                </Row> */}
                     <Row className=''>
                         <Col md={3}>
                             <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >

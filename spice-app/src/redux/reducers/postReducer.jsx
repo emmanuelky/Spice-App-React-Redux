@@ -2,7 +2,7 @@ import { initialState } from '../store/'
 
 
 
-export const postsReducer = (state = initialState, action) => {
+export const postsReducer = (state = initialState.posts, action) => {
     switch (action.type) {
         case 'FETCH_POSTS':
             return {

@@ -10,7 +10,8 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const MyNavBar = () => {
 
-    const allUsers = useSelector(state => state.users.users)
+    const currentUser = useSelector(state => state.users.users[0])
+    console.log(currentUser)
 
     return (
         <div className='border-b bg-gray-900 border-gray-800 pt-3'>
@@ -33,7 +34,7 @@ const MyNavBar = () => {
                                 <div className='flex bg-gray-200 rounded-full  px-1 border-blue-600 border-b-2'>
                                     <div className='align-self-center'>
                                         <Link to='/profile'>
-                                            <img className=" w-5 h-5 rounded-full" src="https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U" alt="" />
+                                            {<img className=" w-5 h-5 rounded-full" src={currentUser?.image} alt="" />}
                                         </Link>
                                     </div>
                                     <div className='align-self-center '>

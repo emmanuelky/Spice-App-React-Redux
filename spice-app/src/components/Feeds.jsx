@@ -12,9 +12,17 @@ import { fetchPosts, } from '../redux/actions'
 
 const Feeds = () => {
 
+
+
+    useEffect(() => {
+        dispatch(fetchPosts())
+
+    }, [])
+
+
     const allPosts = useSelector(state => state.posts.posts)
 
-    // console.log(allPosts)
+    console.log(allPosts)
 
 
     const dispatch = useDispatch()
@@ -23,10 +31,7 @@ const Feeds = () => {
 
 
 
-    useEffect(() => {
-        dispatch(fetchPosts())
 
-    }, [])
 
 
 
@@ -54,11 +59,11 @@ const Feeds = () => {
                                     <div className="text-xs flex align-items-center ">
                                         <div>
 
-                                            {/* <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.postImage} alt="" /> */}
+                                            <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.user.image} alt="" />
                                         </div>
                                         <div className='mx-1 '>
 
-                                            <span className=" align-self-bottom">{post.username}</span>
+                                            <span className=" align-self-bottom">{post.user.username}</span>
                                         </div>
                                     </div>
 

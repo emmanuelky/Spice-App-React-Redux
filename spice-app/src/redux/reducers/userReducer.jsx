@@ -7,7 +7,7 @@ export const usersReducer = (state = initialState.users, action) => {
         case 'FETCH_USERS':
             return {
                 ...state,
-                users: action.payload,
+                users: action.payload.reverse(),
             }
 
         case 'ADD_USER':

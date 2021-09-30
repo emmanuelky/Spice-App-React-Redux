@@ -10,16 +10,15 @@ import { AiOutlineDingding } from "react-icons/ai";
 const Login = ({ history }) => {
     const [useremail, setUseremail] = useState('')
     const [userpassword, setUserpassword] = useState('')
+    const [field, setField] = useState(false)
 
     useEffect(() => {
         dispatch(fetchUsers())
-
-
     }, [])
 
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.users.users[0])
-    console.log(currentUser)
+    // console.log(currentUser)
 
 
 
@@ -42,11 +41,12 @@ const Login = ({ history }) => {
 
 
     const confirmLoginDetails = (id) => {
-        if (id && useremail === '') {
-            return alert('enter name')
-        } else {
-
+        if (id && (useremail && userpassword === '') || (useremail !== currentUser.email && userpassword !== currentUser.password)) {
+            return setField(true)
+        } else if (id && useremail === currentUser.email && userpassword === currentUser.password) {
             return history.push(`/`)
+        } else {
+            return
         }
 
     }
@@ -59,7 +59,11 @@ const Login = ({ history }) => {
 
             </div>
             <h1 className='text-center'>Login</h1>
-
+            {field
+                ? <Alert variant='danger'>
+                    Please enter a valid email and password
+                </Alert>
+                : ''}
             <Form className='my-10'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -81,6 +85,7 @@ const Login = ({ history }) => {
                 {<button onClick={() => confirmLoginDetails(currentUser.id)} type="submit" className="mx-3 my-4 text-center text-light text-xl p-2 flex border-grey-100 border-b-2 border-t-2 hover:border-grey-900 rounded-full ">
                     Login
                 </button>}
+
 
             </Form>
             <div className="text-grey-100">Don't have an account?

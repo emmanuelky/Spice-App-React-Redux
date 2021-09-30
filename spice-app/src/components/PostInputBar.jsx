@@ -13,8 +13,8 @@ const PostInputBar = () => {
     const dispatch = useDispatch()
 
 
-    const allDBUsers = useSelector(state => state.users.users)
-    // console.log(allDBUsers)
+    const currentUser = useSelector(state => state.users.users[0])
+    // console.log(currentUser)
 
 
 
@@ -26,20 +26,20 @@ const PostInputBar = () => {
     const currentDate = format(new Date(), 'HH:mm b, do-MMM-yyyy')
     // console.log(currentDate)
 
-    const allUsers = {
-        city: "Najia",
-        bio: "wget",
-        createdAt: currentDate,
-        email: "arianrazab@yahoo.com",
-        image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
-        firstName: "Emmanuel",
-        lastName: "Iyere",
-        updatedAt: currentDate,
-        username: "johniyere",
-        followers: [],
-        following: [],
-        id: ID
-    }
+    // const allUsers = {
+    //     city: "Najia",
+    //     bio: "wget",
+    //     createdAt: currentDate,
+    //     email: "arianrazab@yahoo.com",
+    //     image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+    //     firstName: "Emmanuel",
+    //     lastName: "Iyere",
+    //     updatedAt: currentDate,
+    //     username: "johniyere",
+    //     followers: [],
+    //     following: [],
+    //     id: ID
+    // }
 
 
 
@@ -47,29 +47,17 @@ const PostInputBar = () => {
 
 
     const allPost = {
+        id: ID,
         createdAt: currentDate,
         text: message,
         postImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         likes: [],
         updatedAt: currentDate,
-        user: {
-            city: allUsers.city,
-            bio: allUsers.bio,
-            createdAt: currentDate,
-            email: allUsers.email,
-            image: allUsers.image,
-            firstName: allUsers.firstName,
-            lastName: allUsers.lastName,
-            updatedAt: currentDate,
-            username: allUsers.username,
-            followers: allUsers.followers,
-            following: allUsers.following,
-            id: ID
-        },
-        username: allUsers.username,
-        id: allUsers.id
+        user: currentUser,
+
     }
 
+    // console.log(allPost.user.image)
 
     const handleInputChange = (e) => {
 
