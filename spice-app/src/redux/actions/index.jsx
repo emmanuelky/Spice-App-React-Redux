@@ -55,3 +55,27 @@ export const addUser = (user) => {
         })
     }
 }
+
+export const loggedinUser = () => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'LOG_IN',
+            payload: false,
+        })
+    }
+}
+
+
+
+
+export const currentUser = (id) => {
+    return async (dispatch, getState) => {
+        const user = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/${id}`)
+
+        dispatch({
+            type: 'CURRENT_USER',
+            payload: user,
+        })
+
+    }
+}

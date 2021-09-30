@@ -2,12 +2,17 @@ import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AiOutlineDingding } from "react-icons/ai";
+import { useSelector, useDispatch } from 'react-redux'
+
+
 
 
 
 const MyNavBar = () => {
-    return (
 
+    const allUsers = useSelector(state => state.users.users)
+
+    return (
         <div className='border-b bg-gray-900 border-gray-800 pt-3'>
             <Navbar expand="lg" className='border-b-2 border-gray-900 pt-1 sticky-top'  >
                 <Container>

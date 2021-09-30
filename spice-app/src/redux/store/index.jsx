@@ -5,7 +5,11 @@ import thunk from 'redux-thunk'
 
 export const initialState = {
     posts: [],
-    users: [],
+    users: {
+        users: [],
+        loggedin: true,
+        currentUser: {},
+    },
 }
 
 const allReducers = combineReducers({

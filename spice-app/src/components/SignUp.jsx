@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik';
-import { addUser } from '../redux/actions'
+import { addUser, currentUser } from '../redux/actions'
 import { useSelector, useDispatch, } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'
@@ -12,9 +12,7 @@ import { Link } from 'react-router-dom'
 
 
 
-
-
-const SignUp = () => {
+const SignUp = ({ history }) => {
 
 
     const dispatch = useDispatch()
@@ -22,7 +20,7 @@ const SignUp = () => {
 
     const ID = uuidv4()
     const currentDate = format(new Date(), 'yyyy-MMM-do HH:mm b')
-    // console.log(currentDate)
+
 
 
 
@@ -56,68 +54,51 @@ const SignUp = () => {
                         followers: [],
                         following: []
                     }))
+                    dispatch(currentUser(values, {
+                        followers: [],
+                        following: []
+                    }))
+                    history.push('/')
                 }}
 
             >
                 <Form className='flex flex-col  '>
                     <div className='my-2 '>
 
-                        {/* <label htmlFor="firstName">First Name</label> */}
                         <Field id="firstName" name="firstName" placeholder="first name" />
 
                     </div>
                     <div className='my-2'>
-
-                        {/* <label htmlFor="lastName">Last Name</label> */}
                         <Field id="lastName" name="lastName" placeholder="last name" />
                     </div>
                     <div className='my-2'>
-
-                        {/* <label htmlFor="email">Email</label>  */}
                         <Field
                             id="email"
                             name="email"
-                            placeholder="iyere@gmail.com"
+                            placeholder="email"
                             type="email"
                         />
                     </div>
                     <div className='my-2'>
-
-
-                        {/* <label htmlFor="firstName">User Name</label> */}
                         <Field id="UserName" name="username" placeholder="username" />
                     </div>
                     <div className='my-2'>
-
-
-                        {/* <label htmlFor="password">password</label> */}
                         <Field type='password' id="password" name="password" placeholder="password" />
                     </div>
                     <div className='my-2'>
-
-
-
-                        {/* <label htmlFor="photo">Photo Url</label> */}
                         <Field id="photo" name="image" placeholder="image url" />
                     </div>
                     <div className='my-2'>
-
-
-                        {/* <label htmlFor="bio">Bio</label> */}
                         <Field id="bio" name="bio" placeholder="about you..." />
                     </div>
                     <div className='my-2'>
-
-
-
-                        {/* <label htmlFor="city">City</label> */}
                         <Field id="city" name="city" placeholder="city" />
                     </div>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" className=''>Sign up</Button>
                 </Form>
             </Formik>
 
-            <span className="my-10 ">You already have an account?
+            <span className="mx-3 my-10 ">You already have an account?
                 <Link to="/login">Login</Link> </span>
         </div>
     )
