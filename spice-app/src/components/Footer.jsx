@@ -3,12 +3,11 @@ import { format } from 'date-fns'
 
 const Footer = () => {
     return (
-        <div className="flex flex-wrap gap-2 text-xs text-gray-900 bg-gray-100 p-2 mb-2 rounded-lg">
+        <div className="flex flex-wrap gap-2 text-xs text-black bg-white p-2 mb-2 rounded-lg">
             <span>Imprint |</span>
             <span> Privacy |</span>
-            <span>Data Protection |</span>
-            <span> Cookies |</span>
             <span>Policy |</span>
+            <span> Cookies |</span>
             <span> Spice @{format(new Date(), 'yyyy')} </span>
         </div>
     )

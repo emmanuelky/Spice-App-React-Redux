@@ -246,6 +246,144 @@
         "followers": [],
         "following": []
       }
+    },
+    {
+      "id": "6ad2353f-1aa1-45b9-ac05-2cf27df5861d",
+      "createdAt": "08:19 AM, 1st-Oct-2021",
+      "text": "good morning",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "08:19 AM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "fbdfca10-12c4-46fd-8e01-f37e841144f5",
+      "createdAt": "08:19 AM, 1st-Oct-2021",
+      "text": "hello",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "08:19 AM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "c1fb3556-78cb-4acf-9f4f-9444557daf08",
+      "createdAt": "08:19 AM, 1st-Oct-2021",
+      "text": "hello2",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "08:19 AM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "115a3f89-2615-4801-bee7-6be761bae294",
+      "createdAt": "08:20 AM, 1st-Oct-2021",
+      "text": "ok",
+      "postImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "08:20 AM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "1b094498-5811-48d8-9c15-2353acc6238b",
+      "createdAt": "08:26 AM, 1st-Oct-2021",
+      "text": "emma",
+      "postImage": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+      "likes": [],
+      "updatedAt": "08:26 AM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "eab59fad-fce2-479d-8c69-dd99519caa98",
+      "createdAt": "08:27 AM, 1st-Oct-2021",
+      "text": "hmmm",
+      "postImage": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+      "likes": [],
+      "updatedAt": "08:27 AM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
     }
   ]
 }

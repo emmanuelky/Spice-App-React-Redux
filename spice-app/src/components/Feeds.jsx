@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PostInputBar from './PostInputBar'
 import { Card } from 'react-bootstrap'
 import { RiWalkFill } from "react-icons/ri";
-import { FcLike } from "react-icons/fc";
-import { FcSms } from "react-icons/fc";
+import { FcLike, FcSms } from "react-icons/fc";
 import { useSelector, useDispatch, } from 'react-redux'
 import { fetchPosts, addLikes } from '../redux/actions'
 

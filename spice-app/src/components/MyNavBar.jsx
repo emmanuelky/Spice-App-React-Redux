@@ -27,6 +27,22 @@ const MyNavBar = () => {
                             <Nav.Link href="/" className="text-light text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full ">Feeds</Nav.Link>
                             <Nav.Link href="/music" className="text-light mx-5 text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Music</Nav.Link>
                             <Nav.Link href="/movies" className="text-light text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Movies</Nav.Link>
+                            <Nav.Link href="/movies" className="text-light text-sm align-self-center  hover:bg-blue-800 rounded-full">
+                                <div className=' my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  block md:hidden '>
+                                    <div className='text-light md:text-xs'><h4 className='text-center md:text-xs'>Play Games</h4></div>
+
+                                    <div className=' md:text-xs md:flex-col  relative mx-5 '>
+                                        <div className='absolute -inset-0.5 opacity-50 bg-blue-600    rounded-lg blur-xl '></div>
+                                        <div className='bg-gray-900 hover:bg-pink-600 rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative '>Bugs Killer </div> </div>
+                                    <div className=' md:text-xs md:flex-col relative mx-4 '>
+                                        <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl '></div>
+                                        <div className='bg-gray-900 hover:bg-pink-600 rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative '>Bugs Killer</div> </div>
+
+                                    <div className=' md:text-xs md:flex-col relative mx-3 '>
+                                        <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl '></div>
+                                        <div className='bg-gray-900 hover:bg-pink-600  rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative '>Bugs Killer</div> </div>
+                                </div></Nav.Link>
+
                         </Nav>
 
                         <Nav>
