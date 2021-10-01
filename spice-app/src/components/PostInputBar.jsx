@@ -10,6 +10,7 @@ import { fetchPosts, fetchUsers, addPosts } from '../redux/actions'
 const PostInputBar = () => {
 
     const [message, setMessage] = useState('')
+
     const dispatch = useDispatch()
 
 
@@ -24,26 +25,6 @@ const PostInputBar = () => {
 
     const ID = uuidv4()
     const currentDate = format(new Date(), 'HH:mm b, do-MMM-yyyy')
-    // console.log(currentDate)
-
-    // const allUsers = {
-    //     city: "Najia",
-    //     bio: "wget",
-    //     createdAt: currentDate,
-    //     email: "arianrazab@yahoo.com",
-    //     image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
-    //     firstName: "Emmanuel",
-    //     lastName: "Iyere",
-    //     updatedAt: currentDate,
-    //     username: "johniyere",
-    //     followers: [],
-    //     following: [],
-    //     id: ID
-    // }
-
-
-
-
 
 
     const allPost = {
@@ -56,8 +37,6 @@ const PostInputBar = () => {
         user: currentUser,
 
     }
-
-    // console.log(allPost.user.image)
 
     const handleInputChange = (e) => {
 
@@ -75,7 +54,7 @@ const PostInputBar = () => {
 
 
     return (
-        <Container fluid className="mb-5 justify-center mx-auto border-grey-100 border pt-4 rounded-2xl" >
+        <Container fluid className="my-5 justify-center mx-auto border-grey-100 border pt-4 rounded-2xl" >
 
             <Form onSubmit >
                 <Row>
@@ -108,6 +87,7 @@ const PostInputBar = () => {
                             <Col md={3}>
 
                                 <span className=" ">
+
                                     <FcAddImage />
 
                                 </span>

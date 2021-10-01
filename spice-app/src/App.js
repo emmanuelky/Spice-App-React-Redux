@@ -1,8 +1,8 @@
 import HomePage from './components/HomePage'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ProfilePage from './components/ProfilePage';
-import Music from './components/Music';
-import Movies from './components/Movies';
+import Music from './components/Music/Music';
+import Movies from './components/Movies/Movies';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 

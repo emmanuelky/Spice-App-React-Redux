@@ -27,23 +27,23 @@ const HomePage = () => {
                         </div>
                     </Row>
 
-                    <Row className=''>
-                        <Col md={3}>
-                            <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
+                    <Row className=' '>
+                        <Col md={3} className=' '>
+                            <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-600 drop-shadow-2xl border-b-2 rounded " >
 
                                 <SideBarLeft />
 
                             </div>
                         </Col>
                         <Col md={6}>
-                            <div className=" border-l border-r border-gray-800 rounded-lg my-2 mx-2" >
+                            <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <Feeds />
 
 
                             </div>
                         </Col>
                         <Col md={3}>
-                            <div className="  border bg-indigo-900 shadow-2xl flex flex-wrap mx-1 border-blue-600 border-b-2 rounded " >
+                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-600 drop-shadow-2xl border-b-2 rounded " >
 
                                 <SideBarRight />
 
@@ -51,9 +51,6 @@ const HomePage = () => {
                         </Col>
                         {/* </div> */}
                     </Row>
-                    <div className="flex mx-auto flex-col justify-center border mt-3 border-blue-600 border-b-2 rounded " >
-                        <h4>footer</h4>
-                    </div>
 
                 </Container>)}
         </div>

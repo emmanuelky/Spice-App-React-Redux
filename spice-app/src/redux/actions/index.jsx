@@ -79,3 +79,13 @@ export const currentUser = (id) => {
 
     }
 }
+
+
+export const addLikes = (likes) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'ADD_LIKES',
+            payload: likes
+        })
+    }
+}

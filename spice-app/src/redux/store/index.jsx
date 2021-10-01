@@ -6,12 +6,12 @@ import thunk from 'redux-thunk'
 export const initialState = {
     posts: {
         posts: [],
-        likes: [],
     },
     users: {
         users: [],
         loggedin: true,
         currentUser: {},
+        likes: [],
     },
 }
 
