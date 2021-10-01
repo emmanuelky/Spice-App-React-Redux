@@ -1,28 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import MyNavBar from '../MyNavBar'
+import SideBarLeft from '../SideBarLeft'
+import SideBarRight from '../SideBarRight'
+import Feeds from '../Feeds'
+import { Container, Row, Col } from 'react-bootstrap'
+import SignUp from '../SignUp'
+import Login from '../Login'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Music = () => {
     return (
-        <>
-            <div className="flex mx-auto justify-center border my-3" >
-                <h4>Mynavbar</h4>
-            </div>
-            <div className="flex flex-wrap justify-around my-3">
+        <div className='mx-5'>
 
-                <div className="border" >
-                    <h4>sidebarleft</h4>
-                </div>
-                <div className="border" >
-                    <h4>Music</h4>
-                </div>
-                <div className="border" >
-                    <h4>sidebarright</h4>
-                </div>
-            </div>
-            <div className="flex mx-auto justify-center border my-3" >
-                <h4>footer</h4>
-            </div>
+            {
 
-        </>
+                (<Container fluid>
+
+                    <Row className='sticky-top '>
+
+                        <div className="mb-5 " >
+                            <MyNavBar />
+                        </div>
+                    </Row>
+
+                    <Row className=' '>
+                        <Col md={3} className=' '>
+                            <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
+
+                                <SideBarLeft />
+
+                            </div>
+                        </Col>
+                        <Col md={6}>
+                            <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
+                                <h5 className='text-gray-200 text-center mb-5'>Movies</h5>
+
+
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
+
+                                <SideBarRight />
+
+                            </div>
+                        </Col>
+                        {/* </div> */}
+                    </Row>
+
+                </Container>)}
+        </div>
     )
 }
 

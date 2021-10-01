@@ -18,7 +18,7 @@ function App() {
         <Route path="/signup" exact component={SignUp} />
         <Route path="/profile/:id" exact component={ProfilePage} />
         <Route path="/music" exact component={Music} />
-        <Route path="/movie" exact component={Movies} />
+        <Route path="/movies" exact component={Movies} />
 
 
 

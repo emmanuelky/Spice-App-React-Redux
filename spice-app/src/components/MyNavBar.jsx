@@ -3,6 +3,8 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AiOutlineDingding } from "react-icons/ai";
 import { useSelector, useDispatch } from 'react-redux'
+import Footer from './Footer'
+
 
 
 
@@ -29,7 +31,7 @@ const MyNavBar = () => {
                             <Nav.Link href="/movies" className="text-light text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Movies</Nav.Link>
                             <Nav.Link href="/movies" className="text-light text-sm align-self-center  hover:bg-blue-800 rounded-full">
                                 <div className=' my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  block md:hidden '>
-                                    <div className='text-light md:text-xs'><h4 className='text-center md:text-xs'>Play Games</h4></div>
+                                    <div className='text-light md:text-xs'><h5 className='text-center md:text-xs'>Play Games</h5></div>
 
                                     <div className=' md:text-xs md:flex-col  relative mx-5 '>
                                         <div className='absolute -inset-0.5 opacity-50 bg-blue-600    rounded-lg blur-xl '></div>
@@ -71,6 +73,11 @@ const MyNavBar = () => {
                             <Nav.Link className="text-light text-xs align-self-center"></Nav.Link>
                             <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Followers (100)</Nav.Link>
                             <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Following (2000)</Nav.Link>
+                            <Nav.Link>
+                                <div className='mb-10 border-b-2 block md:hidden  border-gray-600'>
+                                    <Footer />
+                                </div>
+                            </Nav.Link>
                         </Nav>
 
 

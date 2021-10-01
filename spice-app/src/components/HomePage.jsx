@@ -29,7 +29,7 @@ const HomePage = () => {
 
                     <Row className=' '>
                         <Col md={3} className=' '>
-                            <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
+                            <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
                                 <SideBarLeft />
 

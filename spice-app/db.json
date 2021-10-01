@@ -14,6 +14,36 @@
       "updatedAt": "2021-Sep-30th 06:22 AM",
       "followers": [],
       "following": []
+    },
+    {
+      "id": "edb15cf0-5968-4d4f-bebc-8afd94eaf4f0",
+      "firstName": "Emmanuel",
+      "lastName": "Iyere",
+      "email": "iyereemmanuel.akhere@gmail.com",
+      "username": "emm",
+      "password": "1122",
+      "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=798&q=80",
+      "bio": "cool",
+      "city": "Cottbus",
+      "createdAt": "2021-Oct-1st 14:34 PM",
+      "updatedAt": "2021-Oct-1st 14:34 PM",
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "ed089e76-74d1-48fa-ab7a-13c80c3c8893",
+      "firstName": "Emmanuel",
+      "lastName": "Iyere",
+      "email": "iyereemmanuel.akhere@gmail.com",
+      "username": "rmm",
+      "password": "111",
+      "image": "https://images.unsplash.com/photo-1628191139344-11bec156abdc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
+      "bio": "rrr",
+      "city": "Cottbus",
+      "createdAt": "2021-Oct-1st 14:44 PM",
+      "updatedAt": "2021-Oct-1st 14:44 PM",
+      "followers": [],
+      "following": []
     }
   ],
   "posts": [
@@ -381,6 +411,121 @@
         "city": "Potsdam",
         "createdAt": "2021-Sep-30th 06:22 AM",
         "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "4f45eee4-5a54-4e75-87ab-4a2a1d845780",
+      "createdAt": "12:37 noon, 1st-Oct-2021",
+      "text": "hello",
+      "postImage": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+      "likes": [],
+      "updatedAt": "12:37 noon, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "5c925ece-2ee4-42f8-92ee-35213d019a0b",
+      "createdAt": "12:37 noon, 1st-Oct-2021",
+      "text": "ok then",
+      "postImage": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+      "likes": [],
+      "updatedAt": "12:37 noon, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "114319b6-3dc1-4191-9ccb-ec7d76236704",
+      "createdAt": "14:00 PM, 1st-Oct-2021",
+      "text": "think twice!",
+      "postImage": "https://images.unsplash.com/photo-1632979424672-f99e5e1b6394?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "14:00 PM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "9e5aaba7-eab1-4760-a3f0-2f905b514e07",
+      "createdAt": "14:28 PM, 1st-Oct-2021",
+      "text": "yeah",
+      "postImage": "https://images.unsplash.com/photo-1632979424672-f99e5e1b6394?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "14:28 PM, 1st-Oct-2021",
+      "user": {
+        "id": "c558eb59-b9ab-447f-9516-5d17a55bdd83",
+        "firstName": "firstuser",
+        "lastName": "yes",
+        "email": "ky.4reall@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "hot",
+        "city": "Potsdam",
+        "createdAt": "2021-Sep-30th 06:22 AM",
+        "updatedAt": "2021-Sep-30th 06:22 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "158aa238-6391-4cce-8d06-fbceba487d73",
+      "createdAt": "14:46 PM, 1st-Oct-2021",
+      "text": "happy",
+      "postImage": "https://images.unsplash.com/photo-1632979424672-f99e5e1b6394?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
+      "likes": [],
+      "updatedAt": "14:46 PM, 1st-Oct-2021",
+      "user": {
+        "id": "ed089e76-74d1-48fa-ab7a-13c80c3c8893",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "rmm",
+        "password": "111",
+        "image": "https://images.unsplash.com/photo-1628191139344-11bec156abdc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
+        "bio": "rrr",
+        "city": "Cottbus",
+        "createdAt": "2021-Oct-1st 14:44 PM",
+        "updatedAt": "2021-Oct-1st 14:44 PM",
         "followers": [],
         "following": []
       }
