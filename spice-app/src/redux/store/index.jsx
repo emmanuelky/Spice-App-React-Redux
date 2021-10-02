@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import { postsReducer } from '../reducers/postReducer'
 import { usersReducer } from '../reducers/userReducer'
+import { movieReducer } from '../reducers/moviesReducer'
 import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import { encryptTransform } from 'redux-persist-transform-encrypt'
@@ -12,14 +13,16 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 export const initialState = {
     posts: {
         posts: [],
-        likes: [],
     },
     users: {
         users: [],
+        likes: [],
         loggedin: true,
-        // currentUser: {},
         getcurrentuser: {}
     },
+    movies: {
+        movies: [],
+    }
 }
 
 
@@ -38,6 +41,7 @@ const persistConfig = {
 const allReducers = combineReducers({
     posts: postsReducer,
     users: usersReducer,
+    movies: movieReducer
 })
 
 const persistAllReducers = persistReducer(

@@ -100,3 +100,18 @@ export const addLikes = (likes) => {
         })
     }
 }
+
+const BASE_URL = 'https://api.themoviedb.org/3'
+
+console.log()
+
+export const fetchMovies = () => {
+    return async (dispatch, getState) => {
+        const movies = await axios.get(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9e2146b30687bd1feadfd70291545597`)
+        console.log(movies)
+        dispatch({
+            type: 'FETCH_MOVIES',
+            payload: movies,
+        })
+    }
+}

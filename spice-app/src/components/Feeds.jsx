@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import PostInputBar from './PostInputBar'
 import { Card } from 'react-bootstrap'
@@ -11,14 +11,11 @@ import { fetchPosts, addLikes, currentUser, } from '../redux/actions'
 
 const Feeds = () => {
 
-
-
-
     const allPosts = useSelector(state => state.posts.posts)
-    console.log(allPosts)
+    // console.log(allPosts)
 
-
-
+    const currentUsername = useSelector(state => state.users.getcurrentuser)
+    console.log(currentUsername)
 
     useEffect(() => {
         dispatch(fetchPosts())
@@ -26,16 +23,29 @@ const Feeds = () => {
 
     }, [])
 
-    // const postLikesLength = useSelector(state => state.users.likes.length)
+    const postLikes = useSelector(state => state.users.likes)
+
+    console.log(postLikes)
 
 
-
-    // const currentUser = useSelector(state => state.users.currentUser)
-    // console.log(currentUser)
 
     const dispatch = useDispatch()
     const ID = uuidv4()
 
+
+    // const counts = {};
+    // postLikes.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+    // console.log(counts)
+
+
+
+
+    const handleUserPostLikes = (postid) => {
+
+        dispatch(addLikes(postid))
+
+
+    }
 
 
     return (
@@ -78,13 +88,14 @@ const Feeds = () => {
                                 <div className='flex flex-wrap justify-evenly  border-blue-800 border-b-2  pt-2 pb-3'>
 
 
-                                    <div onClick={() => dispatch(addLikes(post.id))} className="text-sm flex align-items-center cursor-pointer ">
+                                    <div onClick={(e) => handleUserPostLikes(e.target.value, post.id)} className="text-sm flex align-items-center cursor-pointer ">
                                         <div className="mx-1" >
                                             < FcLike />
                                         </div>
-                                        {/* <div className='text-muted'> <span>{postLikesLength}</span>  </div> */}
+                                        {/* <div className='text-muted'> <span>{}</span>  </div> */}
                                     </div>
                                     <div className="text-sm flex cursor-pointer align-items-center  ">
+                                        {/* {postId(post.id)} */}
                                         <div className="mx-1" >
                                             <FcSms />
                                         </div>

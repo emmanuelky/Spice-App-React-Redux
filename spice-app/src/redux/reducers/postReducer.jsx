@@ -15,11 +15,7 @@ export const postsReducer = (state = initialState.posts, action) => {
                 ...state,
                 posts: [...state.posts, action.payload],
             }
-        case 'ADD_LIKES':
-            return {
-                ...state,
-                likes: [...state.likes, action.payload],
-            }
+
         default:
             return state
 

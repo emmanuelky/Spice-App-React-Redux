@@ -7,7 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import SignUp from '../SignUp'
 import Login from '../Login'
 import { useSelector, useDispatch } from 'react-redux'
-import MovieList from './MovieList'
+import MovieList from '../MovieList'
 import MovieSearch from './MovieSearch'
 
 

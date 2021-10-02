@@ -15,7 +15,7 @@ const PostInputBar = () => {
 
 
     const getcurrentuser = useSelector(state => state.users.getcurrentuser)
-    console.log(getcurrentuser)
+    // console.log(getcurrentuser)
 
 
 
