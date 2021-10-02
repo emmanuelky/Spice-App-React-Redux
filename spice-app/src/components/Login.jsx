@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchUsers, loggedinUser } from '../redux/actions'
+import { fetchUsers, getCurrentUser, currentUser } from '../redux/actions'
 import { Form, Button, Alert } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
 import { AiOutlineDingding } from "react-icons/ai";
 
 
 
+
 const Login = ({ history }) => {
     const [useremail, setUseremail] = useState('')
     const [userpassword, setUserpassword] = useState('')
-    const [field, setField] = useState(false)
+    const [inputField, setInputField] = useState(false)
+
+
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchUsers())
     }, [])
 
-    const dispatch = useDispatch()
-    const currentUser = useSelector(state => state.users.users[0])
-    // console.log(currentUser)
 
 
-
-
-    // const getUsersEmail = allUsers?.map((user) => user.email)
-    // const getUsersPassword = allUsers?.map((user) => (user.password))
-    // const usersEmailsAndPasswords = getUsersEmail?.concat(getUsersPassword)
-
+    const allUsers = useSelector(state => state.users.users)
 
 
 
@@ -37,20 +34,22 @@ const Login = ({ history }) => {
     const handlePasswordInputChange = (e) => {
         setUserpassword(e.target.value)
     }
+    const findUserLoginDetails = allUsers.find(user => user.email === useremail && user.password === userpassword)
+    console.log(findUserLoginDetails)
 
 
 
-    const confirmLoginDetails = (id) => {
-        if (id && (useremail && userpassword === '') || (useremail !== currentUser.email && userpassword !== currentUser.password)) {
-            return setField(true)
-        } else if (id && useremail === currentUser.email && userpassword === currentUser.password) {
-            return history.push(`/`)
-        } else {
-            return
-        }
+    const checkLoginEmail = findUserLoginDetails?.email === useremail
+    const checkLoginPassword = findUserLoginDetails?.password === userpassword
 
+    console.log(checkLoginEmail, checkLoginPassword)
+
+
+
+
+    const handleLoginDetails = () => {
+        return (checkLoginEmail && checkLoginPassword === true) ? (dispatch(currentUser(findUserLoginDetails)), history.push('/')) : setInputField(true)
     }
-
 
     return (
         <div className='flex flex-col pt-20 text-gray-300 align-items-center'>
@@ -59,7 +58,7 @@ const Login = ({ history }) => {
 
             </div>
             <h1 className='text-center'>Login</h1>
-            {field
+            {inputField
                 ? <Alert variant='danger'>
                     Please enter a valid email and password
                 </Alert>
@@ -82,9 +81,9 @@ const Login = ({ history }) => {
                     />
                 </Form.Group>
 
-                {<button onClick={() => confirmLoginDetails(currentUser.id)} type="submit" className="mx-3 my-4 text-center text-light text-xl p-2 flex border-grey-100 border-b-2 border-t-2 hover:border-grey-900 rounded-full ">
+                <button onClick={() => handleLoginDetails()} type="submit" className="mx-3 my-4 text-center text-light text-xl p-2 flex border-grey-100 border-b-2 border-t-2 hover:border-grey-900 rounded-full ">
                     Login
-                </button>}
+                </button>
 
 
             </Form>
