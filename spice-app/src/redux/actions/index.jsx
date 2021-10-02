@@ -56,30 +56,41 @@ export const addUser = (user) => {
     }
 }
 
-export const loggedinUser = () => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'LOG_IN',
-            payload: false,
-        })
-    }
-}
+// export const loggedinUser = () => {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: 'LOG_IN',
+//             payload: false,
+//         })
+//     }
+// }
 
 
 
 
-export const currentUser = (id) => {
+export const currentUser = (newuser) => {
     return async (dispatch, getState) => {
-        const user = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/${id}`)
+        const user = await axios.post(`${process.env.REACT_APP_BASE_URL}/currentUser/`, newuser)
 
         dispatch({
-            type: 'CURRENT_USER',
+            type: 'POST_CURRENT_USER',
             payload: user,
         })
 
     }
 }
 
+
+export const getCurrentUser = () => {
+    return async (dispatch, getState) => {
+        const currentUser = await axios.get(`${process.env.REACT_APP_BASE_URL}/currentUser`)
+
+        dispatch({
+            type: 'GET_CURRENT_USER',
+            payload: currentUser,
+        })
+    }
+}
 
 export const addLikes = (likes) => {
     return (dispatch, getState) => {

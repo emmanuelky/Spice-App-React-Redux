@@ -4,7 +4,7 @@ import { FcVideoCall, FcAddImage, FcAdvertising } from "react-icons/fc";
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, fetchUsers, addPosts } from '../redux/actions'
+import { fetchPosts, fetchUsers, addPosts, getCurrentUser } from '../redux/actions'
 
 
 const PostInputBar = () => {
@@ -14,27 +14,29 @@ const PostInputBar = () => {
     const dispatch = useDispatch()
 
 
-    const currentUser = useSelector(state => state.users.users[0])
-    // console.log(currentUser)
+    const getcurrentuser = useSelector(state => state.users.getcurrentuser)
+    console.log(getcurrentuser)
 
 
 
     useEffect(() => {
         dispatch(fetchUsers())
+        dispatch(getCurrentUser())
+
     }, [])
 
     const ID = uuidv4()
     const currentDate = format(new Date(), 'HH:mm b, do-MMM-yyyy')
 
 
-    const allPost = {
+    const sendNewPost = {
         id: ID,
         createdAt: currentDate,
         text: message,
         postImage: "https://images.unsplash.com/photo-1632979424672-f99e5e1b6394?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
         likes: [],
         updatedAt: currentDate,
-        user: currentUser,
+        user: getcurrentuser.data,
 
     }
 
@@ -46,7 +48,7 @@ const PostInputBar = () => {
 
     const handleAddPosts = (e) => {
         e.preventDefault();
-        dispatch(addPosts(allPost))
+        dispatch(addPosts(sendNewPost))
         setMessage('')
         dispatch(fetchPosts())
     }

@@ -5,27 +5,33 @@ import { Card } from 'react-bootstrap'
 import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, addLikes } from '../redux/actions'
+import { fetchPosts, addLikes, currentUser, } from '../redux/actions'
 
 
 
 const Feeds = () => {
 
-    useEffect(() => {
-        dispatch(fetchPosts())
 
-    }, [])
 
 
     const allPosts = useSelector(state => state.posts.posts)
     console.log(allPosts)
 
-    const postLikesLength = useSelector(state => state.users.likes.length)
 
 
 
-    const currentUser = useSelector(state => state.users.users[0])
+    useEffect(() => {
+        dispatch(fetchPosts())
 
+
+    }, [])
+
+    // const postLikesLength = useSelector(state => state.users.likes.length)
+
+
+
+    // const currentUser = useSelector(state => state.users.currentUser)
+    // console.log(currentUser)
 
     const dispatch = useDispatch()
     const ID = uuidv4()
@@ -49,11 +55,11 @@ const Feeds = () => {
                                     <div className="text-xs flex align-items-center ">
                                         <div>
 
-                                            <img className="text-right w-5 h-5 rounded-full img-fluid" src={currentUser?.image} alt="" />
+                                            <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.user?.image} alt="" />
                                         </div>
                                         <div className='mx-1 '>
 
-                                            <span className=" align-self-bottom">{currentUser?.username}</span>
+                                            <span className=" align-self-bottom">{post.user?.username}</span>
                                         </div>
                                     </div>
 
@@ -76,7 +82,7 @@ const Feeds = () => {
                                         <div className="mx-1" >
                                             < FcLike />
                                         </div>
-                                        <div className='text-muted'> <span>{postLikesLength}</span>  </div>
+                                        {/* <div className='text-muted'> <span>{postLikesLength}</span>  </div> */}
                                     </div>
                                     <div className="text-sm flex cursor-pointer align-items-center  ">
                                         <div className="mx-1" >

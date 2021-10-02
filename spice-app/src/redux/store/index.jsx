@@ -12,12 +12,13 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 export const initialState = {
     posts: {
         posts: [],
+        likes: [],
     },
     users: {
         users: [],
         loggedin: true,
-        currentUser: [],
-        likes: [],
+        // currentUser: {},
+        getcurrentuser: {}
     },
 }
 

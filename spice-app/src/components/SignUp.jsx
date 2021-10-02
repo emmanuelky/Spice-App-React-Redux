@@ -50,14 +50,8 @@ const SignUp = ({ history }) => {
                 onSubmit={async (values) => {
                     await new Promise((r) => setTimeout(r, 500));
                     alert(JSON.stringify(values, null, 2));
-                    dispatch(addUser(values, {
-                        followers: [],
-                        following: []
-                    }))
-                    dispatch(currentUser(values, {
-                        followers: [],
-                        following: []
-                    }))
+                    dispatch(addUser(values))
+                    dispatch(currentUser(values))
                     history.push('/')
                 }}
 

@@ -12,7 +12,7 @@ import Footer from './Footer'
 
 const MyNavBar = () => {
 
-    const currentUser = useSelector(state => state.users.users[0])
+    const currentUser = useSelector(state => state.users.getcurrentuser)
     console.log(currentUser)
 
     return (
@@ -52,7 +52,7 @@ const MyNavBar = () => {
                                 <div className='flex bg-gray-200 rounded-full  px-1 border-blue-600 border-b-2'>
                                     <div className='align-self-center'>
                                         <Link to='/profile'>
-                                            {<img className=" w-5 h-5 rounded-full" src={currentUser?.image} alt="" />}
+                                            {<img className=" w-5 h-5 rounded-full" src={currentUser?.data.image} alt="" />}
                                         </Link>
                                     </div>
                                     <div className='align-self-center '>
