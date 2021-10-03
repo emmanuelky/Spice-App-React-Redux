@@ -7,11 +7,17 @@ import { fetchMovies } from '../redux/actions'
 const MovieList = () => {
 
 
-    const allMovies = useSelector(state => state.movies.movies)
-    console.log(allMovies)
-
-
     const dispatch = useDispatch()
+    const allMovies = useSelector(state => state.movies.movies)
+    console.log(allMovies.data)
+    const IMG_URL = 'https://image.tmdb.org/t/p/original'
+
+
+
+    const shortTitle = (title) => {
+        return title.slice(0, 20)
+    }
+
 
     useEffect(() => {
         dispatch(fetchMovies())
@@ -19,103 +25,23 @@ const MovieList = () => {
 
     return (
         <>
-            <h5 className='text-gray-200 text-center mb-5'>Movies</h5>
-            <div className="flex flex-wrap justify-around gap-4">
+            <div className="flex flex-wrap justify-center" >
                 {
-                    // allMovies?.map((movie) =>
-                    (<Card >
-                        <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
+                    allMovies.data.results?.map((movie) =>
+                    (<Card key={movie.id} className='w-40 h-40 mx-4 my-2  hover:border-purple-800 hover:text-gray-200 border-blue-600 border-b-2 hover:bg-blue-800 rounded-full' >
+                        <Card.Img variant="top" className="img-fluid" src={IMG_URL + movie.backdrop_path} />
                         <Card.Body>
-                            <Card.Title>Money Heist</Card.Title>
+                            <span>{shortTitle(movie.title)}</span>
                             <Card.Text>
-                                Nice holiday
+
                             </Card.Text>
-                            <Button variant="primary">View</Button>
+
                         </Card.Body>
                     </Card>)
-                    // )
+                    )
                 }
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
-                <Card >
-                    <Card.Img variant="top" className="w-20 h-20" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/MONEY-HEIST-SEASON-5.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5" />
-                    <Card.Body>
-                        <Card.Title>Money Heist</Card.Title>
-                        <Card.Text>
-                            Nice holiday
-                        </Card.Text>
-                        <Button variant="primary">View</Button>
-                    </Card.Body>
-                </Card>
             </div>
+
         </>
     )
 }

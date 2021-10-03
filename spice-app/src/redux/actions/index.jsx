@@ -101,13 +101,14 @@ export const addLikes = (likes) => {
     }
 }
 
-const BASE_URL = 'https://api.themoviedb.org/3'
+const BASE_URL = 'https://api.themoviedb.org/3' + '/discover/movie?sort_by=popularity.desc&' + process.env.REACT_APP_MOVIE_API_KEY
+const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.REACT_APP_MOVIE_API_KEY + '&query='
 
 console.log()
 
-export const fetchMovies = () => {
+export const fetchMovies = (query) => {
     return async (dispatch, getState) => {
-        const movies = await axios.get(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9e2146b30687bd1feadfd70291545597`)
+        const movies = await axios.get(query ? Search_URL + query : BASE_URL)
         console.log(movies)
         dispatch({
             type: 'FETCH_MOVIES',
