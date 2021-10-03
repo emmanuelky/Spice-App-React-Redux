@@ -11,6 +11,7 @@ import MovieList from '../MovieList'
 import MovieSearch from './MovieSearch'
 
 
+
 const Movies = () => {
     return (
         <div className='mx-5'>
@@ -37,6 +38,7 @@ const Movies = () => {
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <MovieSearch />
                                 <MovieList />
+
 
 
                             </div>

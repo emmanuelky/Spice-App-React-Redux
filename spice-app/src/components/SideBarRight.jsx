@@ -6,7 +6,7 @@ import { RiWalkFill } from "react-icons/ri";
 
 const SideBarRight = () => {
     return (<>
-        <div className='  flex flex-wrap my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  md:flex-col '>
+        <div className='  flex flex-wrap my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  flex-col '>
             <div className='text-light md:text-xs flex justify-center align-items-center'><div className=' text-lg'><RiWalkFill /></div><span className='mx-2 text-lg'>Follow</span></div>
 
 
@@ -25,7 +25,7 @@ const SideBarRight = () => {
 
         </div>
 
-        <div className='  flex flex-wrap my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  md:flex-col '>
+        <div className='  flex flex-wrap my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  flex-col '>
             <div className='text-light md:text-xs flex justify-center align-items-center'><span className='mx-2 text-lg'>Followers</span><div className=' text-lg'><RiWalkFill /></div></div>
 
 

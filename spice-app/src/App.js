@@ -20,7 +20,7 @@ function App() {
         <Route path="/profile/:id" exact component={ProfilePage} />
         <Route path="/music" exact component={Music} />
         <Route path="/movies" exact component={Movies} />
-        <Route path="/movie/:id" exact component={MovieDetails} />
+        <Route path="/movie/:id/credits" exact component={MovieDetails} />
 
 
 

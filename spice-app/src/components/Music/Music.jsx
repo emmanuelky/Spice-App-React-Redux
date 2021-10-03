@@ -33,7 +33,7 @@ const Music = () => {
                         </Col>
                         <Col md={6}>
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
-                                <h5 className='text-gray-200 text-center mb-5'>Movies</h5>
+                                <h5 className='text-gray-200 text-center mb-5'>Music</h5>
 
 
                             </div>

@@ -119,17 +119,42 @@ export const fetchMovies = (query) => {
     }
 }
 
-
+// Movie Detail
 const movie_api = process.env.REACT_APP_MOVIE_API_KEY
-const movieDetail_URL = "https://api.themoviedb.org/3"
+const movieDetail_URL = 'https://api.themoviedb.org/3/movie/'
+
+
+
 
 export const getMovieDetails = (id) => {
     return async (dispatch, getState) => {
-        const movieDetail = await axios.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=9e2146b30687bd1feadfd70291545597')
-        // console.log(movieDetail.data)
-        dispatch({
-            type: 'GET_MOVIE_DETAIL',
-            payload: movieDetail.data,
+        const movieDetail = await axios.get(movieDetail_URL + id + movie_api)
+        const movieCasts = await axios.get(movieDetail_URL + id + '/credits' + movie_api)
+
+        axios.all([movieDetail, movieCasts]).then(axios.spread((...responses) => {
+            console.log(responses)
+
+            dispatch({
+                type: 'GET_MOVIE_DETAILS',
+                payload: responses
+            })
+        })).catch(errors => {
+
         })
+
+
     }
 }
+
+
+
+// export const getMovieCasts = (id) => {
+//     return async (dispatch, getState) => {
+//         const movieCasts = await axios.get(movieDetail_URL + id + '/credits' + movie_api)
+//         console.log(movieCasts)
+//         dispatch({
+//             type: 'GET_MOVIE_CASTS',
+//             payload: movieCasts,
+//         })
+//     }
+// }
