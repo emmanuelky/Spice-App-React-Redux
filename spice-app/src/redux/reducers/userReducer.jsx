@@ -20,11 +20,7 @@ export const usersReducer = (state = initialState.users, action) => {
                 ...state,
                 loggedin: action.payload,
             }
-        // case 'POST_CURRENT_USER':
-        //     return {
-        //         ...state,
-        //         getcurrentuser: action.payload,
-        //     }
+
 
         case 'GET_CURRENT_USER':
             return {

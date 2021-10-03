@@ -22,6 +22,7 @@ export const initialState = {
     },
     movies: {
         movies: [],
+        movie_detail: {},
     }
 }
 
