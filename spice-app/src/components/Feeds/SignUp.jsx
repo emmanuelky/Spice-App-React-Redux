@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik';
-import { addUser, currentUser } from '../redux/actions'
+import { addUser, currentUser } from '../../redux/actions'
 import { useSelector, useDispatch, } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'

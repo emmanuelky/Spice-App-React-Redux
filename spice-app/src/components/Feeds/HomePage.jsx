@@ -4,8 +4,7 @@ import SideBarLeft from './SideBarLeft'
 import SideBarRight from './SideBarRight'
 import Feeds from './Feeds'
 import { Container, Row, Col } from 'react-bootstrap'
-import SignUp from './SignUp'
-import Login from './Login'
+
 import { useSelector, useDispatch } from 'react-redux'
 
 

@@ -1,11 +1,11 @@
-import HomePage from './components/HomePage'
+import HomePage from './components/Feeds/HomePage'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import ProfilePage from './components/ProfilePage';
+import ProfilePage from './components/Feeds/ProfilePage';
 import Music from './components/Music/Music';
 import Movies from './components/Movies/Movies';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import MovieDetails from './components/MovieDetails';
+import Login from './components/Feeds/Login';
+import SignUp from './components/Feeds/SignUp';
+import MovieDetails from './components/Movies/MovieDetails';
 
 
 

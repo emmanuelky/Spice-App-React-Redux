@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import MyNavBar from '../MyNavBar'
-import SideBarLeft from '../SideBarLeft'
-import SideBarRight from '../SideBarRight'
-import Feeds from '../Feeds'
+import MyNavBar from '../Feeds/MyNavBar'
+import SideBarLeft from '../Feeds/SideBarLeft'
+import SideBarRight from '../Feeds/SideBarRight'
+
 import { Container, Row, Col } from 'react-bootstrap'
-import SignUp from '../SignUp'
-import Login from '../Login'
+
 import { useSelector, useDispatch } from 'react-redux'
-import MovieList from '../MovieList'
+import MovieList from './MovieList'
 import MovieSearch from './MovieSearch'
 import { fetchMovies, } from '../../redux/actions'
 

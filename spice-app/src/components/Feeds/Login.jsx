@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchUsers, getCurrentUser, currentUser } from '../redux/actions'
+import { fetchUsers, getCurrentUser, currentUser } from '../../redux/actions'
 import { Form, Button, Alert } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
 import { AiOutlineDingding } from "react-icons/ai";

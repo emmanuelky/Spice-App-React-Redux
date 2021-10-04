@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { AiOutlineDingding } from "react-icons/ai";
 import { useSelector, useDispatch } from 'react-redux'
 import Footer from './Footer'
-import { fetchUsers } from '../redux/actions'
+import { fetchUsers } from '../../redux/actions'
 
 
 
@@ -15,11 +15,14 @@ const MyNavBar = () => {
     const dispatch = useDispatch()
 
     const currentUser = useSelector(state => state.users.getcurrentuser)
-    console.log(currentUser)
+    // console.log(currentUser)
+
 
     useEffect(() => {
         dispatch(fetchUsers())
     }, [])
+
+
 
     return (
         <div className='border-b bg-gray-900 border-gray-800 pt-3'>

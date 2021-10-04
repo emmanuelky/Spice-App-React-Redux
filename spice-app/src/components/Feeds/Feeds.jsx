@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap'
 import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, addLikes, currentUser, } from '../redux/actions'
+import { fetchPosts, addLikes } from '../../redux/actions'
 
 
 
@@ -13,31 +13,37 @@ const Feeds = () => {
 
 
 
+    const dispatch = useDispatch()
+
+
+    const allPosts = useSelector(state => state.posts.posts)
+    const postLikes = useSelector(state => state.posts.likes)
+    const loggedInCurrentUser = useSelector(state => state.users.getcurrentuser)
+
+    const getUserPostId = allPosts.filter(p => p.user.id === loggedInCurrentUser.data.id)
+    // console.log(getUserPostId)
+
+
+
+
+
+    // console.log(postLikes)
+    // console.log(allPosts)
+    // console.log(loggedInCurrentUser)
+
 
     useEffect(() => {
         dispatch(fetchPosts())
 
-
     }, [])
 
-    const allPosts = useSelector(state => state.posts.posts)
+    const handleLikesCount = (post) => {
 
-
-    const postLikes = useSelector(state => state.posts.likes)
-
-    console.log(postLikes)
-    console.log(allPosts)
-
-
-    const handleLikesCount = (id) => {
-        const likesCount = postLikes.filter(p => p.id === id).length;
+        const likesCount = postLikes.filter(p => p.id === post.id).length;
         return likesCount
 
     }
 
-
-
-    const dispatch = useDispatch()
     const ID = uuidv4()
 
 
@@ -86,16 +92,13 @@ const Feeds = () => {
 
                             <Card.Body>
                                 <div className='flex flex-wrap justify-evenly  border-blue-800 border-b-2  pt-2 pb-3'>
-
-
                                     <div onClick={(e) => handleUserPostLikes(e.target.value, post)} className="text-sm flex align-items-center cursor-pointer ">
                                         <div className="mx-1" >
                                             < FcLike />
-
-                                            {handleLikesCount(post.id)}
-
                                         </div>
-
+                                        <div className="mx-1" >
+                                            {handleLikesCount(post)}
+                                        </div>
                                     </div>
                                     <div className="text-sm flex cursor-pointer align-items-center  ">
                                         {/* {postId(post.id)} */}
@@ -104,7 +107,7 @@ const Feeds = () => {
                                         </div>
                                         <div><span>Comment</span> </div>
                                     </div>
-                                    <div className="text-sm flex align-items-center cursor-pointer  ">
+                                    <div className={getUserPostId[0].user.id === post.user?.id ? 'hidden' : "visible text-sm flex align-items-center cursor-pointer  "}>
                                         <div className="mx-1 " >
                                             <RiWalkFill />
                                         </div>
@@ -117,7 +120,7 @@ const Feeds = () => {
 
                     </div>
 
-                </>))
+                </>)).reverse()
 
             }
         </div>

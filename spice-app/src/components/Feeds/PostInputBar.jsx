@@ -4,7 +4,7 @@ import { FcVideoCall, FcAddImage, FcAdvertising } from "react-icons/fc";
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, fetchUsers, addPosts, getCurrentUser } from '../redux/actions'
+import { fetchPosts, fetchUsers, addPosts, getCurrentUser } from '../../redux/actions'
 
 
 const PostInputBar = () => {

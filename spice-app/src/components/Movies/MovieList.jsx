@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Button, Modal } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchMovies, } from '../redux/actions'
-import MovieDetails from './MovieDetails'
+import { fetchMovies, } from '../../redux/actions'
+
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import CrytoNews from './Cryto/CrytoNews'
+import CrytoNews from '../Cryto/CrytoNews'
 import Footer from './Footer'
 
 
