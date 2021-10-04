@@ -136,11 +136,7 @@
       "createdAt": "12:51 noon, 4th-Oct-2021",
       "text": "ok",
       "postImage": "https://images.unsplash.com/photo-1632979424672-f99e5e1b6394?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
-      "likes": [
-        3,
-        5,
-        7
-      ],
+      "likes": [],
       "updatedAt": "12:51 noon, 4th-Oct-2021",
       "user": {
         "id": "f92ceceb-168d-4cbc-8423-e60bb87eefc7",

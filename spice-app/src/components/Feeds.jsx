@@ -12,8 +12,7 @@ import { fetchPosts, addLikes, currentUser, } from '../redux/actions'
 const Feeds = () => {
 
 
-    // const currentUsername = useSelector(state => state.users.getcurrentuser)
-    // console.log(currentUsername)
+
 
     useEffect(() => {
         dispatch(fetchPosts())
@@ -25,33 +24,26 @@ const Feeds = () => {
 
 
     const postLikes = useSelector(state => state.posts.likes)
-    const totalLikes = useSelector(state => state.posts.likes.length)
+
     console.log(postLikes)
     console.log(allPosts)
 
 
-    let newArr = allPosts.map((item, index, arr) =>
+    const handleLikesCount = (id) => {
+        const likesCount = postLikes.filter(p => p.id === id).length;
+        return likesCount
 
-        item.id === (postLikes.map(p => p.id)) ? (postLikes.map(p => p.likes + 1)) : 0
-    )
+    }
 
-    console.log(newArr)
+
 
     const dispatch = useDispatch()
     const ID = uuidv4()
 
 
-    // const counts = {};
-    // postLikes.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-    // console.log(counts)
-
-
-
-
     const handleUserPostLikes = (e, post) => {
 
         dispatch(addLikes(post))
-
 
     }
 
@@ -61,7 +53,7 @@ const Feeds = () => {
             <div className='flex mb-4'>
                 <PostInputBar />
             </div>
-            {allPosts?.reverse().map((post, i) => (
+            {allPosts?.map((post, i) => (
                 <>
                     <div key={post.id} className='flex flex-col align-items-center border-green-100  hover:bg-grey-50 rounded-lg'>
 
@@ -99,7 +91,9 @@ const Feeds = () => {
                                     <div onClick={(e) => handleUserPostLikes(e.target.value, post)} className="text-sm flex align-items-center cursor-pointer ">
                                         <div className="mx-1" >
                                             < FcLike />
-                                            {post.likes.length}
+
+                                            {handleLikesCount(post.id)}
+
                                         </div>
 
                                     </div>
