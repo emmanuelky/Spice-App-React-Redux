@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 
 
 
+
 const MovieDetails = () => {
 
     const { id } = useParams()
@@ -61,6 +62,7 @@ const MovieDetails = () => {
                             </div>
                         </Col>
                         <Col md={6}>
+
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <div className="flex flex-wrap justify-center my-5" >
                                     {
@@ -130,15 +132,16 @@ const MovieDetails = () => {
 
 
                                     </div>}
-                                <div className='flex justify-end'>
+                                <div className='flex justify-center mt-0 mb-4'>
 
                                     <Link to="/movies">
 
-                                        <Button className="text-light text-lg p-2 align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Go Back</Button>
+                                        <div className="text-light text-lg p-2 align-self-center border-blue-600 border-b-2 border-t-2 hover:bg-blue-800 rounded-full">Back</div>
                                     </Link>
                                 </div>
 
                             </div>
+
                         </Col>
                         <Col md={3}>
                             <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >

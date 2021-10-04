@@ -9,10 +9,21 @@ import Login from '../Login'
 import { useSelector, useDispatch } from 'react-redux'
 import MovieList from '../MovieList'
 import MovieSearch from './MovieSearch'
+import { fetchMovies, } from '../../redux/actions'
+
 
 
 
 const Movies = () => {
+
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        dispatch(fetchMovies())
+    }, [])
+
+
     return (
         <div className='mx-5'>
 

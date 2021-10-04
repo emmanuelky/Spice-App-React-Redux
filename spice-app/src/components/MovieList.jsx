@@ -13,7 +13,7 @@ const MovieList = () => {
 
     const dispatch = useDispatch()
     const allMovies = useSelector(state => state.movies.movies)
-    console.log(allMovies.data)
+    console.log(allMovies)
 
 
 

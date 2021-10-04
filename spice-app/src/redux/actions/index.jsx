@@ -1,4 +1,5 @@
 import axios from 'axios'
+require('dotenv').config()
 
 export const fetchPosts = () => {
     return async (dispatch, getState) => {
@@ -101,17 +102,17 @@ export const addLikes = (likes) => {
     }
 }
 
-const BASE_URL = 'https://api.themoviedb.org/3' + '/discover/movie?sort_by=popularity.desc&' + process.env.REACT_APP_MOVIE_API_KEY
-const Search_URL = 'https://api.themoviedb.org/3/search/movie' + process.env.REACT_APP_MOVIE_API_KEY + '&query='
+const POPULAR_MOVIE_BASE_URL = 'https://api.themoviedb.org/3' + '/discover/movie?sort_by=popularity.desc&' + process.env.REACT_APP_MOVIE_API_KEY
+const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.REACT_APP_MOVIE_API_KEY + '&query='
 
 
 
-console.log()
+// console.log()
 
 export const fetchMovies = (query) => {
     return async (dispatch, getState) => {
-        const movies = await axios.get(query ? Search_URL + query : BASE_URL)
-        // console.log(movies)
+        const movies = await axios.get(query ? Search_URL + query : POPULAR_MOVIE_BASE_URL)
+        console.log(movies)
         dispatch({
             type: 'FETCH_MOVIES',
             payload: movies,
@@ -128,8 +129,8 @@ const movieDetail_URL = 'https://api.themoviedb.org/3/movie/'
 
 export const getMovieDetails = (id) => {
     return async (dispatch, getState) => {
-        const movieDetail = await axios.get(movieDetail_URL + id + movie_api)
-        const movieCasts = await axios.get(movieDetail_URL + id + '/credits' + movie_api)
+        const movieDetail = await axios.get(movieDetail_URL + id + '?' + movie_api)
+        const movieCasts = await axios.get(movieDetail_URL + id + '/credits?' + movie_api)
 
         axios.all([movieDetail, movieCasts]).then(axios.spread((...responses) => {
             console.log(responses)
