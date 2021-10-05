@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { AiOutlineDingding } from "react-icons/ai";
 import { useSelector, useDispatch } from 'react-redux'
 import Footer from './Footer'
@@ -10,19 +10,25 @@ import { fetchUsers } from '../../redux/actions'
 
 
 
-const MyNavBar = () => {
+const MyNavBar = ({ history }) => {
 
     const dispatch = useDispatch()
 
     const currentUser = useSelector(state => state.users.getcurrentuser)
-    // console.log(currentUser)
+    const currentUserObj = Object.keys(currentUser).length
+
+
+    console.log(currentUserObj)
 
 
     useEffect(() => {
         dispatch(fetchUsers())
+        checkLoginUser()
     }, [])
 
-
+    const checkLoginUser = () => {
+        currentUserObj < 0 ? (history.push('/login')) : history.push('/')
+    }
 
     return (
         <div className='border-b bg-gray-900 border-gray-800 pt-3'>
@@ -61,7 +67,7 @@ const MyNavBar = () => {
                                 <div className='flex bg-gray-200 rounded-full  px-1 border-blue-600 border-b-2'>
                                     <div className='align-self-center'>
                                         <Link to='/profile'>
-                                            {<img className=" w-5 h-5 rounded-full" src={currentUser?.data.image} alt="" />}
+                                            {<img className=" w-5 h-5 rounded-full" src={currentUserObj > 0 ? currentUser?.data.image : (history.push('/login'))} alt="" />}
                                         </Link>
                                     </div>
                                     <div className='align-self-center '>
@@ -100,4 +106,4 @@ const MyNavBar = () => {
     )
 }
 
-export default MyNavBar
+export default withRouter(MyNavBar)

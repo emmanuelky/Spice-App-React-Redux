@@ -4,8 +4,10 @@ import PostInputBar from './PostInputBar'
 import { Card } from 'react-bootstrap'
 import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
+import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, addLikes } from '../../redux/actions'
+import { fetchPosts, addLikes, removeLikes } from '../../redux/actions'
+
 
 
 
@@ -27,7 +29,7 @@ const Feeds = () => {
 
 
 
-    // console.log(postLikes)
+    console.log(postLikes)
     // console.log(allPosts)
     // console.log(loggedInCurrentUser)
 
@@ -40,16 +42,23 @@ const Feeds = () => {
     const handleLikesCount = (post) => {
 
         const likesCount = postLikes.filter(p => p.id === post.id).length;
+        likesCounted(likesCount)
         return likesCount
-
     }
 
     const ID = uuidv4()
 
 
-    const handleUserPostLikes = (e, post) => {
 
-        dispatch(addLikes(post))
+    const likesCounted = (likesCount) => {
+        return likesCount
+    }
+
+    const countedLikes = likesCounted()
+    console.log(countedLikes)
+
+    const handleLikeToggle = (e, post) => {
+        return postLikes.find(p => p.id === post.id) ? dispatch(removeLikes(post.id)) : (dispatch(addLikes(post)))
 
     }
 
@@ -92,9 +101,9 @@ const Feeds = () => {
 
                             <Card.Body>
                                 <div className='flex flex-wrap justify-evenly  border-blue-800 border-b-2  pt-2 pb-3'>
-                                    <div onClick={(e) => handleUserPostLikes(e.target.value, post)} className="text-sm flex align-items-center cursor-pointer ">
+                                    <div onClick={(e) => handleLikeToggle(e.target.value, post)} className="text-sm flex align-items-center cursor-pointer ">
                                         <div className="mx-1" >
-                                            < FcLike />
+                                            {postLikes.find(p => p.id === post.id) ? < FcLike /> : < AiOutlineHeart />}
                                         </div>
                                         <div className="mx-1" >
                                             {handleLikesCount(post)}

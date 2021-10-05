@@ -19,7 +19,13 @@ export const postsReducer = (state = initialState.posts, action) => {
         case 'ADD_LIKES':
             return {
                 ...state,
-                likes: [...state.likes, action.payload]
+                likes: [...state.likes, action.payload],
+            }
+
+        case 'REMOVE_LIKES':
+            return {
+                ...state,
+                likes: [...state.likes.filter(p => p.id !== action.payload)]
             }
 
         default:

@@ -102,6 +102,17 @@ export const addLikes = (likes) => {
     }
 }
 
+
+export const removeLikes = (likes) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'REMOVE_LIKES',
+            payload: likes
+        })
+    }
+}
+
+
 const POPULAR_MOVIE_BASE_URL = 'https://api.themoviedb.org/3' + '/discover/movie?sort_by=popularity.desc&' + process.env.REACT_APP_MOVIE_API_KEY
 const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.REACT_APP_MOVIE_API_KEY + '&query='
 
