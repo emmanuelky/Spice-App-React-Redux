@@ -13,6 +13,11 @@ export const movieReducer = (state = initialState.movies, action) => {
                 ...state,
                 movie_details: action.payload,
             }
+        case "GET_MOVIE_CATEGORY":
+            return {
+                ...state,
+                movie_category: action.payload,
+            }
         default:
             return state
     }

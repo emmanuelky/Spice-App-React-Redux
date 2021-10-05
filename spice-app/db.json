@@ -153,20 +153,66 @@
         "followers": [],
         "following": []
       }
+    },
+    {
+      "id": "fcf436b7-0f54-4e4f-b8f3-79c39774f006",
+      "createdAt": "13:09 PM, 5th-Oct-2021",
+      "text": "hello",
+      "postImage": "https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1019&q=80",
+      "likes": [],
+      "updatedAt": "13:09 PM, 5th-Oct-2021",
+      "user": {
+        "id": "f7b161a4-f334-4eef-b259-d556908783dc",
+        "firstName": "BLESSING",
+        "lastName": "AWOYO",
+        "email": "Geniusopera@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "laugh",
+        "city": "Cottbus",
+        "createdAt": "2021-Oct-2nd 07:07 AM",
+        "updatedAt": "2021-Oct-2nd 07:07 AM",
+        "followers": [],
+        "following": []
+      }
+    },
+    {
+      "id": "9f71823f-ca0c-4ab1-b5d0-a6eb651fa02f",
+      "createdAt": "14:43 PM, 5th-Oct-2021",
+      "text": "hello",
+      "postImage": "https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1019&q=80",
+      "likes": [],
+      "updatedAt": "14:43 PM, 5th-Oct-2021",
+      "user": {
+        "id": "f7b161a4-f334-4eef-b259-d556908783dc",
+        "firstName": "BLESSING",
+        "lastName": "AWOYO",
+        "email": "Geniusopera@gmail.com",
+        "username": "iyereemm",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+        "bio": "laugh",
+        "city": "Cottbus",
+        "createdAt": "2021-Oct-2nd 07:07 AM",
+        "updatedAt": "2021-Oct-2nd 07:07 AM",
+        "followers": [],
+        "following": []
+      }
     }
   ],
   "currentUser": {
-    "id": "f92ceceb-168d-4cbc-8423-e60bb87eefc7",
-    "firstName": "Emmanuel",
-    "lastName": "Iyere",
-    "email": "iyereemmanuel.akhere@gmail.com",
-    "username": "emmanuelky",
+    "id": "f7b161a4-f334-4eef-b259-d556908783dc",
+    "firstName": "BLESSING",
+    "lastName": "AWOYO",
+    "email": "Geniusopera@gmail.com",
+    "username": "iyereemm",
     "password": "111",
-    "image": "https://images.unsplash.com/photo-1632769092277-83b8c526a673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=776&q=80",
-    "bio": "cool",
+    "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1638403200&v=beta&t=4nI5gHqJsfd2Vq8cMdf_jfEBk_QCqTxU6rVV4tqsW8U",
+    "bio": "laugh",
     "city": "Cottbus",
-    "createdAt": "2021-Oct-2nd 06:59 AM",
-    "updatedAt": "2021-Oct-2nd 06:59 AM",
+    "createdAt": "2021-Oct-2nd 07:07 AM",
+    "updatedAt": "2021-Oct-2nd 07:07 AM",
     "followers": [],
     "following": []
   }

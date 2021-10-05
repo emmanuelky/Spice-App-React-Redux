@@ -35,14 +35,14 @@ const Login = ({ history }) => {
         setUserpassword(e.target.value)
     }
     const findUserLoginDetails = allUsers.find(user => user.email === useremail && user.password === userpassword)
-    console.log(findUserLoginDetails)
+    // console.log(findUserLoginDetails)
 
 
 
     const checkLoginEmail = findUserLoginDetails?.email === useremail
     const checkLoginPassword = findUserLoginDetails?.password === userpassword
 
-    console.log(checkLoginEmail, checkLoginPassword)
+    // console.log(checkLoginEmail, checkLoginPassword)
 
 
 

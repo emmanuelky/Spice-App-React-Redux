@@ -24,6 +24,7 @@ export const initialState = {
     movies: {
         all_movies: [],
         movie_details: [],
+        movie_category: [],
     }
 }
 

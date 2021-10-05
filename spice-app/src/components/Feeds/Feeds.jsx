@@ -22,12 +22,12 @@ const Feeds = () => {
 
     // const getUserPostId = allPosts.filter(p => p.user.id === loggedInCurrentUser?.id)
 
-    console.log(allPosts)
+    // console.log(allPosts)
 
 
 
 
-    console.log(postLikes)
+    // console.log(postLikes)
 
     const scrollTop = () => {
         window.scrollTo(0, 0);
@@ -56,7 +56,7 @@ const Feeds = () => {
     }
 
     const countedLikes = likesCounted()
-    console.log(countedLikes)
+    // console.log(countedLikes)
 
     const handleLikeToggle = (e, post) => {
         return postLikes.find(p => p.id === post.id) ? dispatch(removeLikes(post.id)) : (dispatch(addLikes(post)))

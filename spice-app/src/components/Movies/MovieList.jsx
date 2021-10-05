@@ -13,7 +13,7 @@ const MovieList = () => {
 
     const dispatch = useDispatch()
     const allMovies = useSelector(state => state.movies.all_movies)
-    console.log(allMovies)
+    // console.log(allMovies)
 
 
 
@@ -21,8 +21,6 @@ const MovieList = () => {
     useEffect(() => {
         dispatch(fetchMovies())
     }, [])
-
-
 
 
 

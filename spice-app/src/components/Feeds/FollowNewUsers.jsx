@@ -10,7 +10,7 @@ const FollowNewUsers = () => {
     const dispatch = useDispatch()
 
     const allUsers = useSelector(state => state.users.users)
-    console.log(allUsers)
+    // console.log(allUsers)
 
 
     const totalUsers = () => {
@@ -34,7 +34,7 @@ const FollowNewUsers = () => {
                             <>
                                 <div className=' md:text-xs md:flex-col relative  '>
                                     <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl  '></div>
-                                    <div className='flex justify-between bg-gray-900 rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative  '>
+                                    <div className='flex justify-between bg-gray-900 hover:bg-pink-900 rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative  '>
                                         <Col md={3}>
                                             <div className=' cursor-pointer'><img className='h-5 w-5 rounded-full ' src={user.image} alt="" /></div>
                                         </Col>

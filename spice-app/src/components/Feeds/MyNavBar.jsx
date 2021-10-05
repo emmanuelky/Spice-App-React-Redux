@@ -18,7 +18,7 @@ const MyNavBar = ({ history }) => {
     const currentUserObj = Object.keys(currentUser).length
 
 
-    console.log(currentUserObj)
+    // console.log(currentUserObj)
 
 
     useEffect(() => {
@@ -41,8 +41,8 @@ const MyNavBar = ({ history }) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
                     <Navbar.Collapse id="basic-navbar-nav " className=''>
                         <Nav className="mx-auto">
-                            <Link to='/' className="mx-auto">
-                                <button className="text-light p-2  text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full ">Feeds</button>
+                            <Link to='/' className="mx-auto ">
+                                <button className="text-light  p-2  text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full ">Feeds</button>
                             </Link>
                             <Link to='/music' className="mx-auto">
                                 <button className="text-light p-2  mx-5 text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Music</button>
@@ -64,7 +64,8 @@ const MyNavBar = ({ history }) => {
                                     <div className=' md:text-xs md:flex-col relative mx-3 '>
                                         <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl '></div>
                                         <div className='bg-gray-900 hover:bg-pink-600  rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative '>Bugs Killer</div> </div>
-                                </div></Nav.Link>
+                                </div>
+                            </Nav.Link>
 
                         </Nav>
 
