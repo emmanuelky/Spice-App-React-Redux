@@ -22,7 +22,7 @@ export const initialState = {
         getcurrentuser: {}
     },
     movies: {
-        movies: [],
+        all_movies: [],
         movie_details: [],
     }
 }

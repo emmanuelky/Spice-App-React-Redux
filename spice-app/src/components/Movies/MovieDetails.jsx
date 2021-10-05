@@ -4,10 +4,9 @@ import { useParams } from 'react-router-dom'
 import { Card, Button, Modal, Container, Row, Col, Carousel } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchMovies, getMovieDetails } from '../../redux/actions'
-import MyNavBar from '../Feeds/Feeds'
+import MyNavBar from '../Feeds/MyNavBar'
 import SideBarLeft from '../Feeds/SideBarLeft'
 import SideBarRight from '../Feeds/SideBarRight'
-// import MovieModal from './MovieModal'
 import { Link } from 'react-router-dom'
 
 
@@ -25,7 +24,7 @@ const MovieDetails = () => {
 
     const IMG_URL = 'https://image.tmdb.org/t/p/original'
 
-    const movie_URL = 'https://api.themoviedb.org/3/search/movie/'
+    // const movie_URL = 'https://api.themoviedb.org/3/search/movie/'
 
     const shortTitle = (title) => {
 
@@ -33,9 +32,13 @@ const MovieDetails = () => {
         return newTitle[0] + ' ' + newTitle[1]
     }
 
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     useEffect(() => {
         dispatch(getMovieDetails(id))
+        scrollTop()
     }, [])
 
     return (

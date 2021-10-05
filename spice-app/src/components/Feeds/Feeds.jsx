@@ -6,14 +6,12 @@ import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, addLikes, removeLikes } from '../../redux/actions'
+import { fetchPosts, addLikes, removeLikes, getCurrentUser } from '../../redux/actions'
 
 
 
 
 const Feeds = () => {
-
-
 
     const dispatch = useDispatch()
 
@@ -22,20 +20,23 @@ const Feeds = () => {
     const postLikes = useSelector(state => state.posts.likes)
     const loggedInCurrentUser = useSelector(state => state.users.getcurrentuser)
 
-    const getUserPostId = allPosts.filter(p => p.user.id === loggedInCurrentUser.data.id)
-    // console.log(getUserPostId)
+    // const getUserPostId = allPosts.filter(p => p.user.id === loggedInCurrentUser?.id)
 
+    console.log(allPosts)
 
 
 
 
     console.log(postLikes)
-    // console.log(allPosts)
-    // console.log(loggedInCurrentUser)
 
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     useEffect(() => {
         dispatch(fetchPosts())
+        dispatch(getCurrentUser())
+        scrollTop()
 
     }, [])
 
@@ -68,7 +69,7 @@ const Feeds = () => {
             <div className='flex mb-4'>
                 <PostInputBar />
             </div>
-            {allPosts?.map((post, i) => (
+            {allPosts.map((post, i) => (
                 <>
                     <div key={post.id} className='flex flex-col align-items-center border-green-100  hover:bg-grey-50 rounded-lg'>
 
@@ -84,13 +85,13 @@ const Feeds = () => {
                                         </div>
                                         <div className='mx-1 '>
 
-                                            <span className=" align-self-bottom">{post.user?.username}</span>
+                                            <span className=" align-self-bottom">{post.user?.firstName}</span>
                                         </div>
                                     </div>
 
                                     <div className='flex'>
                                         <i className="text-xs text-muted ">
-                                            posted at  {post.createdAt}
+                                            @{post.createdAt}
                                         </i>
                                     </div>
                                 </div>
@@ -116,7 +117,10 @@ const Feeds = () => {
                                         </div>
                                         <div><span>Comment</span> </div>
                                     </div>
-                                    <div className={getUserPostId[0].user.id === post.user?.id ? 'hidden' : "visible text-sm flex align-items-center cursor-pointer  "}>
+
+                                    {/* <div className={getUserPostId[0].user.id === post.user?.id ? 'hidden' : "visible text-sm flex align-items-center cursor-pointer  "}> */}
+                                    <div className={"visible text-sm flex align-items-center cursor-pointer  "}>
+
                                         <div className="mx-1 " >
                                             <RiWalkFill />
                                         </div>

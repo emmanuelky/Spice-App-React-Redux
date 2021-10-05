@@ -17,9 +17,13 @@ const Movies = () => {
 
     const dispatch = useDispatch()
 
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     useEffect(() => {
         dispatch(fetchMovies())
+        scrollTop()
     }, [])
 
 

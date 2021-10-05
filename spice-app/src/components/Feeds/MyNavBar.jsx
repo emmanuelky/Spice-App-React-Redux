@@ -23,12 +23,12 @@ const MyNavBar = ({ history }) => {
 
     useEffect(() => {
         dispatch(fetchUsers())
-        checkLoginUser()
     }, [])
 
-    const checkLoginUser = () => {
-        currentUserObj < 0 ? (history.push('/login')) : history.push('/')
-    }
+    // const checkLoginUser = () => {
+    //     currentUserObj < 0 ? (history.push('/login')) : history.push('/')
+    // }
+    // checkLoginUser()
 
     return (
         <div className='border-b bg-gray-900 border-gray-800 pt-3'>
@@ -39,12 +39,18 @@ const MyNavBar = ({ history }) => {
                     </Link>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
-                    <Navbar.Collapse id="basic-navbar-nav ">
+                    <Navbar.Collapse id="basic-navbar-nav " className=''>
                         <Nav className="mx-auto">
-                            <Nav.Link href="/" className="text-light text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full ">Feeds</Nav.Link>
-                            <Nav.Link href="/music" className="text-light mx-5 text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Music</Nav.Link>
-                            <Nav.Link href="/movies" className="text-light text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Movies</Nav.Link>
-                            <Nav.Link href="/movies" className="text-light text-sm align-self-center  hover:bg-blue-800 rounded-full">
+                            <Link to='/' className="mx-auto">
+                                <button className="text-light p-2  text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full ">Feeds</button>
+                            </Link>
+                            <Link to='/music' className="mx-auto">
+                                <button className="text-light p-2  mx-5 text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Music</button>
+                            </Link>
+                            <Link to='/movies' className="mx-auto">
+                                <button className="text-light p-2  text-sm align-self-center border-blue-600 border-b-2 hover:bg-blue-800 rounded-full">Movies</button>
+                            </Link>
+                            <Nav.Link href="/" className="text-light text-sm align-self-center  hover:bg-blue-800 rounded-full">
                                 <div className=' my-5 p-2 gap-4 text-sm bg-gray-900 w-100 h-100  block md:hidden '>
                                     <div className='text-light md:text-xs'><h5 className='text-center md:text-xs'>Play Games</h5></div>
 
@@ -67,7 +73,7 @@ const MyNavBar = ({ history }) => {
                                 <div className='flex bg-gray-200 rounded-full  px-1 border-blue-600 border-b-2'>
                                     <div className='align-self-center'>
                                         <Link to='/profile'>
-                                            {<img className=" w-5 h-5 rounded-full" src={currentUserObj > 0 ? currentUser?.data.image : (history.push('/login'))} alt="" />}
+                                            {<img className=" w-5 h-5 rounded-full" src={currentUserObj > 0 ? currentUser?.image : (history.push('/login'))} alt="" />}
                                         </Link>
                                     </div>
                                     <div className='align-self-center '>
@@ -78,7 +84,9 @@ const MyNavBar = ({ history }) => {
                                             <NavDropdown.Item href="#action/3.2"  >Followers</NavDropdown.Item>
                                             <NavDropdown.Item href="#action/3.3">Following</NavDropdown.Item>
                                             <NavDropdown.Divider />
-                                            <NavDropdown.Item href="#action/3.4">Settings</NavDropdown.Item>
+                                            <Link to='/login'>
+                                                <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
+                                            </Link>
                                         </NavDropdown>
 
                                     </div>
@@ -86,8 +94,8 @@ const MyNavBar = ({ history }) => {
                             </Nav.Link>
 
                             <Nav.Link className="text-light text-xs align-self-center"></Nav.Link>
-                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Followers (100)</Nav.Link>
-                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Following (2000)</Nav.Link>
+                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Followers (0)</Nav.Link>
+                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Following (0)</Nav.Link>
                             <Nav.Link>
                                 <div className='mb-10 border-b-2 block md:hidden  border-gray-600'>
                                     <Footer />

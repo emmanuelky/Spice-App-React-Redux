@@ -57,14 +57,6 @@ export const addUser = (user) => {
     }
 }
 
-// export const loggedinUser = () => {
-//     return (dispatch, getState) => {
-//         dispatch({
-//             type: 'LOG_IN',
-//             payload: false,
-//         })
-//     }
-// }
 
 
 
@@ -85,10 +77,10 @@ export const currentUser = (newuser) => {
 export const getCurrentUser = () => {
     return async (dispatch, getState) => {
         const currentUser = await axios.get(`${process.env.REACT_APP_BASE_URL}/currentUser`)
-
+        const loggedInCurrentUser = currentUser.data
         dispatch({
             type: 'GET_CURRENT_USER',
-            payload: currentUser,
+            payload: loggedInCurrentUser,
         })
     }
 }
@@ -123,10 +115,11 @@ const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.RE
 export const fetchMovies = (query) => {
     return async (dispatch, getState) => {
         const movies = await axios.get(query ? Search_URL + query : POPULAR_MOVIE_BASE_URL)
-        console.log(movies)
+        const allMovies = movies.data.results
+        console.log(allMovies)
         dispatch({
             type: 'FETCH_MOVIES',
-            payload: movies,
+            payload: allMovies,
         })
     }
 }
@@ -140,11 +133,11 @@ const movieDetail_URL = 'https://api.themoviedb.org/3/movie/'
 
 export const getMovieDetails = (id) => {
     return async (dispatch, getState) => {
-        const movieDetail = await axios.get(movieDetail_URL + id + '?' + movie_api)
-        const movieCasts = await axios.get(movieDetail_URL + id + '/credits?' + movie_api)
+        const movieDetail = await axios.get(movieDetail_URL + id + '?' + process.env.REACT_APP_MOVIE_API_KEY)
+        const movieCasts = await axios.get(movieDetail_URL + id + '/credits?' + process.env.REACT_APP_MOVIE_API_KEY)
 
         axios.all([movieDetail, movieCasts]).then(axios.spread((...responses) => {
-            console.log(responses)
+            // console.log(responses)
 
             dispatch({
                 type: 'GET_MOVIE_DETAILS',
@@ -160,13 +153,4 @@ export const getMovieDetails = (id) => {
 
 
 
-// export const getMovieCasts = (id) => {
-//     return async (dispatch, getState) => {
-//         const movieCasts = await axios.get(movieDetail_URL + id + '/credits' + movie_api)
-//         console.log(movieCasts)
-//         dispatch({
-//             type: 'GET_MOVIE_CASTS',
-//             payload: movieCasts,
-//         })
-//     }
-// }
+

@@ -33,10 +33,10 @@ const PostInputBar = () => {
         id: ID,
         createdAt: currentDate,
         text: message,
-        postImage: "https://images.unsplash.com/photo-1632979424672-f99e5e1b6394?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
+        postImage: "https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1019&q=80",
         likes: [],
         updatedAt: currentDate,
-        user: getcurrentuser.data,
+        user: getcurrentuser,
 
     }
 
@@ -56,7 +56,7 @@ const PostInputBar = () => {
 
 
     return (
-        <Container fluid className="my-5 justify-center mx-auto border-grey-100 pt-4 rounded-2xl border-blue-600 drop-shadow-2xl border-b-4 border-t-4 shadow-2xl" >
+        <Container fluid className="my-5 justify-center mx-auto border-grey-100 pt-4 rounded-2xl border-blue-600 drop-shadow-2xl hover:border-green-900  border-b-4 border-t-4 shadow-2xl" >
 
             <Form onSubmit >
                 <Row>
