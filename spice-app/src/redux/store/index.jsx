@@ -23,6 +23,7 @@ export const initialState = {
         loggedin: true,
         getcurrentuser: {},
         loading: false,
+        followers: [],
     },
     movies: {
         all_movies: [],

@@ -9,11 +9,12 @@ import { fetchPosts, fetchUsers, addPosts, getCurrentUser } from '../../redux/ac
 
 const PostInputBar = () => {
 
-    const [image, setImage] = useState("");
-    const [url, setUrl] = useState("");
+    const [image, setImage] = useState("")
+    const [url, setUrl] = useState("")
 
 
-    console.log(url)
+
+    console.log(image)
 
     const uploadImage = () => {
         const data = new FormData()
@@ -28,6 +29,7 @@ const PostInputBar = () => {
             .then(data => {
                 console.log(data)
                 setUrl(data.url)
+
             })
             .catch(err => console.log(err))
     }
@@ -38,8 +40,9 @@ const PostInputBar = () => {
     // console.log(getcurrentuser)
 
 
-
-
+    useEffect(() => {
+        uploadImage()
+    }, [image.length])
 
     useEffect(() => {
         dispatch(fetchUsers())
@@ -70,10 +73,14 @@ const PostInputBar = () => {
 
     const handleAddPosts = (e) => {
         e.preventDefault();
+
         dispatch(addPosts(sendNewPost))
         setMessage('')
+        setImage('')
         dispatch(fetchPosts())
+
     }
+
 
 
 
@@ -97,10 +104,11 @@ const PostInputBar = () => {
                         />
                     </Form.Group>
                 </Row>
+
                 <Row className='px-4'>
                     <div className=" my-4 flex flex-wrap justify-around align-items-center ">
                         <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600 flex  p-1 hover:bg-green-100 rounded-lg">
-                            <Col md={3}>
+                            <Col md={2}>
                                 <span className=" ">
                                     <FcVideoCall />
                                 </span>
@@ -108,26 +116,16 @@ const PostInputBar = () => {
                             </Col>
                         </div>
                         <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600  flex  p-1 hover:bg-green-100 rounded-lg">
-                            <Col md={3}>
+                            <Col md={2} className='flex'>
 
-                                <span className=" ">
 
-                                    <FcAddImage onClick={() => uploadImage()} />
-
-                                </span>
-                                <div>
-                                    <input type="file" onChange={(e) => setImage(e.target.files[0])}></input>
-                                </div>
-                                <div>
-                                    {/* <h1>Uploaded image will be displayed here</h1> */}
-                                    <img src={url} />
-                                </div>
-                                {/* <button onClick={uploadImage}>Upload</button> */}
-
+                                <label for="files" className="btn"><FcAddImage /></label>
+                                <input onClick={uploadImage} onChange={(e) => setImage(e.target.files[0])} id="files" className="hidden" type="file" />
                             </Col>
+
                         </div>
                         <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600 flex  p-1 hover:bg-green-100 rounded-lg">
-                            <Col md={3}>
+                            <Col md={2}>
 
                                 <span className="">
                                     <FcAdvertising />
@@ -135,18 +133,26 @@ const PostInputBar = () => {
                                 </span>
                             </Col>
                         </div>
-                        <div onClick={(e) => handleAddPosts(e)} className="mx-3 mt-1 text-center text-light text-xl p-2 flex border-green-500 border-b-2 border-t-2 hover:border-green-900 rounded-full ">
-                            <Col md={3}>
+                        <div onClick={(e) => handleAddPosts(e)} className="mx-1 mt-1 text-center text-light text-xl p-2 flex border-green-500 border-b-2 border-t-2 hover:border-green-900 rounded-full ">
+                            <Col md={2}>
 
                                 <span className="text-center cursor-pointer">
                                     post
                                 </span>
                             </Col>
                         </div>
+                        {/* <div className="mx-3 "> */}
+                        <Col md={2}>
+                            {
+                                <img className={image === '' ? 'hidden' : "w-20 h-20 rounded-full"} src={url} />
+                            }
+                        </Col>
+                        {/* </div> */}
 
 
                     </div>
                 </Row>
+
             </Form>
         </Container >
     )

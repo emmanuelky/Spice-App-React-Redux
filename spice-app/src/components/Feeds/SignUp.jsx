@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form } from 'formik';
 import { addUser, currentUser } from '../../redux/actions'
 import { useSelector, useDispatch, } from 'react-redux'
+import { FcAddImage } from "react-icons/fc";
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'
 import { Button } from 'react-bootstrap'
@@ -14,6 +15,35 @@ import { Link } from 'react-router-dom'
 
 const SignUp = ({ history }) => {
 
+    const [image, setImage] = useState("")
+    const [url, setUrl] = useState("")
+
+
+
+    console.log(image)
+
+    const uploadImage = () => {
+        const data = new FormData()
+        data.append("file", image)
+        data.append("upload_preset", "emmanuelspice")
+        data.append("cloud_name", "emmanuelky")
+        fetch("https://api.cloudinary.com/v1_1/emmanuelky/image/upload", {
+            method: "post",
+            body: data
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                setUrl(data.url)
+
+            })
+            .catch(err => console.log(err))
+    }
+
+
+    useEffect(() => {
+        uploadImage()
+    }, [image.length])
 
     const dispatch = useDispatch()
 
@@ -31,6 +61,9 @@ const SignUp = ({ history }) => {
 
             </div>
             <h1 className='text-blue-700'>Sign Up</h1>
+            {
+                <img className={image === '' ? 'hidden' : "w-20 h-20 rounded-full my-4"} src={url} />
+            }
             <Formik
                 initialValues={{
                     id: ID,
@@ -39,7 +72,7 @@ const SignUp = ({ history }) => {
                     email: '',
                     username: '',
                     password: '',
-                    image: '',
+                    image: url,
                     bio: '',
                     city: '',
                     createdAt: currentDate,
@@ -52,7 +85,9 @@ const SignUp = ({ history }) => {
                     alert(JSON.stringify(values, null, 2));
                     dispatch(addUser(values))
                     dispatch(currentUser(values))
+                    uploadImage()
                     history.push('/')
+
                 }}
 
             >
@@ -80,7 +115,8 @@ const SignUp = ({ history }) => {
                         <Field type='password' id="password" name="password" placeholder="password" />
                     </div>
                     <div className='my-2'>
-                        <Field id="photo" name="image" placeholder="image url" />
+                        {/* <label for="files" className="btn text-lg"><FcAddImage />  Upload Profile Image</label> */}
+                        <input onClick={() => uploadImage()} onChange={(e) => setImage(e.target.files[0])} id="files" className="" type="file" />
                     </div>
                     <div className='my-2'>
                         <Field id="bio" name="bio" placeholder="about you..." />
@@ -88,7 +124,7 @@ const SignUp = ({ history }) => {
                     <div className='my-2'>
                         <Field id="city" name="city" placeholder="city" />
                     </div>
-                    <Button type="submit" className=''>Sign up</Button>
+                    <Button type="submit" onClick={() => uploadImage()} className=''>Sign up</Button>
                 </Form>
             </Formik>
 

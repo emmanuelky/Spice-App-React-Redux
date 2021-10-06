@@ -134,13 +134,13 @@ const Feeds = () => {
                                             </div>
 
                                             {/* <div className={getUserPostId[0].user.id === post.user?.id ? 'hidden' : "visible text-sm flex align-items-center cursor-pointer  "}> */}
-                                            <div className={"visible text-sm flex align-items-center cursor-pointer  "}>
+                                            {/* <div className={"visible text-sm flex align-items-center cursor-pointer  "}>
 
                                                 <div className="mx-1 " >
                                                     <RiWalkFill />
                                                 </div>
                                                 <div><span>Follow</span> </div>
-                                            </div>
+                                            </div> */}
 
                                         </div>
                                     </Card.Body>
