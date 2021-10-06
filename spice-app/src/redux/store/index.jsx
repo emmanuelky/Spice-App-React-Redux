@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import { postsReducer } from '../reducers/postReducer'
 import { usersReducer } from '../reducers/userReducer'
 import { movieReducer } from '../reducers/moviesReducer'
+import { musicReducer } from '../reducers/musicReducer'
 import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import { encryptTransform } from 'redux-persist-transform-encrypt'
@@ -25,7 +26,10 @@ export const initialState = {
         all_movies: [],
         movie_details: [],
         movie_category: [],
-    }
+    },
+    music: {
+        music_lists: [],
+    },
 }
 
 
@@ -44,7 +48,8 @@ const persistConfig = {
 const allReducers = combineReducers({
     posts: postsReducer,
     users: usersReducer,
-    movies: movieReducer
+    movies: movieReducer,
+    music: musicReducer,
 })
 
 const persistAllReducers = persistReducer(

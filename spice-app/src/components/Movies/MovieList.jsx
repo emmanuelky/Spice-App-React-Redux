@@ -13,7 +13,7 @@ const MovieList = () => {
 
     const dispatch = useDispatch()
     const allMovies = useSelector(state => state.movies.all_movies)
-    // console.log(allMovies)
+    console.log(allMovies)
 
 
 
@@ -43,7 +43,7 @@ const MovieList = () => {
                     allMovies?.map((movie) =>
                     (
                         <Link to={`/movie/${movie.id}/credits`} className="no-underline">
-                            <Card key={movie.id} className='w-40 h-40 mx-4 my-5  hover:border-purple-800 hover:text-gray-200 border-blue-600 border-b-2 hover:bg-blue-800 rounded-full' >
+                            <Card key={movie.id} className='w-40 h-40 mx-1 my-5  hover:border-purple-800 hover:text-gray-200 border-blue-600 border-b-2 hover:bg-blue-800 rounded-full' >
                                 <Card.Img variant="top" className="img-fluid" src={IMG_URL + movie.poster_path} />
                                 <Card.Body>
                                     {/* <Card.Text className='text-center'>

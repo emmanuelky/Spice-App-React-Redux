@@ -105,14 +105,14 @@ export const removeLikes = (likes) => {
 }
 
 
-const POPULAR_MOVIE_BASE_URL = 'https://api.themoviedb.org/3' + '/discover/movie?sort_by=popularity.desc&' + process.env.REACT_APP_MOVIE_API_KEY
+const TRENDING_MOVIE_BASE_URL = 'https://api.themoviedb.org/3/' + 'trending/all/week?' + process.env.REACT_APP_MOVIE_API_KEY
 const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.REACT_APP_MOVIE_API_KEY + '&query='
 
 // console.log()
 
 export const fetchMovies = (query) => {
     return async (dispatch, getState) => {
-        const movies = await axios.get(query ? Search_URL + query : POPULAR_MOVIE_BASE_URL)
+        const movies = await axios.get(query ? Search_URL + query : TRENDING_MOVIE_BASE_URL)
 
         const allMovies = movies.data.results
         // console.log(allMovies)
@@ -132,16 +132,16 @@ const movieDetail_URL = 'https://api.themoviedb.org/3/movie/'
 const upcomingMovie_URL = 'https://api.themoviedb.org/3/movie/upcoming?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
 const topRatedMovie_URL = 'https://api.themoviedb.org/3/movie/top_rated?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
 const nowPlayingMovie_URL = 'https://api.themoviedb.org/3/movie/now_playing?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
-const latestMovie_URL = 'https://api.themoviedb.org/3/movie/latest?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
+const popularMovie_URL = 'https://api.themoviedb.org/3/movie/popular?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
 
 export const getMovieCategory = () => {
     return async (dispatch, getState) => {
         const upcomingMovie = await axios.get(upcomingMovie_URL)
         const topRatedMovie = await axios.get(topRatedMovie_URL)
         const nowPlayingMovie = await axios.get(nowPlayingMovie_URL)
-        const latestMovie = await axios.get(latestMovie_URL)
+        const popularMovie = await axios.get(popularMovie_URL)
 
-        axios.all([upcomingMovie, topRatedMovie, nowPlayingMovie, latestMovie,]).then(axios.spread((...responses) => {
+        axios.all([upcomingMovie, topRatedMovie, nowPlayingMovie, popularMovie,]).then(axios.spread((...responses) => {
 
 
             dispatch({
@@ -183,6 +183,29 @@ export const getMovieDetails = (id) => {
 
     }
 }
+
+const music_BASE_URL = 'https://striveschool-api.herokuapp.com/api/deezer'
+
+export const getMusicSearch = (query) => {
+    return async (dispatch, getState) => {
+        const musicSearch = await axios.get(query ? `${music_BASE_URL}/search?q=${query}` : `${music_BASE_URL}/search?q=eminem`)
+
+        axios.all([musicSearch]).then(axios.spread((...responses) => {
+            // console.log(musicSearch)
+
+            dispatch({
+                type: 'FETCH_MUSIC_LIST',
+                payload: responses
+            })
+        })).catch(errors => {
+
+        })
+
+
+    }
+}
+
+
 
 
 

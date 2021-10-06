@@ -13,6 +13,9 @@ import Footer from '../Feeds/Footer'
 import CrytoNews from '../Cryto/CrytoNews'
 import UpComingMovies from './UpComingMovies'
 import NowPlayingMovie from './NowPlayingMovie'
+import FollowNewUsers from '../Feeds/FollowNewUsers'
+import TopRatedMovies from './TopRatedMovies'
+import LatestMovies from './LatestMovies'
 
 
 
@@ -47,9 +50,10 @@ const Movies = () => {
                     <Row className=' '>
                         <Col md={3} className=' '>
                             <div className="sticky top-40 shadow-2xl  flex-wrap mx-1 drop-shadow-2xl  rounded " >
-                                <UpComingMovies />
+                                <div><UpComingMovies /></div>
+                                <div><LatestMovies /> </div>
                                 <div className="my-2"><CrytoNews /></div>
-                                <Footer />
+                                <div><Footer /></div>
 
                             </div>
                         </Col>
@@ -65,8 +69,9 @@ const Movies = () => {
                         <Col md={3}>
                             <div className=" sticky top-40 shadow-2xl flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
 
-                                <NowPlayingMovie />
-
+                                <div><NowPlayingMovie /></div>
+                                <div><TopRatedMovies /> </div>
+                                <div><FollowNewUsers /> </div>
                             </div>
                         </Col>
                         {/* </div> */}

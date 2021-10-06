@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import MyNavBar from '../Feeds/MyNavBar'
 import SideBarLeft from '../Feeds/SideBarLeft'
 import SideBarRight from '../Feeds/SideBarRight'
-
 import { Container, Row, Col } from 'react-bootstrap'
-
 import { useSelector, useDispatch } from 'react-redux'
+import MusicList from './MusicList'
 
 const Music = () => {
     return (
@@ -34,7 +33,7 @@ const Music = () => {
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <h5 className='text-gray-200 text-center mb-5'>Music</h5>
 
-
+                                <MusicList />
                             </div>
                         </Col>
                         <Col md={3}>
