@@ -3,9 +3,12 @@ import { FiPlusCircle } from "react-icons/fi";
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchUsers } from '../../redux/actions'
 import { Container, Row, Col, Spinner } from 'react-bootstrap'
+import { addFollowers } from '../../redux/actions'
 
 
 const FollowNewUsers = () => {
+
+
 
     const dispatch = useDispatch()
 
@@ -15,9 +18,14 @@ const FollowNewUsers = () => {
     const loading = useSelector(state => state.posts.loading)
 
 
+    const myAddedFollowers = useSelector(state => state.users.followers)
+    const followerUserId = myAddedFollowers.map(user => user.id)
+
+
     const totalUsers = () => {
         return allUsers.length
     }
+
 
 
     useEffect(() => {
@@ -35,9 +43,9 @@ const FollowNewUsers = () => {
 
                         loading
                             ? (<Spinner animation="border" variant="success" />)
-                            : allUsers?.map(user => (
+                            : allUsers?.slice(0, 5).map(user => (
                                 <>
-                                    <div className=' md:text-xs md:flex-col relative  '>
+                                    <div className={followerUserId?.includes(user.id) ? 'hidden' : ' md:text-xs md:flex-col relative  '}>
                                         <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl  '></div>
                                         <div className='flex justify-between bg-gray-900 hover:bg-pink-900 rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative  '>
                                             <Col md={3}>
@@ -48,7 +56,7 @@ const FollowNewUsers = () => {
 
                                             </Col>
                                             <Col md={3} className='mx-5'>
-                                                <div className=' cursor-pointer'><FiPlusCircle /></div>
+                                                <div onClick={() => dispatch(addFollowers(user))} className=' cursor-pointer text-2xl'><FiPlusCircle /></div>
 
                                             </Col>
 

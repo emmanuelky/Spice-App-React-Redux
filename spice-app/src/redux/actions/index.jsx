@@ -300,6 +300,25 @@ export const getMusicSearch = (query) => {
 
 
 
+export const addFollowers = (user) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'ADD_FOLLOWERS',
+            payload: user
+        })
+    }
+}
+
+
+export const removeFollowers = (userId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'REMOVE_FOLLOWERS',
+            payload: userId
+        })
+    }
+}
+
 
 
 
