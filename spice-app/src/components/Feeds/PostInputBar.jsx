@@ -9,13 +9,35 @@ import { fetchPosts, fetchUsers, addPosts, getCurrentUser } from '../../redux/ac
 
 const PostInputBar = () => {
 
+    const [image, setImage] = useState("");
+    const [url, setUrl] = useState("");
+
+
+    console.log(url)
+
+    const uploadImage = () => {
+        const data = new FormData()
+        data.append("file", image)
+        data.append("upload_preset", "emmanuelspice")
+        data.append("cloud_name", "emmanuelky")
+        fetch("https://api.cloudinary.com/v1_1/emmanuelky/image/upload", {
+            method: "post",
+            body: data
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                setUrl(data.url)
+            })
+            .catch(err => console.log(err))
+    }
+
     const [message, setMessage] = useState('')
-
     const dispatch = useDispatch()
-
-
     const getcurrentuser = useSelector(state => state.users.getcurrentuser)
     // console.log(getcurrentuser)
+
+
 
 
 
@@ -33,7 +55,7 @@ const PostInputBar = () => {
         id: ID,
         createdAt: currentDate,
         text: message,
-        postImage: "https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1019&q=80",
+        postImage: url,
         likes: [],
         updatedAt: currentDate,
         user: getcurrentuser,
@@ -90,9 +112,18 @@ const PostInputBar = () => {
 
                                 <span className=" ">
 
-                                    <FcAddImage />
+                                    <FcAddImage onClick={() => uploadImage()} />
 
                                 </span>
+                                <div>
+                                    <input type="file" onChange={(e) => setImage(e.target.files[0])}></input>
+                                </div>
+                                <div>
+                                    {/* <h1>Uploaded image will be displayed here</h1> */}
+                                    <img src={url} />
+                                </div>
+                                {/* <button onClick={uploadImage}>Upload</button> */}
+
                             </Col>
                         </div>
                         <div className="mx-3 mt-1 cursor-pointer  text-light text-xl bg-gray-600 flex  p-1 hover:bg-green-100 rounded-lg">

@@ -3,13 +3,22 @@ require('dotenv').config()
 
 export const fetchPosts = () => {
     return async (dispatch, getState) => {
+
+
+        dispatch({
+            type: 'LOADING',
+            payload: true
+        })
         const posts = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/`)
         const postsArray = posts.data
         dispatch({
             type: 'FETCH_POSTS',
             payload: postsArray,
         })
-
+        dispatch({
+            type: 'LOADING',
+            payload: false,
+        })
     }
 }
 
@@ -17,12 +26,22 @@ export const fetchPosts = () => {
 export const addPosts = (post) => {
     return async (dispatch, getState) => {
 
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
+
         const posts = await axios.post(`${process.env.REACT_APP_BASE_URL}/posts/`, post)
         // const postsArray = posts.data
         dispatch({
             type: 'ADD_POST',
             payload: posts
         })
+        dispatch({
+            type: 'LOADING',
+            payload: false,
+        })
+
     }
 }
 
@@ -31,12 +50,22 @@ export const addPosts = (post) => {
 
 export const fetchUsers = () => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
+
         const users = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/`)
         const usersArray = users.data
         // console.log(usersArray)
         dispatch({
             type: 'FETCH_USERS',
             payload: usersArray,
+        })
+        dispatch({
+            type: 'LOADING',
+            payload: false
         })
 
     }
@@ -48,11 +77,19 @@ export const fetchUsers = () => {
 export const addUser = (user) => {
     return async (dispatch, getState) => {
 
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
         const users = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/`, user)
 
         dispatch({
             type: 'ADD_USER',
             payload: users
+        })
+        dispatch({
+            type: 'LOADING',
+            payload: false
         })
     }
 }
@@ -63,24 +100,42 @@ export const addUser = (user) => {
 
 export const currentUser = (newuser) => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
         const user = await axios.post(`${process.env.REACT_APP_BASE_URL}/currentUser/`, newuser)
 
         dispatch({
             type: 'POST_CURRENT_USER',
             payload: user,
         })
-
+        dispatch({
+            type: 'LOADING',
+            payload: false
+        })
     }
 }
 
 
 export const getCurrentUser = () => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
+
         const currentUser = await axios.get(`${process.env.REACT_APP_BASE_URL}/currentUser`)
         const loggedInCurrentUser = currentUser.data
         dispatch({
             type: 'GET_CURRENT_USER',
             payload: loggedInCurrentUser,
+        })
+        dispatch({
+            type: 'LOADING',
+            payload: false
         })
     }
 }
@@ -112,6 +167,12 @@ const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.RE
 
 export const fetchMovies = (query) => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
+
         const movies = await axios.get(query ? Search_URL + query : TRENDING_MOVIE_BASE_URL)
 
         const allMovies = movies.data.results
@@ -119,6 +180,10 @@ export const fetchMovies = (query) => {
         dispatch({
             type: 'FETCH_MOVIES',
             payload: allMovies,
+        })
+        dispatch({
+            type: 'LOADING',
+            payload: false
         })
     }
 }
@@ -136,6 +201,11 @@ const popularMovie_URL = 'https://api.themoviedb.org/3/movie/popular?' + process
 
 export const getMovieCategory = () => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
         const upcomingMovie = await axios.get(upcomingMovie_URL)
         const topRatedMovie = await axios.get(topRatedMovie_URL)
         const nowPlayingMovie = await axios.get(nowPlayingMovie_URL)
@@ -147,6 +217,10 @@ export const getMovieCategory = () => {
             dispatch({
                 type: 'GET_MOVIE_CATEGORY',
                 payload: responses
+            })
+            dispatch({
+                type: 'LOADING',
+                payload: false
             })
         })).catch(errors => {
 
@@ -160,6 +234,11 @@ export const getMovieCategory = () => {
 
 export const getMovieDetails = (id) => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
         const movieDetail = await axios.get(movieDetail_URL + id + '?' + process.env.REACT_APP_MOVIE_API_KEY)
         const movieCasts = await axios.get(movieDetail_URL + id + '/credits?' + process.env.REACT_APP_MOVIE_API_KEY)
         const similarMovie = await axios.get(movieDetail_URL + id + '/similar?' + process.env.REACT_APP_MOVIE_API_KEY)
@@ -176,6 +255,10 @@ export const getMovieDetails = (id) => {
                 type: 'GET_MOVIE_DETAILS',
                 payload: responses
             })
+            dispatch({
+                type: 'LOADING',
+                payload: false
+            })
         })).catch(errors => {
 
         })
@@ -188,6 +271,11 @@ const music_BASE_URL = 'https://striveschool-api.herokuapp.com/api/deezer'
 
 export const getMusicSearch = (query) => {
     return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
         const musicSearch = await axios.get(query ? `${music_BASE_URL}/search?q=${query}` : `${music_BASE_URL}/search?q=eminem`)
 
         axios.all([musicSearch]).then(axios.spread((...responses) => {
@@ -196,6 +284,11 @@ export const getMusicSearch = (query) => {
             dispatch({
                 type: 'FETCH_MUSIC_LIST',
                 payload: responses
+            })
+
+            dispatch({
+                type: 'LOADING',
+                payload: false
             })
         })).catch(errors => {
 

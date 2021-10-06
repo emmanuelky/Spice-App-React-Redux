@@ -71,7 +71,7 @@ const Movies = () => {
 
                                 <div><NowPlayingMovie /></div>
                                 <div><TopRatedMovies /> </div>
-                                <div><FollowNewUsers /> </div>
+                                {/* <div><FollowNewUsers /> </div> */}
                             </div>
                         </Col>
                         {/* </div> */}

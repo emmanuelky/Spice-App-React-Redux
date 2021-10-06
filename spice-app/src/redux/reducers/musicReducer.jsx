@@ -7,7 +7,11 @@ export const musicReducer = (state = initialState.music, action) => {
                 ...state,
                 music_lists: action.payload,
             }
-
+        case "LOADING":
+            return {
+                ...state,
+                loading: action.payload,
+            }
 
         default:
             return state

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Card, Button, Modal, Container, Row, Col, Carousel } from 'react-bootstrap'
+import { Card, Button, Spinner, Container, Row, Col, Carousel } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchMovies, getMovieDetails } from '../../redux/actions'
 import MyNavBar from '../Feeds/MyNavBar'
@@ -21,6 +21,9 @@ const MovieDetails = () => {
 
     const movieDetail = useSelector(state => state.movies.movie_details)
     console.log(movieDetail[0])
+
+
+    const loading = useSelector(state => state.movies.loading)
 
     const IMG_URL = 'https://image.tmdb.org/t/p/original'
 
@@ -69,19 +72,20 @@ const MovieDetails = () => {
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <div className="flex flex-wrap justify-center my-5" >
                                     {
+                                        loading
+                                            ? (<Spinner animation="border" variant="success" />)
+                                            : (
+                                                <Card key={movieDetail[0]?.data.id} className=' mx-4 my-2  hover:border-purple-800 hover:text-gray-200 border-blue-600 border-b-2 hover:bg-blue-800 rounded-full' >
+                                                    <Card.Img variant="top" className="img-fluid" src={IMG_URL + movieDetail[0]?.data.poster_path} />
+                                                    <Card.Body>
 
-                                        (
-                                            <Card key={movieDetail[0]?.data.id} className=' mx-4 my-2  hover:border-purple-800 hover:text-gray-200 border-blue-600 border-b-2 hover:bg-blue-800 rounded-full' >
-                                                <Card.Img variant="top" className="img-fluid" src={IMG_URL + movieDetail[0]?.data.poster_path} />
-                                                <Card.Body>
+                                                        <Card.Text className='text-center'>
+                                                            {movieDetail[0]?.data.character}
+                                                        </Card.Text>
 
-                                                    <Card.Text className='text-center'>
-                                                        {movieDetail[0]?.data.character}
-                                                    </Card.Text>
-
-                                                </Card.Body>
-                                            </Card>
-                                        )
+                                                    </Card.Body>
+                                                </Card>
+                                            )
 
                                     }
                                 </div>

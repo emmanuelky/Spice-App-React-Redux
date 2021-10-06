@@ -28,7 +28,11 @@ export const usersReducer = (state = initialState.users, action) => {
                 getcurrentuser: action.payload,
             }
 
-
+        case "LOADING":
+            return {
+                ...state,
+                loading: action.payload,
+            }
 
         default:
             return state

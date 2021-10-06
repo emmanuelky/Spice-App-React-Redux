@@ -14,21 +14,25 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 export const initialState = {
     posts: {
         posts: [],
-        likes: []
+        likes: [],
+        loading: false,
 
     },
     users: {
         users: [],
         loggedin: true,
-        getcurrentuser: {}
+        getcurrentuser: {},
+        loading: false,
     },
     movies: {
         all_movies: [],
         movie_details: [],
         movie_category: [],
+        loading: false,
     },
     music: {
         music_lists: [],
+        loading: false,
     },
 }
 
