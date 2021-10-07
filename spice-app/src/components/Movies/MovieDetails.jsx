@@ -113,9 +113,9 @@ const MovieDetails = () => {
 
                                     <div className='flex justify-around rounded-lg bg-black  my-10 p-5'>
                                         <div className='flex flex-col my-auto'>
-                                            <div className='flex flex-col'> <span className='text-sm text-gray-400'>Origin</span> <span className='text-sm text-gray-700 '>{movieDetail[0]?.data.production_countries[0].name}</span>
+                                            <div className='flex flex-col'> <span className='text-sm text-gray-400'>Origin</span> <span className='text-sm text-gray-700 '>{movieDetail[0]?.data.production_countries[0]?.name}</span>
                                             </div>
-                                            <div className='flex flex-col my-4'>  <span className='text-sm text-gray-400'>Language</span> <span className='text-sm text-gray-700'>{movieDetail[0]?.data.spoken_languages[0].name}</span>
+                                            <div className='flex flex-col my-4'>  <span className='text-sm text-gray-400'>Language</span> <span className='text-sm text-gray-700'>{movieDetail[0]?.data.spoken_languages[0]?.name}</span>
                                             </div>
 
 
@@ -123,7 +123,7 @@ const MovieDetails = () => {
                                         <div className='flex flex-col my-auto'>
                                             <div className='flex flex-col'> <span className='text-sm text-gray-400'>Released-date</span> <span className='text-sm text-gray-700'>{movieDetail[0]?.data.release_date}</span>
                                             </div >
-                                            <div className='flex flex-col my-4'> <span className='text-sm text-gray-400'>Genre</span> <span className='text-sm text-gray-700'>{movieDetail[0]?.data.genres[0].name}</span>
+                                            <div className='flex flex-col my-4'> <span className='text-sm text-gray-400'>Genre</span> <span className='text-sm text-gray-700'>{movieDetail[0]?.data.genres[0]?.name}</span>
                                             </div>
 
 

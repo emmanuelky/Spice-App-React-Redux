@@ -61,9 +61,6 @@ const Movies = () => {
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <MovieSearch />
                                 <MovieList />
-
-
-
                             </div>
                         </Col>
                         <Col md={3}>

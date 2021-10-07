@@ -23,7 +23,8 @@ export const initialState = {
         loggedin: true,
         getcurrentuser: {},
         loading: false,
-        followers: [],
+        following: [],
+        // unfollowing_user_list: [],
     },
     movies: {
         all_movies: [],

@@ -49,7 +49,7 @@ const SignUp = ({ history }) => {
 
 
     const ID = uuidv4()
-    const currentDate = format(new Date(), 'yyyy-MMM-do HH:mm b')
+    const currentDate = format(new Date(), 'HH:mm b')
 
 
 
@@ -72,20 +72,20 @@ const SignUp = ({ history }) => {
                     email: '',
                     username: '',
                     password: '',
-                    image: url,
+                    image: 'https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk',
                     bio: '',
                     city: '',
                     createdAt: currentDate,
                     updatedAt: currentDate,
-                    followers: [],
                     following: [],
+                    followers: [],
                 }}
                 onSubmit={async (values) => {
                     await new Promise((r) => setTimeout(r, 500));
                     alert(JSON.stringify(values, null, 2));
                     dispatch(addUser(values))
                     dispatch(currentUser(values))
-                    uploadImage()
+                    // uploadImage()
                     history.push('/')
 
                 }}
@@ -115,8 +115,10 @@ const SignUp = ({ history }) => {
                         <Field type='password' id="password" name="password" placeholder="password" />
                     </div>
                     <div className='my-2'>
+                        <Field type='text' id="password" name="image url" placeholder="img url" />
+
                         {/* <label for="files" className="btn text-lg"><FcAddImage />  Upload Profile Image</label> */}
-                        <input onClick={() => uploadImage()} onChange={(e) => setImage(e.target.files[0])} id="files" className="" type="file" />
+                        {/* <input onClick={() => uploadImage()} onChange={(e) => setImage(e.target.files[0])} id="files" className="" type="file" /> */}
                     </div>
                     <div className='my-2'>
                         <Field id="bio" name="bio" placeholder="about you..." />

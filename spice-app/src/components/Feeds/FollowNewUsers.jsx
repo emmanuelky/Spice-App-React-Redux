@@ -3,7 +3,7 @@ import { FiPlusCircle } from "react-icons/fi";
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchUsers } from '../../redux/actions'
 import { Container, Row, Col, Spinner } from 'react-bootstrap'
-import { addFollowers } from '../../redux/actions'
+import { addFollowers, removeFollowers } from '../../redux/actions'
 
 
 const FollowNewUsers = () => {
@@ -18,8 +18,8 @@ const FollowNewUsers = () => {
     const loading = useSelector(state => state.posts.loading)
 
 
-    const myAddedFollowers = useSelector(state => state.users.followers)
-    const followerUserId = myAddedFollowers.map(user => user.id)
+    const myAddedFollowers = useSelector(state => state.users.following)
+    const followerUserId = myAddedFollowers?.map(user => user.id)
 
 
     const totalUsers = () => {
@@ -45,20 +45,21 @@ const FollowNewUsers = () => {
                             ? (<Spinner animation="border" variant="success" />)
                             : allUsers?.slice(0, 5).map(user => (
                                 <>
-                                    <div className={followerUserId?.includes(user.id) ? 'hidden' : ' md:text-xs md:flex-col relative  '}>
+                                    <div className={followerUserId?.includes(user.id) ? 'hidden' : ' md:text-xs md:flex-col  relative  '}>
                                         <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl  '></div>
-                                        <div className='flex justify-between bg-gray-900 hover:bg-pink-900 rounded-lg  border-1 border-blue-600  text-center text-gray-300 leading-none p-2 relative  '>
+                                        <div className='flex justify-between bg-gray-900  align-items-center rounded-lg  border-1 border-blue-600  text-center text-gray-300  leading-none p-2 relative  '>
                                             <Col md={3}>
-                                                <div className=' cursor-pointer'><img className='h-5 w-5 rounded-full ' src={user.image} alt="" /></div>
+                                                <div className=' cursor-pointer'><img className='h-10 w-10 rounded-full ' src={user.image} alt="" /></div>
                                             </Col>
                                             <Col md={3}>
-                                                <div className=' cursor-pointer '><span className=' '>{user.firstName}</span></div>
+                                                <div className=' cursor-pointer text-sm '><span className=' '>{user.firstName}</span></div>
 
                                             </Col>
                                             <Col md={3} className='mx-5'>
-                                                <div onClick={() => dispatch(addFollowers(user))} className=' cursor-pointer text-2xl'><FiPlusCircle /></div>
+                                                <div onClick={() => dispatch(addFollowers(user))} className=' cursor-pointer text-2xl hover:text-gray-500'><span>< FiPlusCircle /></span></div>
 
                                             </Col>
+
 
                                         </div>
                                     </div>

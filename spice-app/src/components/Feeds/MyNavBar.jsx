@@ -19,11 +19,14 @@ const MyNavBar = ({ history }) => {
     // console.log(currentUserObj)
 
 
-    const myAddedFollowers = useSelector(state => state.users.followers)
-
-    const totalNumOfMyFollowers = myAddedFollowers.length
+    const myAddedFollowers = useSelector(state => state.users.following)
+    const totalNumOfMyFollowers = myAddedFollowers?.length
 
     console.log(totalNumOfMyFollowers)
+
+
+    // const unFollowingUserList = useSelector(state => state.users.unfollowing_user_list)
+    // const totalNumOfUnfollowingUsers = unFollowingUserList?.length
 
     useEffect(() => {
         dispatch(fetchUsers())
@@ -86,8 +89,9 @@ const MyNavBar = ({ history }) => {
                                             <Link to='/profile'>
                                                 <NavDropdown.Item href="#action/3.1" >Profile</NavDropdown.Item>
                                             </Link>
-                                            <NavDropdown.Item href="#action/3.2"  >Followers {`(${totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0})`}</NavDropdown.Item>
-                                            <NavDropdown.Item href="#action/3.3">Following</NavDropdown.Item>
+                                            <NavDropdown.Item href="#action/3.2"  >Following {`(${totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0})`}</NavDropdown.Item>
+                                            {/* <NavDropdown.Item href="#action/3.2"  >Unfollowing {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</NavDropdown.Item> */}
+                                            <NavDropdown.Item href="#action/3.3">Followers</NavDropdown.Item>
                                             <NavDropdown.Divider />
                                             <Link to='/login'>
                                                 <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
@@ -99,8 +103,9 @@ const MyNavBar = ({ history }) => {
                             </Nav.Link>
 
                             <Nav.Link className="text-light text-xs align-self-center"></Nav.Link>
-                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Followers  {`(${totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0})`}</Nav.Link>
-                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Following (0)</Nav.Link>
+                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Following  {`(${totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0})`}</Nav.Link>
+                            {/* <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Unfollowing  {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</Nav.Link> */}
+                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Followers (0)</Nav.Link>
                             <Nav.Link>
                                 <div className='mb-10 border-b-2 block md:hidden  border-gray-600'>
                                     <Footer />

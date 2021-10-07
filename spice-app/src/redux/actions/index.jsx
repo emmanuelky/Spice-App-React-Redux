@@ -310,10 +310,20 @@ export const addFollowers = (user) => {
 }
 
 
-export const removeFollowers = (userId) => {
+export const addUnfollowingUserBackToUsersList = (user) => {
     return (dispatch, getState) => {
         dispatch({
-            type: 'REMOVE_FOLLOWERS',
+            type: 'ADD_UNFOLLOWING_USER_BACK_TO_USERS',
+            payload: user
+        })
+    }
+}
+
+
+export const removeFromFollowingList = (userId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'REMOVE_FROM_FOLLOWING_LIST',
             payload: userId
         })
     }

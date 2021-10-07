@@ -88,15 +88,15 @@ const Feeds = () => {
                         <>
                             <div key={post.id} className='flex flex-col align-items-center border-green-100  hover:bg-grey-50 rounded-lg'>
 
-                                <Card style={{}} className='w-100 h-100 mb-5'  >
+                                <Card className='w-50 h-50 mb-5 rounded-lg '  >
                                     <Card.Img variant="top" className="img-fluid" src={post.postImage} />
                                     <Card.Body>
-                                        <div className='flex flex-wrap justify-between text-blue-600 mb-4 mx-3 border-b-2 p-1'>
+                                        <div className='flex flex-wrap align-items-center justify-between text-blue-600 mb-4 mx-3 border-b-2 p-1'>
 
                                             <div className="text-xs flex align-items-center ">
                                                 <div>
 
-                                                    <img className="text-right w-5 h-5 rounded-full img-fluid" src={post.user?.image} alt="" />
+                                                    <img className="text-right w-10 h-10 rounded-full img-fluid" src={post.user?.image} alt="" />
                                                 </div>
                                                 <div className='mx-1 '>
 
@@ -106,11 +106,11 @@ const Feeds = () => {
 
                                             <div className='flex'>
                                                 <i className="text-xs text-muted ">
-                                                    @{post.createdAt}
+                                                    {post.createdAt}
                                                 </i>
                                             </div>
                                         </div>
-                                        <Card.Text className=' text-center'>
+                                        <Card.Text className=' text-center bg-gray-50 rounded'>
                                             <h6 className='justify'></h6>{post.text}
                                         </Card.Text>
                                     </Card.Body>
@@ -118,7 +118,7 @@ const Feeds = () => {
                                     <Card.Body>
                                         <div className='flex flex-wrap justify-evenly  border-blue-800 border-b-2  pt-2 pb-3'>
                                             <div onClick={(e) => handleLikeToggle(e.target.value, post)} className="text-sm flex align-items-center cursor-pointer ">
-                                                <div className="mx-1" >
+                                                <div className="mx-1 text-lg" >
                                                     {postLikes.find(p => p.id === post.id) ? < FcLike /> : < AiOutlineHeart />}
                                                 </div>
                                                 <div className="mx-1" >

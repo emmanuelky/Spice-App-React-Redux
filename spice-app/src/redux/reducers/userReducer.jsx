@@ -37,13 +37,20 @@ export const usersReducer = (state = initialState.users, action) => {
         case "ADD_FOLLOWERS":
             return {
                 ...state,
-                followers: [...state.followers, action.payload],
+                following: [...state.following, action.payload],
             }
 
-        case "REMOVE_FOLLOWERS":
+
+        case "REMOVE_FROM_FOLLOWING_LIST":
             return {
                 ...state,
-                followers: [...state.followers.filter(user => user.id !== action.payload)],
+                following: [...state.following.filter(user => user.id !== action.payload)],
+            }
+
+        case "ADD_UNFOLLOWING_USER_BACK_TO_USERS":
+            return {
+                ...state,
+                users: [...state.users, action.payload],
             }
 
         default:
