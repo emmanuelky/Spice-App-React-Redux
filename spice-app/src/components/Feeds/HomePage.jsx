@@ -21,12 +21,12 @@ const HomePage = () => {
                 (<Container fluid>
                     <Row className='sticky-top '>
 
-                        <div className="mb-5 " >
+                        <div className=" " >
                             <MyNavBar />
                         </div>
                     </Row>
 
-                    <Row className=' '>
+                    <Row className=' justify-center '>
                         <Col md={3} className=' '>
                             <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
@@ -34,7 +34,7 @@ const HomePage = () => {
 
                             </div>
                         </Col>
-                        <Col md={6}>
+                        <Col md={5}>
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <Feeds />
 

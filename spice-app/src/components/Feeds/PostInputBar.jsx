@@ -51,7 +51,7 @@ const PostInputBar = () => {
     }, [])
 
     const ID = uuidv4()
-    const currentDate = format(new Date(), 'HH:mm b, do-MMM-yyyy')
+    const currentDate = format(new Date(), 'HH:mm b')
 
 
     const sendNewPost = {
@@ -62,6 +62,7 @@ const PostInputBar = () => {
         likes: [],
         updatedAt: currentDate,
         user: getcurrentuser,
+        comments: [],
 
     }
 
