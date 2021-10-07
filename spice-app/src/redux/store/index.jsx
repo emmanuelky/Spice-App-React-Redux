@@ -16,7 +16,7 @@ export const initialState = {
         posts: [],
         likes: [],
         loading: false,
-        comments: [],
+        single_post_comment: [],
 
     },
     users: {

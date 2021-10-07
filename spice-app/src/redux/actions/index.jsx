@@ -330,5 +330,12 @@ export const removeFromFollowingList = (userId) => {
 }
 
 
-
+export const getSinglePostComment = (postId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'SINGLE_POST_COMMENT',
+            payload: postId
+        })
+    }
+}
 

@@ -33,6 +33,14 @@ export const postsReducer = (state = initialState.posts, action) => {
                 loading: action.payload,
             }
 
+        case "SINGLE_POST_COMMENT":
+            return {
+                ...state,
+                single_post_comment: action.payload
+            }
+
+
+
         default:
             return state
 
