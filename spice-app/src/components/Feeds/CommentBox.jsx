@@ -1,9 +1,13 @@
 import React from 'react'
+import CommentInput from './CommentInput'
+import Comments from './Comments'
 
 const CommentBox = () => {
     return (
-        <div className=" border-4 border-black w-full h-100">
-            <div className=" w-1/3">Comment box</div>
+        <div className=" flex flex-col justify-between border-1 border-gray-300 rounded-lg w-full h-full">
+            <div className=""><Comments /></div>
+            <div className=' '><CommentInput /></div>
+
         </div>
     )
 }

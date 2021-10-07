@@ -88,7 +88,7 @@ const PostInputBar = () => {
     return (
         <Container fluid className="my-5 justify-center mx-auto border-grey-100 pt-4 rounded-2xl border-blue-600 drop-shadow-2xl hover:border-green-900  border-b-4 border-t-4 shadow-2xl" >
 
-            <Form onSubmit >
+            <Form onSubmit={(e) => handleAddPosts(e)} >
                 <Row>
                     <Form.Group
                         className="mb-1"
