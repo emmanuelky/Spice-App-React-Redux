@@ -42,7 +42,7 @@ const CommentPhotoSection = () => {
                             <div><img className="w-10 h-10 rounded-full my-1 " src={singlePostComment.user.image} alt="" /></div>
                             <div className="text-xs text-gray-400 mb-2"><i >@{singlePostComment.createdAt}</i> </div>
                         </div>
-                        <div><img className="img-fluid my-2 rounded-lg" src={singlePostComment?.postImage} alt="" /></div>
+                        <div className="flex justify-center"><img className="img-fluid h-60 w-60 my-2 rounded-lg" src={singlePostComment?.postImage} alt="" /></div>
                         <div className="flex justify-center my-4">
                             <div>{singlePostComment.text}</div>
 

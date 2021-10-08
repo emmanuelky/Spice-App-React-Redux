@@ -17,15 +17,14 @@ const CommentInput = () => {
     const dispatch = useDispatch()
     const currentLoginUser = useSelector(state => state.users.getcurrentuser)
     const fetchAllComments = useSelector(state => state.posts.all_comments)
-    console.log(fetchAllComments)
-
 
 
     const handleInputChange = (e) => {
         setMessage(e.target.value)
     }
     const ID = uuidv4()
-    const currentDate = format(new Date(), 'MM/dd/yyyy', 'HH:mm b')
+    const currentDate = format(new Date(), 'HH:mm b')
+    // yyyy-MM-dd, 
 
     const currentUserComment = {
         id: ID,
@@ -33,6 +32,8 @@ const CommentInput = () => {
         createdAt: currentDate,
         user: currentLoginUser
     }
+
+
 
     useEffect(() => {
 
@@ -42,6 +43,7 @@ const CommentInput = () => {
     const handleAddComments = () => {
         dispatch(addComments(currentUserComment))
         setMessage('')
+
     }
 
     const handleOnSubmit = (e) => {
