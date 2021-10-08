@@ -34,7 +34,7 @@ const HomePage = () => {
 
                             </div>
                         </Col>
-                        <Col md={5}>
+                        <Col md={6}>
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <Feeds />
 

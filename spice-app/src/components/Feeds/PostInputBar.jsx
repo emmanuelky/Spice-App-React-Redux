@@ -72,6 +72,17 @@ const PostInputBar = () => {
 
     }
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        console.log(e.keyCode === 13)
+        if (e.keyCode === 13) {
+            dispatch(addPosts(sendNewPost))
+            setMessage('')
+            setImage('')
+            dispatch(fetchPosts())
+        }
+    }
+
     const handleAddPosts = (e) => {
         e.preventDefault();
 
@@ -101,7 +112,7 @@ const PostInputBar = () => {
                             rows={4}
                             value={message}
                             onChange={(e) => handleInputChange(e)}
-
+                            onKeyUp={event => handleOnSubmit(event)}
                         />
                     </Form.Group>
                 </Row>

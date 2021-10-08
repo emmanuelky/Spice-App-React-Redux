@@ -189,6 +189,78 @@
         "followers": []
       },
       "comments": []
+    },
+    {
+      "id": "60de2ea8-8c14-4c5f-89dc-50d600f4260b",
+      "createdAt": "06:43 AM",
+      "text": "new dawn",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633668222/qkmvzq2fpjwy4inwahmj.jpg",
+      "likes": [],
+      "updatedAt": "06:43 AM",
+      "user": {
+        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "emmanuelky",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+        "bio": "cool",
+        "city": "Cottbus",
+        "createdAt": "14:28 PM",
+        "updatedAt": "14:28 PM",
+        "following": [],
+        "followers": []
+      },
+      "comments": []
+    },
+    {
+      "id": "b7804f54-afd3-4069-a6ff-4ab0b8dc3620",
+      "createdAt": "07:01 AM",
+      "text": "i feel like no one here is good enou\ngh",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633669262/gjutjcjzdnrzz6cg7tze.jpg",
+      "likes": [],
+      "updatedAt": "07:01 AM",
+      "user": {
+        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "emmanuelky",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+        "bio": "cool",
+        "city": "Cottbus",
+        "createdAt": "14:28 PM",
+        "updatedAt": "14:28 PM",
+        "following": [],
+        "followers": []
+      },
+      "comments": []
+    },
+    {
+      "id": "b18e246b-f66c-4b60-80f8-a21c3f06d2e1",
+      "createdAt": "07:01 AM",
+      "text": "try it next time and see\n",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633669284/aid8lbe2z9umcbm7mdmf.jpg",
+      "likes": [],
+      "updatedAt": "07:01 AM",
+      "user": {
+        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "emmanuelky",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+        "bio": "cool",
+        "city": "Cottbus",
+        "createdAt": "14:28 PM",
+        "updatedAt": "14:28 PM",
+        "following": [],
+        "followers": []
+      },
+      "comments": []
     }
   ],
   "currentUser": {

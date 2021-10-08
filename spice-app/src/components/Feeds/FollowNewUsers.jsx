@@ -46,7 +46,7 @@ const FollowNewUsers = () => {
             <Row>
 
                 <div className='  flex flex-wrap mb-5 p-2 gap-4 text-sm bg-gray-900 w-screen h-100  flex-col '>
-                    <div className='text-light  flex justify-center align-items-center md:text-xs'><div className=' text-lg'><FiPlusCircle /></div><span className='mx-2 text-lg'>Follow</span></div>
+                    <div className='text-light  flex justify-center align-items-center md:text-xs'><div className=' text-lg'><FiPlusCircle /></div><span className='mx-2 text-lg'>Follow ?</span></div>
                     {
                         //  loading
                         //  ? (<Spinner animation="border" variant="success" />)
