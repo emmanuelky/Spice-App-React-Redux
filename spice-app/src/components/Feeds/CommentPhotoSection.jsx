@@ -36,7 +36,7 @@ const CommentPhotoSection = () => {
         <div>
             {
                 <div key={singlePostComment?.id}>
-                    <div className="flex flex-col my-3">
+                    <div className="flex flex-col my-3 bg-gray-900 p-4 text-gray-300 border rounded">
                         <div className='flex  my-2 justify-between align-items-center'>
 
                             <div><img className="w-10 h-10 rounded-full my-1 " src={singlePostComment.user.image} alt="" /></div>

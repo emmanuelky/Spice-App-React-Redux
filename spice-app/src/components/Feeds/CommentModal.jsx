@@ -17,11 +17,11 @@ const MyVerticallyCenteredModal = (props) => {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-            className="h-100 w-100"
+            className="h-100 w-100  "
         >
 
             <Modal.Body>
-                <div className='flex justify-around'>
+                <div className='flex justify-around bg-indigo-900 p-6 rounded-lg'>
                     <div className='w-80'>
                         <CommentPhotoSection />
 

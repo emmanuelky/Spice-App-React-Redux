@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
 import { addComments, getAllComments } from '../../redux/actions'
 import { format } from 'date-fns'
+import { SiGooglemessages } from "react-icons/si";
+
 
 
 
@@ -80,10 +82,11 @@ const CommentInput = () => {
                     </Row>
 
                     <Row className='w-20 mx-auto'>
-                        <div onClick={(e) => handleAddComments(e)} className="mx-1 mt-1 text-center text-light text-xl border-b-2 m-2  hover:border-blue-900 rounded ">
+                        <div onClick={(e) => handleAddComments(e)} className="mx-1 mt-1 text-center text-light text-xl m-2  rounded ">
                             <Col>
-                                <span className="text-center text-black cursor-pointer">
-                                    send
+                                <span className="text-center flex justify-center align-items-center text-black cursor-pointer">
+                                    {/* <span className="mx-2  text-lg"> send</span> */}
+                                    <div className="text-3xl text-gray-300 mx-2  "><SiGooglemessages /></div>
                                 </span>
                             </Col>
                         </div>
