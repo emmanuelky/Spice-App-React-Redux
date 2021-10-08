@@ -36,7 +36,13 @@ export const postsReducer = (state = initialState.posts, action) => {
         case "SINGLE_POST_COMMENT":
             return {
                 ...state,
-                single_post_comment: action.payload
+                single_post_comment: action.payload,
+            }
+
+        case "ADD_COMMENTS":
+            return {
+                ...state,
+                all_comments: [...state.all_comments, action.payload],
             }
 
 

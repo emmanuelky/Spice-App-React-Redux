@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Container, Row, Col } from "react-bootstrap";
+import { Form, Container, Row, Col } from "react-bootstrap"
+import { useSelector, useDispatch } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid';
+import { addComments, getAllComments } from '../../redux/actions'
+import { format } from 'date-fns'
 
 
 
@@ -8,13 +12,48 @@ const CommentInput = () => {
 
     const [message, setMessage] = useState('')
 
-    const handleAddComments = () => {
 
-    }
+
+    const dispatch = useDispatch()
+    const currentLoginUser = useSelector(state => state.users.getcurrentuser)
+    const fetchAllComments = useSelector(state => state.posts.all_comments)
+    console.log(fetchAllComments)
+
+
 
     const handleInputChange = (e) => {
-        e.preventDefault();
+        setMessage(e.target.value)
     }
+    const ID = uuidv4()
+    const currentDate = format(new Date(), 'MM/dd/yyyy', 'HH:mm b')
+
+    const currentUserComment = {
+        id: ID,
+        commentText: message,
+        createdAt: currentDate,
+        user: currentLoginUser
+    }
+
+    useEffect(() => {
+
+    }, [fetchAllComments.length])
+
+
+    const handleAddComments = () => {
+        dispatch(addComments(currentUserComment))
+        setMessage('')
+    }
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        console.log(e.keyCode === 13)
+        if (e.keyCode === 13) {
+            dispatch(addComments(currentUserComment))
+            setMessage('')
+            // dispatch(getAllComments())
+        }
+    }
+
 
     return (
         <div>
@@ -33,7 +72,7 @@ const CommentInput = () => {
                                 rows={4}
                                 value={message}
                                 onChange={(e) => handleInputChange(e)}
-
+                                onKeyUp={(e) => handleOnSubmit(e)}
                             />
                         </Form.Group>
                     </Row>

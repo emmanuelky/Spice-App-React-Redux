@@ -339,3 +339,23 @@ export const getSinglePostComment = (postId) => {
     }
 }
 
+export const addComments = (comment) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'ADD_COMMENTS',
+            payload: comment
+        })
+    }
+}
+
+
+
+// export const getAllComments = () => {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: 'ADD_COMMENTS',
+//             payload: comment
+//         })
+//     }
+// }
+
