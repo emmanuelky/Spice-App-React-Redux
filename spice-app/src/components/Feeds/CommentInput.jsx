@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Container, Row, Col } from "react-bootstrap"
 import { useSelector, useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
-import { addComments, getAllComments } from '../../redux/actions'
+import { addComments, getAllComments, postComments } from '../../redux/actions'
 import { format } from 'date-fns'
 import { SiGooglemessages } from "react-icons/si";
 
@@ -45,7 +45,7 @@ const CommentInput = () => {
     const handleAddComments = () => {
         dispatch(addComments(currentUserComment))
         setMessage('')
-
+        dispatch(postComments(currentUserComment))
     }
 
     const handleOnSubmit = (e) => {
@@ -86,7 +86,7 @@ const CommentInput = () => {
                             <Col>
                                 <span className="text-center flex justify-center align-items-center text-black cursor-pointer">
                                     {/* <span className="mx-2  text-lg"> send</span> */}
-                                    <div className="text-3xl text-gray-300 mx-2  "><SiGooglemessages /></div>
+                                    <div className="text-3xl text-gray-600 mx-2  "><SiGooglemessages /></div>
                                 </span>
                             </Col>
                         </div>

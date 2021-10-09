@@ -23,7 +23,7 @@ const Comments = () => {
             <div className={` flex flex-col mx-1 overflow-y-auto h-80 `}>
                 {
                     fetchAllComments?.map(comment => (
-                        <div ref={lastMessageView} className=" border rounded-lg my-2 px-2">
+                        <div ref={lastMessageView} className=" bg-gray-50 rounded-lg my-2 px-2">
                             <div className="flex justify-between my-2">
                                 <div className="flex align-items-center">
                                     <img className="h-5 w-5 rounded-full" src={comment.user.image} alt="" />

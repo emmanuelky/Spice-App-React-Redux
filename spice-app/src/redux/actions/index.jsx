@@ -350,12 +350,15 @@ export const addComments = (comment) => {
 
 
 
-// export const getAllComments = () => {
-//     return (dispatch, getState) => {
-//         dispatch({
-//             type: 'ADD_COMMENTS',
-//             payload: comment
-//         })
-//     }
-// }
+export const postComments = (comment) => {
+    return async (dispatch, getState) => {
+
+        const newComment = await axios.post(`${process.env.REACT_APP_BASE_URL}/comments/`, comment)
+
+        dispatch({
+            type: 'POST_COMMENTS',
+            payload: newComment
+        })
+    }
+}
 

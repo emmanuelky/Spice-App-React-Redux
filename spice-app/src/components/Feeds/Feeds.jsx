@@ -128,7 +128,7 @@ const Feeds = () => {
                                     <div className='flex flex-wrap justify-evenly  border-blue-800 border-b-2  pt-2 pb-3'>
                                         <div onClick={(e) => handleLikeToggle(e.target.value, post)} className="text-sm flex align-items-center cursor-pointer ">
                                             <div className="mx-1 text-lg" >
-                                                {postLikes.find(p => p.id === post.id) ? < FcLike /> : < AiOutlineHeart />}
+                                                {postLikes?.find(p => p.id === post.id) ? < FcLike /> : < AiOutlineHeart />}
                                             </div>
                                             <div className="mx-1" >
                                                 {handleLikesCount(post)}

@@ -62,7 +62,7 @@ const PostInputBar = () => {
         likes: [],
         updatedAt: currentDate,
         user: getcurrentuser,
-        comments: [],
+        comments: {},
 
     }
 

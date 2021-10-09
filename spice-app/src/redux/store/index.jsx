@@ -18,6 +18,7 @@ export const initialState = {
         loading: false,
         single_post_comment: [],
         all_comments: [],
+        comments: [],
 
     },
     users: {

@@ -21,7 +21,7 @@ const MyVerticallyCenteredModal = (props) => {
         >
 
             <Modal.Body>
-                <div className='flex justify-around bg-indigo-900 p-6 rounded-lg'>
+                <div className='flex justify-around bg-blue-200 p-6 rounded-lg'>
                     <div className='w-80'>
                         <CommentPhotoSection />
 

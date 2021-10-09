@@ -96,12 +96,12 @@
   ],
   "posts": [
     {
-      "id": "a9ff2e9c-1a06-4b62-933c-a3065f059ffb",
-      "createdAt": "06:52 AM",
-      "text": "new life",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633582375/mcvpnwaz9bqciml4auwc.jpg",
+      "id": "8dfbac10-8cff-436e-907e-584b24bdf308",
+      "createdAt": "16:11 PM",
+      "text": "",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633702269/rrs7jypelfj3fjbwxwi7.jpg",
       "likes": [],
-      "updatedAt": "06:52 AM",
+      "updatedAt": "16:11 PM",
       "user": {
         "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
         "firstName": "Blessing",
@@ -119,108 +119,54 @@
       }
     },
     {
-      "id": "3a6c80d6-8b68-4b0c-8212-91efd81f3d5c",
-      "createdAt": "06:53 AM",
-      "text": "wow",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633582392/t5aqklyaw2fwjuzeo05h.jpg",
-      "likes": [],
-      "updatedAt": "06:53 AM",
-      "user": {
-        "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
-        "firstName": "Blessing",
-        "lastName": "Awoyo",
-        "email": "Geniusopera@gmail.com",
-        "username": "blessy",
-        "password": "111",
-        "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
-        "bio": "hot",
-        "city": "Cottbus",
-        "createdAt": "14:31 PM",
-        "updatedAt": "14:31 PM",
-        "following": [],
-        "followers": []
-      },
-      "comments": []
-    },
-    {
-      "id": "1aab16fb-b017-4b61-9b06-c9947980c9b4",
-      "createdAt": "13:46 PM",
-      "text": "ssss\n",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633607159/nb6zgcf8800qluxfhs3n.jpg",
-      "likes": [],
-      "updatedAt": "13:46 PM",
-      "user": {
-        "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
-        "firstName": "Blessing",
-        "lastName": "Awoyo",
-        "email": "Geniusopera@gmail.com",
-        "username": "blessy",
-        "password": "111",
-        "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
-        "bio": "hot",
-        "city": "Cottbus",
-        "createdAt": "14:31 PM",
-        "updatedAt": "14:31 PM",
-        "following": [],
-        "followers": []
-      },
-      "comments": []
-    },
-    {
-      "id": "80f1ca3e-c3c0-4e86-8897-4fcfe4f8f246",
-      "createdAt": "21:26 PM",
+      "id": "8dfbac10-8cff-436e-907e-589b24bdf308",
+      "createdAt": "16:11 PM",
       "text": "",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633634766/ham32jsropnw4xddkomq.jpg",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633702269/rrs7jypelfj3fjbwxwi7.jpg",
       "likes": [],
-      "updatedAt": "21:26 PM",
+      "updatedAt": "16:11 PM",
       "user": {
-        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
-        "firstName": "Emmanuel",
-        "lastName": "Iyere",
-        "email": "iyereemmanuel.akhere@gmail.com",
-        "username": "emmanuelky",
+        "id": "ee9dccb1-03eb-42d9-a574-a548f2182a7c",
+        "firstName": "Blessing",
+        "lastName": "Awyo",
+        "email": "Geniusopera@gmail.com",
+        "username": "blessy",
         "password": "111",
-        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
-        "bio": "cool",
+        "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
+        "bio": "hot",
         "city": "Cottbus",
-        "createdAt": "14:28 PM",
-        "updatedAt": "14:28 PM",
+        "createdAt": "14:31 PM",
+        "updatedAt": "14:31 PM",
         "following": [],
         "followers": []
-      },
-      "comments": []
+      }
+    }
+  ],
+  "comments": [
+    {
+      "id": "tyr5656rjhvhjkgy5td65f76f76uyf",
+      "postId": "f56r5iugu6rfctyf67f67fyufjy",
+      "comment": "yes jkbvery true",
+      "user": {
+        "id": "f56r56rkjbfctyf67f67fyufuiygyfj",
+        "name": "jojkgghcthn",
+        "other names": "eshgiyvther"
+      }
     },
     {
-      "id": "60de2ea8-8c14-4c5f-89dc-50d600f4260b",
-      "createdAt": "06:43 AM",
-      "text": "new dawn",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633668222/qkmvzq2fpjwy4inwahmj.jpg",
-      "likes": [],
-      "updatedAt": "06:43 AM",
+      "id": "tyr5656ry5td65lhhf76f76uyf",
+      "postId": "f56r5gfdd6rfctyf67f67fyufjy",
+      "comment": "yes vehgry true",
       "user": {
-        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
-        "firstName": "Emmanuel",
-        "lastName": "Iyere",
-        "email": "iyereemmanuel.akhere@gmail.com",
-        "username": "emmanuelky",
-        "password": "111",
-        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
-        "bio": "cool",
-        "city": "Cottbus",
-        "createdAt": "14:28 PM",
-        "updatedAt": "14:28 PM",
-        "following": [],
-        "followers": []
-      },
-      "comments": []
+        "id": "f56r56rfckjhntyf67f67fyufuiygyfj",
+        "name": "john",
+        "other names": "esther"
+      }
     },
     {
-      "id": "b7804f54-afd3-4069-a6ff-4ab0b8dc3620",
-      "createdAt": "07:01 AM",
-      "text": "i feel like no one here is good enou\ngh",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633669262/gjutjcjzdnrzz6cg7tze.jpg",
-      "likes": [],
-      "updatedAt": "07:01 AM",
+      "id": "8796d876-1e79-4d79-bdfd-180e9f17d975",
+      "commentText": "ggfdgg",
+      "createdAt": "17:32 PM",
       "user": {
         "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
         "firstName": "Emmanuel",
@@ -235,46 +181,21 @@
         "updatedAt": "14:28 PM",
         "following": [],
         "followers": []
-      },
-      "comments": []
-    },
-    {
-      "id": "b18e246b-f66c-4b60-80f8-a21c3f06d2e1",
-      "createdAt": "07:01 AM",
-      "text": "try it next time and see\n",
-      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1633669284/aid8lbe2z9umcbm7mdmf.jpg",
-      "likes": [],
-      "updatedAt": "07:01 AM",
-      "user": {
-        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
-        "firstName": "Emmanuel",
-        "lastName": "Iyere",
-        "email": "iyereemmanuel.akhere@gmail.com",
-        "username": "emmanuelky",
-        "password": "111",
-        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
-        "bio": "cool",
-        "city": "Cottbus",
-        "createdAt": "14:28 PM",
-        "updatedAt": "14:28 PM",
-        "following": [],
-        "followers": []
-      },
-      "comments": []
+      }
     }
   ],
   "currentUser": {
-    "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
-    "firstName": "Blessing",
-    "lastName": "Awoyo",
-    "email": "Geniusopera@gmail.com",
-    "username": "blessy",
+    "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+    "firstName": "Emmanuel",
+    "lastName": "Iyere",
+    "email": "iyereemmanuel.akhere@gmail.com",
+    "username": "emmanuelky",
     "password": "111",
-    "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
-    "bio": "hot",
+    "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+    "bio": "cool",
     "city": "Cottbus",
-    "createdAt": "14:31 PM",
-    "updatedAt": "14:31 PM",
+    "createdAt": "14:28 PM",
+    "updatedAt": "14:28 PM",
     "following": [],
     "followers": []
   }

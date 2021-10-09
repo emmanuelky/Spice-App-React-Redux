@@ -1,11 +1,11 @@
 import React from 'react'
-import './CrytoNews.css'
+import './CryptoNews.css'
 
-const CrytoNews = () => {
+const CryptoNews = () => {
     return (
 
         <div className=" flex my-4 items-center justify-center md:flex-col">
-            <div className='text-gray-200'><h6>Cryto News</h6></div>
+            <div className='text-gray-200'><h6>Crypto News</h6></div>
 
             <div className="relative w-3/4 lg:w-1/2 bg-gray-900 p-4  rounded text-white space-y-3 overflow-hidden">
                 <span className="flex h-3 w-3">
@@ -34,4 +34,4 @@ const CrytoNews = () => {
     )
 }
 
-export default CrytoNews
+export default CryptoNews
