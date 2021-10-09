@@ -12,7 +12,7 @@ const CommentPhotoSection = () => {
 
     const postLikes = useSelector(state => state.posts.likes)
     const singlePostComment = useSelector(state => state.posts.single_post_comment)
-    console.log(singlePostComment)
+    // console.log(singlePostComment)
 
     const handleLikesCount = (post) => {
         const likesCount = postLikes.filter(p => p.id === post?.id).length;

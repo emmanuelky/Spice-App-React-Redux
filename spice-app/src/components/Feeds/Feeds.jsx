@@ -6,7 +6,7 @@ import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, addLikes, removeLikes, getCurrentUser, getSinglePostComment } from '../../redux/actions'
+import { fetchPosts, addLikes, removeLikes, getCurrentUser, getSinglePostComment, getPostId } from '../../redux/actions'
 import MyVerticallyCenteredModal from './CommentModal'
 
 
@@ -77,9 +77,9 @@ const Feeds = () => {
 
 
 
-    const handleSinglePostComment = (post) => {
-
-        return (dispatch(getSinglePostComment(allPosts?.find(p => p.id === post.id))), setModalShow(true))
+    const handleSinglePostComment = (e, post) => {
+        console.log('clicked', post.id)
+        return (dispatch(getSinglePostComment(allPosts?.find(p => p.id === post.id))), setModalShow(true), dispatch(getPostId(post.id)))
     }
 
 
@@ -134,7 +134,7 @@ const Feeds = () => {
                                                 {handleLikesCount(post)}
                                             </div>
                                         </div>
-                                        <div onClick={() => handleSinglePostComment(post)} className="text-sm flex cursor-pointer align-items-center  ">
+                                        <div onClick={(e) => handleSinglePostComment(e, post)} className="text-sm flex cursor-pointer align-items-center  ">
                                             {/* {postId(post.id)} */}
                                             <div className="mx-1" >
                                                 <FcSms />

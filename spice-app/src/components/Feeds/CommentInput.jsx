@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Container, Row, Col } from "react-bootstrap"
 import { useSelector, useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
-import { addComments, getAllComments, postComments } from '../../redux/actions'
+import { postComments } from '../../redux/actions'
 import { format } from 'date-fns'
 import { SiGooglemessages } from "react-icons/si";
 
@@ -19,7 +19,8 @@ const CommentInput = () => {
     const dispatch = useDispatch()
     const currentLoginUser = useSelector(state => state.users.getcurrentuser)
     const fetchAllComments = useSelector(state => state.posts.all_comments)
-
+    const postId = useSelector(state => state.posts.post_id)
+    // console.log(postId)
 
     const handleInputChange = (e) => {
         setMessage(e.target.value)
@@ -30,6 +31,7 @@ const CommentInput = () => {
 
     const currentUserComment = {
         id: ID,
+        post_Id: postId,
         commentText: message,
         createdAt: currentDate,
         user: currentLoginUser
@@ -43,7 +45,7 @@ const CommentInput = () => {
 
 
     const handleAddComments = () => {
-        dispatch(addComments(currentUserComment))
+
         setMessage('')
         dispatch(postComments(currentUserComment))
     }
@@ -52,9 +54,9 @@ const CommentInput = () => {
         e.preventDefault()
         console.log(e.keyCode === 13)
         if (e.keyCode === 13) {
-            dispatch(addComments(currentUserComment))
+            dispatch(postComments(currentUserComment))
             setMessage('')
-            // dispatch(getAllComments())
+
         }
     }
 

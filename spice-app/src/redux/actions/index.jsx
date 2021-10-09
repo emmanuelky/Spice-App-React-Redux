@@ -330,23 +330,23 @@ export const removeFromFollowingList = (userId) => {
 }
 
 
-export const getSinglePostComment = (postId) => {
+export const getSinglePostComment = (post) => {
     return (dispatch, getState) => {
         dispatch({
             type: 'SINGLE_POST_COMMENT',
-            payload: postId
+            payload: post
         })
     }
 }
 
-export const addComments = (comment) => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'ADD_COMMENTS',
-            payload: comment
-        })
-    }
-}
+// export const addComments = (comment) => {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: 'ADD_COMMENTS',
+//             payload: comment
+//         })
+//     }
+// }
 
 
 
@@ -362,3 +362,25 @@ export const postComments = (comment) => {
     }
 }
 
+// export const getComments = () => {
+//     return async (dispatch, getState) => {
+
+//         const comment = await axios.get(`${process.env.REACT_APP_BASE_URL}/comments/`)
+
+//         dispatch({
+//             type: 'GET_COMMENTS',
+//             payload: comment
+//         })
+//     }
+// }
+
+
+
+export const getPostId = (postId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'GET_POST_ID',
+            payload: postId
+        })
+    }
+}

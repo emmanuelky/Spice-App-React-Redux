@@ -19,6 +19,7 @@ export const initialState = {
         single_post_comment: [],
         all_comments: [],
         comments: [],
+        post_id: '',
 
     },
     users: {
