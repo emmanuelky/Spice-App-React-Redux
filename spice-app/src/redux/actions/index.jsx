@@ -384,3 +384,24 @@ export const getPostId = (postId) => {
         })
     }
 }
+
+
+// export const getTotalPostComments = (totalComments) => {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: 'GET_TOTAL_POST_COMMENTS',
+//             payload: totalComments
+//         })
+//     }
+// }
+
+
+
+export const addCurrentSongMp3Link = (songMp3Link) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'GET_SONG_MP3_LINK',
+            payload: songMp3Link
+        })
+    }
+}

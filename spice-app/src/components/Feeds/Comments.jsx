@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-
+import { useSelector, useDispatch, } from 'react-redux'
+// import { } from '../../redux/actions'
 
 const Comments = () => {
 
     const lastMessageView = useRef(null);
 
+    // const dispatch = useDispatch()
     const postID = useSelector(state => state.posts.post_id)
     const fetchAllComments = useSelector(state => state.posts.comments)
 
     const uniquePostComments = fetchAllComments.filter(comment => comment.data.post_Id === postID)
-    // console.log(uniquePostComments)
+
+    console.log(uniquePostComments)
 
     useEffect(() => {
 

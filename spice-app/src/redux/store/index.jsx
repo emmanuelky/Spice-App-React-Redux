@@ -20,6 +20,7 @@ export const initialState = {
         all_comments: [],
         comments: [],
         post_id: '',
+        // total_post_comments: [],
 
     },
     users: {
@@ -39,6 +40,7 @@ export const initialState = {
     music: {
         music_lists: [],
         loading: false,
+        current_song_mp3_link: '',
     },
 }
 

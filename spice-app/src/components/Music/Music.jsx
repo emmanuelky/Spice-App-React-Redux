@@ -6,6 +6,10 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import MusicList from './MusicList'
 import MusicSearch from './MusicSearch'
+import Player from './Player'
+
+
+
 
 const Music = () => {
     return (
@@ -23,14 +27,15 @@ const Music = () => {
                     </Row>
 
                     <Row className=' '>
-                        <Col md={3} className=' '>
+                        <Col md={2} className=' '>
                             <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
-                                <SideBarLeft />
+                                {/* <SideBarLeft /> */}
+
 
                             </div>
                         </Col>
-                        <Col md={6}>
+                        <Col md={7}>
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <h5 className='text-gray-200 text-center mb-5'>Music</h5>
                                 <MusicSearch />
@@ -40,7 +45,7 @@ const Music = () => {
                         <Col md={3}>
                             <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
 
-                                <SideBarRight />
+                                <Player />
 
                             </div>
                         </Col>

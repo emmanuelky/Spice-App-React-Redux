@@ -6,7 +6,7 @@ import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch, } from 'react-redux'
-import { fetchPosts, addLikes, removeLikes, getCurrentUser, getSinglePostComment, getPostId } from '../../redux/actions'
+import { fetchPosts, addLikes, removeLikes, getCurrentUser, getSinglePostComment, getPostId, } from '../../redux/actions'
 import MyVerticallyCenteredModal from './CommentModal'
 
 
@@ -43,11 +43,11 @@ const Feeds = () => {
         dispatch(fetchPosts())
         scrollTop()
 
+
     }, [])
 
     useEffect(() => {
         dispatch(getCurrentUser())
-
     }, [totalPosts])
 
 

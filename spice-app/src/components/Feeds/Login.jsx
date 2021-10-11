@@ -48,6 +48,7 @@ const Login = ({ history }) => {
 
 
     const handleLoginDetails = () => {
+
         return (checkLoginEmail && checkLoginPassword === true) ? (dispatch(currentUser(findUserLoginDetails)), history.push('/')) : setInputField(true)
     }
 

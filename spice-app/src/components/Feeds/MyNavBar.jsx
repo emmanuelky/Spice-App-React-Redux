@@ -16,13 +16,13 @@ const MyNavBar = ({ history }) => {
 
     const currentUser = useSelector(state => state.users.getcurrentuser)
     const currentUserObj = Object.keys(currentUser).length
-    // console.log(currentUserObj)
+    // console.log(currentUser.following)
 
 
     const myAddedFollowers = useSelector(state => state.users.following)
     const totalNumOfMyFollowers = myAddedFollowers?.length
 
-    console.log(totalNumOfMyFollowers)
+    // console.log(totalNumOfMyFollowers)
 
 
     // const unFollowingUserList = useSelector(state => state.users.unfollowing_user_list)
