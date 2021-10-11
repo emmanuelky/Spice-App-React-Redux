@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getMusicSearch, addCurrentSong } from '../../redux/actions'
+import { getMusicSearch, addCurrentSong, addFavoriteSong } from '../../redux/actions'
 import { Card, Button, Spinner, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import { ImPlay2 } from "react-icons/im";
 import { ImPause2 } from "react-icons/im";
-import { GiLoveSong } from "react-icons/gi";
+import { AiOutlineHeart } from "react-icons/ai";
 
 
 
@@ -18,7 +18,7 @@ const MusicList = () => {
     const [isPlaying, setIsPlaying] = useState(false)
     const dispatch = useDispatch()
     const musicList = useSelector(state => state.music.music_lists)
-    console.log(musicList[0].data.data)
+    console.log(musicList[0]?.data.data)
 
     const loading = useSelector(state => state.music.loading)
 
@@ -32,9 +32,12 @@ const MusicList = () => {
         console.log(song.id, e)
         if (song) {
             dispatch(addCurrentSong(song))
-
         }
 
+    }
+
+    const toggleFavotiteSong = (song) => {
+        dispatch(addFavoriteSong(song))
     }
 
     // useEffect(() => {
@@ -72,7 +75,7 @@ const MusicList = () => {
                                 </Col>
                                 <Col md={2}>
 
-                                    <div className='text-3xl text-gray-200'><GiLoveSong /></div>
+                                    <div onClick={() => toggleFavotiteSong(music)} className='text-2xl text-muted text-gray-200 cursor-pointer'><AiOutlineHeart /></div>
                                 </Col>
                                 <Col md={1}>
 

@@ -386,21 +386,22 @@ export const getPostId = (postId) => {
 }
 
 
-// export const getTotalPostComments = (totalComments) => {
-//     return (dispatch, getState) => {
-//         dispatch({
-//             type: 'GET_TOTAL_POST_COMMENTS',
-//             payload: totalComments
-//         })
-//     }
-// }
-
 
 
 export const addCurrentSong = (song) => {
     return (dispatch, getState) => {
         dispatch({
             type: 'GET_CURRENT_SONG',
+            payload: song
+        })
+    }
+}
+
+
+export const addFavoriteSong = (song) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'ADD_FAVORITE_SONG',
             payload: song
         })
     }

@@ -20,6 +20,14 @@ export const musicReducer = (state = initialState.music, action) => {
             }
 
 
+        case "ADD_FAVORITE_SONG":
+            return {
+                ...state,
+                favorite_songs: [...state.favorite_songs, action.payload]
+            }
+
+
+
         default:
             return state
     }

@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import MusicList from './MusicList'
 import MusicSearch from './MusicSearch'
 import Player from './Player'
+import MyMusic from './MyMusic'
 
 
 
@@ -28,11 +29,11 @@ const Music = () => {
 
                     <Row className=' '>
                         <Col md={2} className=' '>
-                            <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
+                            <div className="sticky top-40 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
                                 {/* <SideBarLeft /> */}
 
-
+                                <MyMusic />
                             </div>
                         </Col>
                         <Col md={7}>
@@ -44,7 +45,7 @@ const Music = () => {
                             </div>
                         </Col>
                         <Col md={3}>
-                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 bg-yellow-200 border-yellow-900 drop-shadow-2xl border-b-2 rounded " >
+                            <div className=" sticky top-40 shadow-2xl flex flex-wrap mx-1 bg-yellow-200 border-yellow-900 drop-shadow-2xl border-b-2 rounded " >
 
 
                             </div>

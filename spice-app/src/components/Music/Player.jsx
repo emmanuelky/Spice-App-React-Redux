@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { useSelector, useDispatch } from 'react-redux'
+import ReactAudioPlayer from 'react-audio-player';
 
 
 
@@ -19,8 +20,8 @@ const Player = () => {
             <div className='absolute fixed-bottom'>
 
 
-                <ReactPlayer url={currentSong?.preview}
-                    playing
+                {/* <ReactPlayer url={currentSong?.preview}
+                    // playing
                     controls={true}
 
                     className="mx-auto text-blue-600"
@@ -28,6 +29,16 @@ const Player = () => {
                     stopOnUnmount={true}
                     loop={true}
                 // playIcon={<img src={currentSong?.album.cover} alt="" />}
+                /> */}
+
+
+
+                <ReactAudioPlayer
+                    src={currentSong?.preview}
+                    autoPlay
+                    controls
+                    className="mx-auto text-blue-600"
+                    onPause
                 />
             </div>
 

@@ -41,6 +41,7 @@ export const initialState = {
         music_lists: [],
         loading: false,
         current_song: null,
+        favorite_songs: [],
     },
 }
 
