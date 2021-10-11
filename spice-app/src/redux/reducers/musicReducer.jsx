@@ -26,6 +26,12 @@ export const musicReducer = (state = initialState.music, action) => {
                 favorite_songs: [...state.favorite_songs, action.payload]
             }
 
+        case "REMOVE_FAVORITE_SONG":
+            return {
+                ...state,
+                favorite_songs: [...state.favorite_songs.filter(song => song.id !== action.payload)]
+            }
+
 
 
         default:

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getMusicSearch, addCurrentSong, addFavoriteSong } from '../../redux/actions'
+import { getMusicSearch, addCurrentSong, addFavoriteSong, removeFavoriteSong } from '../../redux/actions'
 import { Card, Button, Spinner, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
@@ -15,12 +15,15 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 const MusicList = () => {
 
-    const [isPlaying, setIsPlaying] = useState(false)
+    // const [isPlaying, setIsPlaying] = useState(false)
     const dispatch = useDispatch()
     const musicList = useSelector(state => state.music.music_lists)
     console.log(musicList[0]?.data.data)
 
     const loading = useSelector(state => state.music.loading)
+
+    const favoriteSongs = useSelector(state => state.music.favorite_songs)
+    const songId = favoriteSongs?.map((favoriteSong) => favoriteSong.id)
 
 
     const addDecimalToSongDuration = (duration) => {
@@ -37,7 +40,7 @@ const MusicList = () => {
     }
 
     const toggleFavotiteSong = (song) => {
-        dispatch(addFavoriteSong(song))
+        return songId.includes(song.id) ? dispatch(removeFavoriteSong(song.id)) : dispatch(addFavoriteSong(song))
     }
 
     // useEffect(() => {
@@ -54,7 +57,7 @@ const MusicList = () => {
                         {/* <div className="  flex justify-between border-b my-4 border-gray-700 align-items-center"> */}
                         {/* // <Link to={`/music/${music.id}/`} className="no-underline"> */}
                         <Container fluid >
-                            <Row className="  flex justify-between border-b my-4 border-gray-700 align-items-center">
+                            <Row className="  flex justify-between px-2 border-b my-4 rounded bg-gradient-to-tr from-green-800 via-blue-800 to-purple-800 border-gray-700 align-items-center">
 
                                 <Col md={2}>
 
@@ -66,7 +69,7 @@ const MusicList = () => {
                                 </Col>
                                 <Col md={2}>
 
-                                    <div className='text-gray-600 text-xs mx-2'><span>by</span> <i>{music.artist.name}</i></div>
+                                    <div className='text-gray-400 text-xs mx-2'><i>by {music.artist.name}</i></div>
                                 </Col>
 
                                 <Col md={2} >
@@ -75,11 +78,11 @@ const MusicList = () => {
                                 </Col>
                                 <Col md={2}>
 
-                                    <div onClick={() => toggleFavotiteSong(music)} className='text-2xl text-muted text-gray-200 cursor-pointer'><AiOutlineHeart /></div>
+                                    <div onClick={() => toggleFavotiteSong(music)} className='text-2xl text-blue-100 cursor-pointer'><AiOutlineHeart /></div>
                                 </Col>
                                 <Col md={1}>
 
-                                    <div className='text-gray-600 text-xs mx-4'> <i>{addDecimalToSongDuration(music.duration)}</i></div>
+                                    <div className='text-gray-400 text-xs mx-4'> <i>{addDecimalToSongDuration(music.duration)}</i></div>
                                 </Col>
 
                             </Row>

@@ -9,15 +9,16 @@ const FavoriteSong = () => {
     console.log(favoriteSongs)
 
     return (
-        <div className='mx-auto'>
-            <div className="flex text-gray-200 align-items-baseline mx-auto">
+        <div className='mx-auto border-b border-t border-l border-pink-600'>
+            <div className="flex text-gray-200 align-items-baseline px-3 mt-5 mb-5 mx-auto">
 
-                <div> <h4>Favorite</h4></div>
-                <div className='text-pink-700'>  <AiOutlineHeart /></div>
+                <div> <h6>My Favorite Songs</h6></div>
 
             </div>
-            <div className="flex justify-center">
-                <h5><Badge className=" bg-pink-600">{favoriteSongs?.length}</Badge></h5>
+            <div className="flex justify-center mb-5">
+
+                <h5><Badge className=" bg-pink-600"><AiOutlineHeart />{favoriteSongs?.length}</Badge></h5>
+                <div className='text-pink-700'>  </div>
             </div>
 
             <div>

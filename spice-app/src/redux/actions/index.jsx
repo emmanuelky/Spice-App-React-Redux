@@ -406,3 +406,12 @@ export const addFavoriteSong = (song) => {
         })
     }
 }
+
+export const removeFavoriteSong = (songId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'REMOVE_FAVORITE_SONG',
+            payload: songId
+        })
+    }
+}
