@@ -40,7 +40,7 @@ export const initialState = {
     music: {
         music_lists: [],
         loading: false,
-        current_song_mp3_link: '',
+        current_song: null,
     },
 }
 

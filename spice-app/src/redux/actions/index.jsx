@@ -397,11 +397,11 @@ export const getPostId = (postId) => {
 
 
 
-export const addCurrentSongMp3Link = (songMp3Link) => {
+export const addCurrentSong = (song) => {
     return (dispatch, getState) => {
         dispatch({
-            type: 'GET_SONG_MP3_LINK',
-            payload: songMp3Link
+            type: 'GET_CURRENT_SONG',
+            payload: song
         })
     }
 }

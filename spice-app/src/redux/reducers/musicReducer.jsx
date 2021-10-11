@@ -13,10 +13,10 @@ export const musicReducer = (state = initialState.music, action) => {
                 loading: action.payload,
             }
 
-        case "GET_SONG_MP3_LINK":
+        case "GET_CURRENT_SONG":
             return {
                 ...state,
-                current_song_mp3_link: action.payload,
+                current_song: action.payload,
             }
 
 

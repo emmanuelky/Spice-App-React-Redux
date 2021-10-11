@@ -40,12 +40,12 @@ const Music = () => {
                                 <h5 className='text-gray-200 text-center mb-5'>Music</h5>
                                 <MusicSearch />
                                 <MusicList />
+                                <Player />
                             </div>
                         </Col>
                         <Col md={3}>
-                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
+                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 bg-yellow-200 border-yellow-900 drop-shadow-2xl border-b-2 rounded " >
 
-                                <Player />
 
                             </div>
                         </Col>

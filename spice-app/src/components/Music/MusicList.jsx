@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getMusicSearch } from '../../redux/actions'
+import { getMusicSearch, addCurrentSong } from '../../redux/actions'
 import { Card, Button, Spinner, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import { ImPlay2 } from "react-icons/im";
+import { ImPause2 } from "react-icons/im";
 import { GiLoveSong } from "react-icons/gi";
-
-
-
-
 
 
 
@@ -18,9 +15,10 @@ import { GiLoveSong } from "react-icons/gi";
 
 const MusicList = () => {
 
+    const [isPlaying, setIsPlaying] = useState(false)
     const dispatch = useDispatch()
     const musicList = useSelector(state => state.music.music_lists)
-    console.log(musicList)
+    console.log(musicList[0].data.data)
 
     const loading = useSelector(state => state.music.loading)
 
@@ -28,6 +26,20 @@ const MusicList = () => {
     const addDecimalToSongDuration = (duration) => {
         return Number(duration / 100).toFixed(2)
     }
+
+
+    const handleSongPlay = (song, e) => {
+        console.log(song.id, e)
+        if (song) {
+            dispatch(addCurrentSong(song))
+
+        }
+
+    }
+
+    // useEffect(() => {
+
+    // }, [handleSongPlay()])
 
     return (
         <div className="" >
@@ -54,9 +66,9 @@ const MusicList = () => {
                                     <div className='text-gray-600 text-xs mx-2'><span>by</span> <i>{music.artist.name}</i></div>
                                 </Col>
 
-                                <Col md={2}>
+                                <Col md={2} >
 
-                                    <div className='text-blue-600 text-3xl'><ImPlay2 /></div>
+                                    <button onClick={(e) => handleSongPlay(music, e)} className='text-blue-600 text-3xl cursor-pointer'>{<ImPlay2 />}</button>
                                 </Col>
                                 <Col md={2}>
 

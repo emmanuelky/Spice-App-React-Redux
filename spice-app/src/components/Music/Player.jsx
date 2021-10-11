@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -6,19 +6,30 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const Player = () => {
 
+    // const [isPlaying, setIsPlaying] = useState(false)
+    const currentSong = useSelector(state => state.music.current_song)
+    console.log(currentSong)
 
-
+    // useEffect(() => {
+    //     // setIsPlaying(!isPlaying)
+    // }, [currentSong])
 
     return (
-        <div>
-            <ReactPlayer url='https://cdns-preview-3.dzcdn.net/stream/c-3be8a7e6ae1b8c6ba30a81bd3525a4b2-6.mp3'
-                playing
-                controls={true}
-                width={300}
-                pip={true}
-                stopOnUnmount={false}
-                loop={true}
-            />
+        <div className='relative'>
+            <div className='absolute fixed-bottom'>
+
+
+                <ReactPlayer url={currentSong?.preview}
+                    playing
+                    controls={true}
+
+                    className="mx-auto text-blue-600"
+                    pip={true}
+                    stopOnUnmount={true}
+                    loop={true}
+                // playIcon={<img src={currentSong?.album.cover} alt="" />}
+                />
+            </div>
 
         </div>
     )
