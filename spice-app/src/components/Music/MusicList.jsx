@@ -15,7 +15,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 const MusicList = () => {
 
-    // const [isPlaying, setIsPlaying] = useState(false)
+    const [isFavorite, setIsFavorite] = useState(false)
     const dispatch = useDispatch()
     const musicList = useSelector(state => state.music.music_lists)
     console.log(musicList[0]?.data.data)
@@ -39,8 +39,8 @@ const MusicList = () => {
 
     }
 
-    const toggleFavotiteSong = (song) => {
-        return songId.includes(song.id) ? dispatch(removeFavoriteSong(song.id)) : dispatch(addFavoriteSong(song))
+    const toggleFavotiteSong = (song, e) => {
+        return songId?.find(s => s === song.id) ? dispatch(removeFavoriteSong(song.id)) : (dispatch(addFavoriteSong(song)), setIsFavorite(!isFavorite))
     }
 
     // useEffect(() => {
@@ -53,19 +53,18 @@ const MusicList = () => {
                 loading
                     ? (<Spinner animation="border" variant="success" />)
                     : musicList[0]?.data.data.map((music, i) =>
-                    (<>
-                        {/* <div className="  flex justify-between border-b my-4 border-gray-700 align-items-center"> */}
-                        {/* // <Link to={`/music/${music.id}/`} className="no-underline"> */}
-                        <Container fluid >
-                            <Row className="  flex justify-between px-2 border-b my-4 rounded bg-gradient-to-tr from-green-800 via-blue-800 to-purple-800 border-gray-700 align-items-center">
+                    (<div>
+
+                        <Container fluid>
+                            <Row className="flex flex-wrap justify-between px-6 border-b my-4 rounded bg-gradient-to-tr from-green-800 via-blue-800 to-purple-800 border-gray-700 align-items-center">
 
                                 <Col md={2}>
 
-                                    <div> <img className='w-10 h-10 rounded-lg ' src={music.artist.picture} alt="" /></div>
+                                    <div> <img className='w-10 h-10 rounded-lg my-1 ' src={music.artist.picture} alt="" /></div>
                                 </Col>
                                 <Col md={3}>
 
-                                    <div><span className='text-gray-300 mx-2  text-justify '>{music.title_short}</span></div>
+                                    <div><span className='text-gray-300 mx-2 text-xs md:text-sm  text-justify '>{music.title_short}</span></div>
                                 </Col>
                                 <Col md={2}>
 
@@ -78,7 +77,7 @@ const MusicList = () => {
                                 </Col>
                                 <Col md={2}>
 
-                                    <div onClick={() => toggleFavotiteSong(music)} className='text-2xl text-blue-100 cursor-pointer'><AiOutlineHeart /></div>
+                                    <button onClick={(e) => toggleFavotiteSong(music, e)} className='text-2xl text-blue-100 cursor-pointer'>{songId?.find(s => s === music.id) ? <AiOutlineHeart className='bg-pink-600 rounded-full cursor-pointer' /> : <AiOutlineHeart className='cursor-pointer' />}</button>
                                 </Col>
                                 <Col md={1}>
 
@@ -93,7 +92,7 @@ const MusicList = () => {
 
                         {/* // </Link> */}
                         {/* </div> */}
-                    </>)
+                    </div>)
                     )
             }
         </div>
