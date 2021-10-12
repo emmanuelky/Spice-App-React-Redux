@@ -55,7 +55,7 @@ const FavoriteSong = () => {
                 }
             </div>
             <div className=' justify-center p-2  text-sm hidden md:block'>
-                {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...more</button>)}
+                {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...click to see more</button>)}
             </div>
 
 

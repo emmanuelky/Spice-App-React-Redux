@@ -38,7 +38,7 @@ const Player = () => {
                     autoPlay
                     controls
                     className="mx-auto text-blue-600"
-                    onPause
+                    loop={true}
                 />
             </div>
 

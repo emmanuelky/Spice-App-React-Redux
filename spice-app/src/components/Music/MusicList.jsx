@@ -104,8 +104,7 @@ const MusicList = () => {
 
 
 
-                        {/* // </Link> */}
-                        {/* </div> */}
+
                     </div>)
                     )
             }
@@ -126,31 +125,42 @@ const MusicList = () => {
 
             <div >
                 <Modal show={show} onHide={handleClose}>
-                    <Modal.Header className='bg-gray-900' closeButton>
-                        <Modal.Title className='text-gray-100 '>Artist Page</Modal.Title>
+                    <Modal.Header className='bg-black' closeButton>
+                        <Modal.Title className='text-gray-100'>Artist Page</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className='bg-pink-600 '>
+                    <Modal.Body className='bg-black  '>
+
+
+                        <Row className=''>
+                            <Card className='mx-auto bg-black text-gray-200'>
+                                <Card.Img variant="top" className='img-fluid' src={musicList[0]?.data.data[0]?.artist?.picture_big} />
+                                <Card.Body>
+                                    <Card.Title >{musicList[0]?.data.data[0]?.artist?.name} </Card.Title>
+                                    <Card.Text className='my-4'>
+                                        Album Title - {artist[0]?.data.data[0]?.album?.title}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Tracks:
+
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Row>
                         {artist[0]?.data.data.map((art) => (
                             <>
 
                                 <Container fluid key={art.id}>
-                                    <Row className="p-2 flex justify-between align-items-center border-b border-gray-500 ">
-
-                                        <Col md={2}>
-                                            <img className='w-10 h-10 rounded-full ' src={art.artist.picture} alt="" />
 
 
-                                        </Col>
+
+                                    <Row className="p-2 flex justify-between mt-0 align-items-center border-b border-gray-500 ">
+
                                         <Col md={3}>
                                             <span className=" rounded-full p-1  text-xs text-gray-300 ">{art.title_short}</span>
 
 
                                         </Col>
-                                        <Col md={3}>
-                                            <span className=" rounded-full p-1  text-xs text-gray-300 ">{art.artist.name}</span>
 
-
-                                        </Col>
 
                                         <Col md={2} >
                                             <button onClick={(e) => handleSongPlay(art, e)} className=" text-gray-100 cursor-pointer" ><ImPlay2 /></button>
@@ -164,8 +174,8 @@ const MusicList = () => {
                                 </Container>
                             </>))}
                     </Modal.Body>
-                    <Modal.Footer className='bg-gray-900'>
-                        <Button variant="dark" onClick={handleClose}>
+                    <Modal.Footer className='bg-black'>
+                        <Button variant="danger" onClick={handleClose}>
                             <CgCloseR />
                         </Button>
 
