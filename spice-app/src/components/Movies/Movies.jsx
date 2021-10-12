@@ -64,7 +64,7 @@ const Movies = () => {
                             </div>
                         </Col>
                         <Col md={3}>
-                            <div className=" sticky top-40 shadow-2xl flex-wrap mx-1 bg-pink-700 border-pink-900 drop-shadow-2xl border-b-2 rounded " >
+                            <div className=" sticky top-40 shadow-2xl flex-wrap mx-1 bg-indigo-700 border-pink-900 drop-shadow-2xl border-b-2 rounded " >
 
                                 <SideBarRight />
                             </div>
