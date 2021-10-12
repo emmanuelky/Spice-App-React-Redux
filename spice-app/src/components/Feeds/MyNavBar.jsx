@@ -111,9 +111,9 @@ const MyNavBar = ({ history }) => {
                                     </Nav.Link>
 
                                     <Nav.Link className="text-light text-xs align-self-center"></Nav.Link>
-                                    <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-yellow-900 border-b-2 rounded-full hover:bg-blue-800">Following  <Badge className=" bg-blue-600"> {totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0}</Badge> </Nav.Link>
+                                    <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-pink-900 border-b-2 rounded-full hover:bg-blue-800">Following  <Badge className=" bg-blue-600"> {totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0}</Badge> </Nav.Link>
                                     {/* <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Unfollowing  {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</Nav.Link> */}
-                                    <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-yellow-900 border-b-2 rounded-full hover:bg-blue-800">Followers (0)</Nav.Link>
+                                    <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-pink-900 border-b-2 rounded-full hover:bg-blue-800">Followers <Badge className=" bg-blue-600"> 0 </Badge></Nav.Link>
                                     <Nav.Link>
                                         <div className='mb-10 border-b-2 block md:hidden  border-gray-600'>
                                             <Footer />

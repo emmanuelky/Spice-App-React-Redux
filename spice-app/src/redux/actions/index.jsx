@@ -194,37 +194,31 @@ const movieDetail_URL = 'https://api.themoviedb.org/3/movie/'
 
 
 
-const upcomingMovie_URL = 'https://api.themoviedb.org/3/movie/upcoming?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
-const topRatedMovie_URL = 'https://api.themoviedb.org/3/movie/top_rated?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
-const nowPlayingMovie_URL = 'https://api.themoviedb.org/3/movie/now_playing?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
-const popularMovie_URL = 'https://api.themoviedb.org/3/movie/popular?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1'
-
-export const getMovieCategory = () => {
+export const getMovieCategory = (category) => {
     return async (dispatch, getState) => {
 
         dispatch({
             type: 'LOADING',
             payload: true,
         })
-        const upcomingMovie = await axios.get(upcomingMovie_URL)
-        const topRatedMovie = await axios.get(topRatedMovie_URL)
-        const nowPlayingMovie = await axios.get(nowPlayingMovie_URL)
-        const popularMovie = await axios.get(popularMovie_URL)
+        const movieCatalog = await axios.get('https://api.themoviedb.org/3/movie/' + category + '?' + process.env.REACT_APP_MOVIE_API_KEY + '&language=en-US&page=1')
 
-        axios.all([upcomingMovie, topRatedMovie, nowPlayingMovie, popularMovie,]).then(axios.spread((...responses) => {
+        const movieResults = movieCatalog.data.results
+        console.log(movieResults)
 
 
-            dispatch({
-                type: 'GET_MOVIE_CATEGORY',
-                payload: responses
-            })
-            dispatch({
-                type: 'LOADING',
-                payload: false
-            })
-        })).catch(errors => {
 
+        dispatch({
+            type: 'FETCH_MOVIES',
+            payload: movieResults
         })
+        dispatch({
+            type: 'LOADING',
+            payload: false
+        })
+        // })).catch(errors => {
+
+        // })
 
 
     }

@@ -11,11 +11,10 @@ import MovieSearch from './MovieSearch'
 import { fetchMovies, } from '../../redux/actions'
 import Footer from '../Feeds/Footer'
 import CrytoNews from '../Crypto/CryptoNews'
-import UpComingMovies from './UpComingMovies'
-import NowPlayingMovie from './NowPlayingMovie'
+
 import FollowNewUsers from '../Feeds/FollowNewUsers'
-import TopRatedMovies from './TopRatedMovies'
-import LatestMovies from './LatestMovies'
+
+import MovieCatalog from './MovieCatalog'
 
 
 
@@ -42,7 +41,7 @@ const Movies = () => {
                 (<Container fluid>
                     <Row className='sticky-top '>
 
-                        <div className="mb-2 " >
+                        <div className="mb-5 " >
                             <MyNavBar />
                         </div>
                     </Row>
@@ -50,8 +49,9 @@ const Movies = () => {
                     <Row className=' '>
                         <Col md={3} className=' '>
                             <div className="sticky top-40 shadow-2xl  flex-wrap mx-1 drop-shadow-2xl  rounded " >
-                                <div><UpComingMovies /></div>
-                                <div><LatestMovies /> </div>
+
+
+                                <MovieCatalog />
                                 <div className="my-2"><CrytoNews /></div>
                                 <div><Footer /></div>
 
@@ -64,11 +64,9 @@ const Movies = () => {
                             </div>
                         </Col>
                         <Col md={3}>
-                            <div className=" sticky top-40 shadow-2xl flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
+                            <div className=" sticky top-40 shadow-2xl flex-wrap mx-1 bg-pink-700 border-pink-900 drop-shadow-2xl border-b-2 rounded " >
 
-                                <div><NowPlayingMovie /></div>
-                                <div><TopRatedMovies /> </div>
-                                {/* <div><FollowNewUsers /> </div> */}
+                                <SideBarRight />
                             </div>
                         </Col>
                         {/* </div> */}
