@@ -305,7 +305,7 @@ export const getArtistDetails = (id) => {
         const artistDetails = await axios.get(`${music_BASE_URL}/artist/${id}/top?limit=50`)
 
         axios.all([artistDetails]).then(axios.spread((...responses) => {
-            console.log(artistDetails)
+            // console.log(artistDetails)
 
             dispatch({
                 type: 'ARTIST_DETAILS',
@@ -422,6 +422,21 @@ export const removeFavoriteSong = (songId) => {
         dispatch({
             type: 'REMOVE_FAVORITE_SONG',
             payload: songId
+        })
+    }
+}
+
+
+
+
+export const fetchAllCryptoMarket = () => {
+    return async (dispatch, getState) => {
+
+        const cryptoData = await axios.get(`${process.env.REACT_APP_BASE_URL}`)
+
+        dispatch({
+            type: 'FETCH_CRYPTO_MARKET',
+            payload: cryptoData
         })
     }
 }

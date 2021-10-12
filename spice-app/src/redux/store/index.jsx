@@ -3,6 +3,7 @@ import { postsReducer } from '../reducers/postReducer'
 import { usersReducer } from '../reducers/userReducer'
 import { movieReducer } from '../reducers/moviesReducer'
 import { musicReducer } from '../reducers/musicReducer'
+import { cryptoReducer } from '../reducers/cryptoReducer'
 import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import { encryptTransform } from 'redux-persist-transform-encrypt'
@@ -44,6 +45,9 @@ export const initialState = {
         favorite_songs: [],
         artist_details: [],
     },
+    crypto: {
+        all_cryto_market: [],
+    }
 }
 
 
@@ -64,6 +68,7 @@ const allReducers = combineReducers({
     users: usersReducer,
     movies: movieReducer,
     music: musicReducer,
+    crypto: cryptoReducer,
 })
 
 const persistAllReducers = persistReducer(

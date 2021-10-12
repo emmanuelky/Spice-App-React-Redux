@@ -380,6 +380,54 @@
         "followers": []
       },
       "comments": {}
+    },
+    {
+      "id": "1677bb0e-c946-42c6-bea0-421d54139a03",
+      "createdAt": "13:16 PM",
+      "text": "hh\n",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1634037406/r1yvxvatajddruanoy94.jpg",
+      "likes": [],
+      "updatedAt": "13:16 PM",
+      "user": {
+        "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
+        "firstName": "Blessing",
+        "lastName": "Awoyo",
+        "email": "Geniusopera@gmail.com",
+        "username": "blessy",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
+        "bio": "hot",
+        "city": "Cottbus",
+        "createdAt": "14:31 PM",
+        "updatedAt": "14:31 PM",
+        "following": [],
+        "followers": []
+      },
+      "comments": {}
+    },
+    {
+      "id": "e36e711c-a91e-4358-bf58-dff915b1e678",
+      "createdAt": "13:17 PM",
+      "text": "hggg\n",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1634037431/uyhhqtmeagdnkvde3vwh.jpg",
+      "likes": [],
+      "updatedAt": "13:17 PM",
+      "user": {
+        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "emmanuelky",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+        "bio": "cool",
+        "city": "Cottbus",
+        "createdAt": "14:28 PM",
+        "updatedAt": "14:28 PM",
+        "following": [],
+        "followers": []
+      },
+      "comments": {}
     }
   ],
   "comments": [
@@ -928,20 +976,62 @@
         "following": [],
         "followers": []
       }
+    },
+    {
+      "id": "218e3641-cc98-40c3-9f19-647abe5cfbe8",
+      "post_Id": "1677bb0e-c946-42c6-bea0-421d54139a03",
+      "commentText": "hii\n",
+      "createdAt": "13:16 PM",
+      "user": {
+        "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
+        "firstName": "Blessing",
+        "lastName": "Awoyo",
+        "email": "Geniusopera@gmail.com",
+        "username": "blessy",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
+        "bio": "hot",
+        "city": "Cottbus",
+        "createdAt": "14:31 PM",
+        "updatedAt": "14:31 PM",
+        "following": [],
+        "followers": []
+      }
+    },
+    {
+      "id": "7753a484-5f83-42b3-8423-7af8977e1c01",
+      "post_Id": "1677bb0e-c946-42c6-bea0-421d54139a03",
+      "commentText": "facebook\n",
+      "createdAt": "13:17 PM",
+      "user": {
+        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "emmanuelky",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+        "bio": "cool",
+        "city": "Cottbus",
+        "createdAt": "14:28 PM",
+        "updatedAt": "14:28 PM",
+        "following": [],
+        "followers": []
+      }
     }
   ],
   "currentUser": {
-    "id": "ee9dccb1-03eb-42d9-a574-a508f2182a7c",
-    "firstName": "Blessing",
-    "lastName": "Awoyo",
-    "email": "Geniusopera@gmail.com",
-    "username": "blessy",
+    "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+    "firstName": "Emmanuel",
+    "lastName": "Iyere",
+    "email": "iyereemmanuel.akhere@gmail.com",
+    "username": "emmanuelky",
     "password": "111",
-    "image": "https://media-exp1.licdn.com/dms/image/C5603AQH8KTlE7RHqtA/profile-displayphoto-shrink_800_800/0/1621361354079?e=1639008000&v=beta&t=6q6JsOr7bMZ7niXehj1uluDJQVSVQga03xg2AlxsoBk",
-    "bio": "hot",
+    "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGDf3sUhZgiOQ/profile-displayphoto-shrink_800_800/0/1628360955565?e=1639008000&v=beta&t=AKnji6q-xLsRP-H0aQEDBYq8UG62YhceM5O7LadyH4c",
+    "bio": "cool",
     "city": "Cottbus",
-    "createdAt": "14:31 PM",
-    "updatedAt": "14:31 PM",
+    "createdAt": "14:28 PM",
+    "updatedAt": "14:28 PM",
     "following": [],
     "followers": []
   }

@@ -1,11 +1,19 @@
 import React from 'react'
 import './CryptoNews.css'
+import MyVerticallyCenteredModal from './CryptoModal'
 
 const CryptoNews = () => {
+
+
+    const [modalShow, setModalShow] = React.useState(false);
+    // <Button variant="primary" onClick={() => setModalShow(true)}>
+    //     Launch vertically centered modal
+    //   </Button>
+
     return (
 
         <div className=" flex my-4 items-center justify-center md:flex-col">
-            <div className='text-gray-200'><h6>Crypto News</h6></div>
+            <div onClick={() => setModalShow(true)} className='text-gray-200'><button className='bg-blue-600 p-2 rounded'>Get Crypto Update</button></div>
 
             <div className="relative w-3/4 lg:w-1/2 bg-gray-900 p-4  rounded text-white space-y-3 overflow-hidden">
                 <span className="flex h-3 w-3">
@@ -28,6 +36,12 @@ const CryptoNews = () => {
 
                 </div>
             </div>
+
+
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
 
         </div>
 
