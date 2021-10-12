@@ -9,7 +9,7 @@ const Player = () => {
 
     // const [isPlaying, setIsPlaying] = useState(false)
     const currentSong = useSelector(state => state.music.current_song)
-    console.log(currentSong)
+    // console.log(currentSong)
 
     // useEffect(() => {
     //     // setIsPlaying(!isPlaying)

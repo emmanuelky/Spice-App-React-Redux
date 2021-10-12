@@ -276,7 +276,7 @@ export const getMusicSearch = (query) => {
             type: 'LOADING',
             payload: true,
         })
-        const musicSearch = await axios.get(query ? `${music_BASE_URL}/search?q=${query}` : `${music_BASE_URL}/search?q=eminem`)
+        const musicSearch = await axios.get(query ? `${music_BASE_URL}/search?q=${query}` : `${music_BASE_URL}/search?q=drake`)
 
         axios.all([musicSearch]).then(axios.spread((...responses) => {
             // console.log(musicSearch)
@@ -297,6 +297,41 @@ export const getMusicSearch = (query) => {
 
     }
 }
+
+
+
+export const getArtistDetails = (id) => {
+    return async (dispatch, getState) => {
+
+        dispatch({
+            type: 'LOADING',
+            payload: true,
+        })
+
+        const artistDetails = await axios.get(`${music_BASE_URL}/artist/${id}/top?limit=50`)
+
+        axios.all([artistDetails]).then(axios.spread((...responses) => {
+            console.log(artistDetails)
+
+            dispatch({
+                type: 'ARTIST_DETAILS',
+                payload: responses
+            })
+
+            dispatch({
+                type: 'LOADING',
+                payload: false
+            })
+        })).catch(errors => {
+
+        })
+
+
+    }
+}
+
+
+
 
 
 
@@ -339,14 +374,6 @@ export const getSinglePostComment = (post) => {
     }
 }
 
-// export const addComments = (comment) => {
-//     return (dispatch, getState) => {
-//         dispatch({
-//             type: 'ADD_COMMENTS',
-//             payload: comment
-//         })
-//     }
-// }
 
 
 
@@ -362,17 +389,6 @@ export const postComments = (comment) => {
     }
 }
 
-// export const getComments = () => {
-//     return async (dispatch, getState) => {
-
-//         const comment = await axios.get(`${process.env.REACT_APP_BASE_URL}/comments/`)
-
-//         dispatch({
-//             type: 'GET_COMMENTS',
-//             payload: comment
-//         })
-//     }
-// }
 
 
 

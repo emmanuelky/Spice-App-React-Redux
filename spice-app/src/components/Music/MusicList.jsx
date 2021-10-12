@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getMusicSearch, addCurrentSong, addFavoriteSong, removeFavoriteSong } from '../../redux/actions'
-import { Card, Button, Spinner, Container, Row, Col } from 'react-bootstrap'
+import { getMusicSearch, addCurrentSong, addFavoriteSong, removeFavoriteSong, getArtistDetails } from '../../redux/actions'
+import { Card, Button, Spinner, Container, Row, Col, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import { ImPlay2 } from "react-icons/im";
 import { ImPause2 } from "react-icons/im";
 import { AiOutlineHeart } from "react-icons/ai";
+import { CgCloseR } from "react-icons/cg";
+
 
 
 
@@ -15,10 +17,18 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 const MusicList = () => {
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const [isFavorite, setIsFavorite] = useState(false)
     const dispatch = useDispatch()
     const musicList = useSelector(state => state.music.music_lists)
-    console.log(musicList[0]?.data.data)
+
+    const artist = useSelector(state => state.music.artist_details)
+    console.log(artist)
+
 
     const loading = useSelector(state => state.music.loading)
 
@@ -43,9 +53,13 @@ const MusicList = () => {
         return songId?.find(s => s === song.id) ? dispatch(removeFavoriteSong(song.id)) : (dispatch(addFavoriteSong(song)), setIsFavorite(!isFavorite))
     }
 
-    // useEffect(() => {
+    const handleGetArtistId = (id) => {
+        dispatch(getArtistDetails(id))
+    }
 
-    // }, [handleSongPlay()])
+    useEffect(() => {
+        dispatch(getMusicSearch())
+    }, [])
 
     return (
         <div className="" >
@@ -60,7 +74,7 @@ const MusicList = () => {
 
                                 <Col md={2}>
 
-                                    <div> <img className='w-10 h-10 rounded-lg my-1 ' src={music.artist.picture} alt="" /></div>
+                                    <button onClick={() => (handleGetArtistId(music.artist.id))}> <img onClick={handleShow} className='w-10 h-10 rounded-lg my-1 ' src={music.artist.picture} alt="" /></button>
                                 </Col>
                                 <Col md={3}>
 
@@ -95,6 +109,73 @@ const MusicList = () => {
                     </div>)
                     )
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div >
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header className='bg-gray-900' closeButton>
+                        <Modal.Title className='text-gray-100 '>Artist Page</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className='bg-pink-600 '>
+                        {artist[0]?.data.data.map((art) => (
+                            <>
+
+                                <Container fluid key={art.id}>
+                                    <Row className="p-2 flex justify-between align-items-center border-b border-gray-500 ">
+
+                                        <Col md={2}>
+                                            <img className='w-10 h-10 rounded-full ' src={art.artist.picture} alt="" />
+
+
+                                        </Col>
+                                        <Col md={3}>
+                                            <span className=" rounded-full p-1  text-xs text-gray-300 ">{art.title_short}</span>
+
+
+                                        </Col>
+                                        <Col md={3}>
+                                            <span className=" rounded-full p-1  text-xs text-gray-300 ">{art.artist.name}</span>
+
+
+                                        </Col>
+
+                                        <Col md={2} >
+                                            <button onClick={(e) => handleSongPlay(art, e)} className=" text-gray-100 cursor-pointer" ><ImPlay2 /></button>
+
+                                        </Col>
+
+
+
+                                    </Row>
+
+                                </Container>
+                            </>))}
+                    </Modal.Body>
+                    <Modal.Footer className='bg-gray-900'>
+                        <Button variant="dark" onClick={handleClose}>
+                            <CgCloseR />
+                        </Button>
+
+                    </Modal.Footer>
+                </Modal>
+            </div>
+
+
+
+
         </div>
     )
 }

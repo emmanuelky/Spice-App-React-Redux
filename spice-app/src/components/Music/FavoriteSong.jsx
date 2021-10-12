@@ -18,7 +18,7 @@ const FavoriteSong = () => {
     const dispatch = useDispatch()
 
     const favoriteSongs = useSelector(state => state.music.favorite_songs)
-    console.log(favoriteSongs)
+    // console.log(favoriteSongs)
 
 
     const handleSongPlay = (song, e) => {
@@ -29,8 +29,6 @@ const FavoriteSong = () => {
 
     }
 
-
-
     return (
         <div className='flex mx-auto justify-center border-b border-t border-l border-pink-600 md:flex-col'>
             <div className="flex text-gray-200 align-items-baseline px-3 mt-5 mx-auto">
@@ -40,7 +38,7 @@ const FavoriteSong = () => {
             </div>
             <div className="flex justify-center my-5">
 
-                <h3><Badge className=" bg-pink-600"><AiOutlineHeart className='my-2' />{favoriteSongs?.length}</Badge></h3>
+                <h3><Badge onClick={handleShow} className=" bg-pink-600"><AiOutlineHeart className='my-2' />{favoriteSongs?.length}</Badge></h3>
 
             </div>
 
@@ -59,7 +57,6 @@ const FavoriteSong = () => {
             <div className=' justify-center p-2  text-sm hidden md:block'>
                 {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...more</button>)}
             </div>
-
 
 
 
@@ -98,9 +95,7 @@ const FavoriteSong = () => {
 
                                         </Col>
                                         <Col md={2}>
-
                                             <button onClick={() => dispatch(removeFavoriteSong(favoriteSong.id))} className='bg-white rounded-full p-1'><FcDislike /></button>
-
                                         </Col>
 
 
