@@ -6,7 +6,7 @@ import Movies from './components/Movies/Movies';
 import Login from './components/Feeds/Login';
 import SignUp from './components/Feeds/SignUp';
 import MovieDetails from './components/Movies/MovieDetails';
-import AllCryptoMarket from './components/Crypto/AllCryptoMarket';
+import CryptoHomePage from './components/Crypto/CryptoHomePage';
 
 
 
@@ -19,7 +19,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/music" exact component={Music} />
-        <Route path="/crypto" exact component={AllCryptoMarket} />
+        <Route path="/crypto" exact component={CryptoHomePage} />
         <Route path="/movies" exact component={Movies} />
         <Route path="/profile/:id" exact component={ProfilePage} />
         <Route path="/movie/:id/credits" exact component={MovieDetails} />

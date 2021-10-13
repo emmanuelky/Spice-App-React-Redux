@@ -10,33 +10,38 @@ const AllCryptoMarket = () => {
 
     const allCryptoMarket = useSelector(state => state.crypto.all_crypto_market)
 
+    const cryptoPriceChange = allCryptoMarket.map(cryptoprice => cryptoprice.current_price)
+
     console.log(allCryptoMarket)
 
     useEffect(() => {
         dispatch(fetchAllCryptoMarket())
-    }, [])
+    }, [cryptoPriceChange])
+
+
+    const symbolToUpperCase = (symbol) => symbol.toUpperCase()
+
     return (
-        <div className='text-gray-500 overflow-x-auto'>
-            <Container fluid >
+        <div className='text-gray-300   '>
+            <Container fluid className='overflow-x-auto'>
+
                 {
                     allCryptoMarket.map(crypto => (
 
-                        <Row className='my-5'>
+                        <Row className='my-5 align-items-center border-b border-gray-800 hover:border-gray-500 hover:bg-gray-700 hover:text-gray-200 rounded-lg p-1'>
 
-                            <Col md={1}>{crypto.market_cap_rank}</Col>
-                            <Col md={1}><img className="" src={crypto.image} alt="" /> </Col>
+                            <Col md={1} className=''> {crypto.market_cap_rank}</Col>
 
-                            <Col md={2}  > {crypto.name} ({crypto.symbol})</Col>
 
-                            <Col md={2}>{crypto.current_price}</Col>
+                            <Col md={3}  ><div className="flex justify-evenly align-items-center"><div><img className="w-10 h-10" src={crypto.image} alt="" /> </div><div className=''>{crypto.name} </div><span className='text-gray-500'>{symbolToUpperCase(crypto.symbol)}</span></div></Col>
 
-                            <Col md={1}>24h%</Col>
+                            <Col md={2} className='text-center'>${crypto.current_price}</Col>
 
-                            <Col md={1}>7d %</Col>
+                            <Col md={2} className='text-center'>{crypto.low_24h}</Col>
 
-                            <Col md={2}>Market cap</Col>
+                            <Col md={2} className='text-center'>${crypto.market_cap}</Col>
 
-                            <Col md={2}>Circulation</Col>
+                            <Col md={2} className='text-center'>{crypto.circulating_supply}</Col>
 
                         </Row>
                     ))

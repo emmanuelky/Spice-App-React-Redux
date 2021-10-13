@@ -432,7 +432,7 @@ export const removeFavoriteSong = (songId) => {
 export const fetchAllCryptoMarket = () => {
     return async (dispatch, getState) => {
 
-        const cryptoData = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc%2C%20volume_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y`)
+        const cryptoData = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc%2C%20volume_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y`)
         const crytoDataArray = cryptoData.data
         console.log(crytoDataArray)
         dispatch({
