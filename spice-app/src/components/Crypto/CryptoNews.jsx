@@ -1,6 +1,7 @@
 import React from 'react'
 import './CryptoNews.css'
 import MyVerticallyCenteredModal from './CryptoModal'
+import { Link } from 'react-router-dom'
 
 const CryptoNews = () => {
 
@@ -13,7 +14,10 @@ const CryptoNews = () => {
     return (
 
         <div className=" flex my-4 items-center justify-center md:flex-col">
-            <div onClick={() => setModalShow(true)} className='text-gray-200'><button className='bg-blue-600 p-2 rounded'>Get Crypto Update</button></div>
+            <Link to={`/crypto`}>
+
+                <div className='text-gray-200'><button className='bg-blue-600 p-2 rounded'>Get Crypto Update</button></div>
+            </Link>
 
             <div className="relative w-3/4 lg:w-1/2 bg-gray-900 p-4  rounded text-white space-y-3 overflow-hidden">
                 <span className="flex h-3 w-3">
@@ -41,6 +45,9 @@ const CryptoNews = () => {
             <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+
+            // to open a new modal
+            //onClick={() => setModalShow(true)}
             />
 
         </div>

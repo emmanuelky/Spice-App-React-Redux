@@ -5,7 +5,7 @@ export const cryptoReducer = (state = initialState.crypto, action) => {
         case "FETCH_CRYPTO_MARKET":
             return {
                 ...state,
-                all_cryto_market: action.payload,
+                all_crypto_market: action.payload,
             }
 
 

@@ -46,7 +46,7 @@ export const initialState = {
         artist_details: [],
     },
     crypto: {
-        all_cryto_market: [],
+        all_crypto_market: [],
     }
 }
 

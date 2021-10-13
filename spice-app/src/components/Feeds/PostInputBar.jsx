@@ -14,7 +14,7 @@ const PostInputBar = () => {
 
 
 
-    console.log(image)
+    // console.log(image)
 
     const uploadImage = () => {
         const data = new FormData()
