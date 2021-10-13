@@ -7,7 +7,11 @@ export const cryptoReducer = (state = initialState.crypto, action) => {
                 ...state,
                 all_crypto_market: action.payload,
             }
-
+        case "SINGLE_CRYPTO_DETAIL":
+            return {
+                ...state,
+                single_crypto_detail: action.payload,
+            }
 
         default:
             return state

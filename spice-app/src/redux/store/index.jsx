@@ -47,6 +47,7 @@ export const initialState = {
     },
     crypto: {
         all_crypto_market: [],
+        single_crypto_detail: {},
     }
 }
 

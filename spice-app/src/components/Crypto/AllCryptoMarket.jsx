@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchAllCryptoMarket } from '../../redux/actions'
+import { fetchAllCryptoMarket, getSingleCryptoDetails } from '../../redux/actions'
 import { Card, Button, Spinner, Container, Row, Col, Modal } from 'react-bootstrap'
 
 
 const AllCryptoMarket = () => {
 
+    const [priceChangeColor, setPriceChangeColor] = useState(false)
+
     const dispatch = useDispatch()
 
     const allCryptoMarket = useSelector(state => state.crypto.all_crypto_market)
+    const singleCryptoDetail = useSelector(state => state.crypto.single_crypto_detail)
+    console.log(singleCryptoDetail)
 
     const cryptoPriceChange = allCryptoMarket.map(cryptoprice => cryptoprice.current_price)
 
-    console.log(allCryptoMarket)
+    // console.log(cryptoPriceChange)
+
+    // const addColorToPriceChange = cryptoPriceChange.forEach(priceChange => console.log(priceChange))
+
+    useEffect(() => {
+
+    }, [cryptoPriceChange])
 
     useEffect(() => {
         dispatch(fetchAllCryptoMarket())
-    }, [cryptoPriceChange])
+    }, [])
 
 
     const symbolToUpperCase = (symbol) => symbol.toUpperCase()
@@ -27,8 +37,9 @@ const AllCryptoMarket = () => {
 
                 {
                     allCryptoMarket.map(crypto => (
+                        // <Link to={ }>
 
-                        <Row className='my-5 align-items-center border-b border-gray-800 hover:border-gray-500 hover:bg-gray-700 hover:text-gray-200 rounded-lg p-1'>
+                        <Row onClick={() => dispatch(getSingleCryptoDetails(crypto.id))} className='my-5 align-items-center border-b border-gray-800 hover:border-gray-500 hover:bg-gray-700 hover:text-gray-200 rounded-lg p-1'>
 
                             <Col md={1} className=''> {crypto.market_cap_rank}</Col>
 
@@ -44,6 +55,7 @@ const AllCryptoMarket = () => {
                             <Col md={2} className='text-center'>{crypto.circulating_supply}</Col>
 
                         </Row>
+                        // </Link>
                     ))
                 }
             </Container>

@@ -441,3 +441,18 @@ export const fetchAllCryptoMarket = () => {
         })
     }
 }
+
+
+export const getSingleCryptoDetails = (id) => {
+    return async (dispatch, getState) => {
+
+        const cryptoDetail = await axios.get(`https://api.coingecko.com/api/v3/coins/${id}?localization=true&tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true`)
+        const crytoDetailArray = cryptoDetail.data
+        console.log(crytoDetailArray)
+        dispatch({
+            type: 'SINGLE_CRYPTO_DETAIL',
+            payload: crytoDetailArray
+        })
+    }
+}
+

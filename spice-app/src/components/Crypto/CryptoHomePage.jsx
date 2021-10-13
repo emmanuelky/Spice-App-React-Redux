@@ -32,9 +32,9 @@ const CryptoHomePage = () => {
                                     <span className="text-yellow-500">Live Update</span>
                                 </div>
 
-                                <Row className='mt-5 align-items-center'>
+                                <Row className='mt-5 align-items-center px-5'>
 
-                                    <Col md={1} className=''> #rank</Col>
+                                    <Col md={1} className=''> #</Col>
 
 
                                     <Col md={3} className='text-center' > Name</Col>
