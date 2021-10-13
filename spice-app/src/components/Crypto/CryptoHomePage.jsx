@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import MyNavBar from '../Feeds/MyNavBar'
-import SideBarRight from '../Feeds/SideBarRight'
+
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import AllCryptoMarket from './AllCryptoMarket'
 import Footer from '../Feeds/Footer'
-import Games from '../Feeds/Games'
+
 
 
 
@@ -17,7 +17,6 @@ const CryptoHomePage = () => {
         <div className='mx-5'>
 
             {
-
                 (<Container fluid>
                     <Row className='sticky-top '>
 
@@ -31,22 +30,41 @@ const CryptoHomePage = () => {
                                     <h3 className='text-center text-gray-300 mx-1'>Crypto Market  </h3>
                                     <span className="text-yellow-500">Live Update</span>
                                 </div>
+                                <Row>
+                                    <Col md={2}>
 
+                                    </Col>
+                                    <Col md={2}>
+
+                                    </Col>
+                                    <Col md={2}>
+
+                                    </Col><Col md={2}>
+
+                                    </Col><Col md={2}>
+
+                                    </Col><Col md={2}>
+
+                                    </Col><Col md={2}>
+
+                                    </Col>
+                                </Row>
                                 <Row className='mt-5 align-items-center px-5'>
 
                                     <Col md={1} className=''> #</Col>
 
+                                    <Col md={1} className='text-center'> </Col>
 
-                                    <Col md={3} className='text-center' > Name</Col>
+                                    <Col md={2} className='text-center' > Name</Col>
 
-                                    <Col md={2} className='text-center'>Price </Col>
+                                    <Col md={2} className='text-center'>Price (€) </Col>
 
 
-                                    <Col md={2} className='text-center'>lowest in 24h</Col>
+                                    <Col md={2} className='text-center'>Change in 24h% (€)</Col>
 
-                                    <Col md={2} className='text-center'>Market Cap</Col>
+                                    <Col md={2} className='text-center'>Market Cap (€)</Col>
 
-                                    <Col md={2} className='text-center'>Circulating Supply</Col>
+                                    <Col md={2} className='text-center'>Volume (€)</Col>
 
                                 </Row>
                             </div>
@@ -65,13 +83,13 @@ const CryptoHomePage = () => {
                             <div className=" sticky top-20  border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <AllCryptoMarket />
 
+                                <Footer />
 
                             </div>
                         </Col>
                         {/* <Col md={3} className='mx-auto'>
                             <div className=" sticky top-20  shadow-2xl flex flex-wrap border-blue-900 drop-shadow-2xl border-b-2 rounded " >
                                 <Games />
-                                <Footer />
 
                             </div>
                         </Col> */}

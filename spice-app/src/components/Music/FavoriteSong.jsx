@@ -30,7 +30,7 @@ const FavoriteSong = () => {
     }
 
     return (
-        <div className='flex mx-auto justify-center border-b border-t border-l border-pink-600 md:flex-col'>
+        <div className='flex mx-auto justify-center mb-5 border-b border-t border-l border-pink-600 md:flex-col'>
             <div className="flex text-gray-200 align-items-baseline px-3 mt-5 mx-auto">
 
                 <div className='hidden flex-wrap md:block'> <h6>My Favorite Songs</h6></div>
@@ -55,7 +55,7 @@ const FavoriteSong = () => {
                 }
             </div>
             <div className=' justify-center p-2  text-sm hidden md:block'>
-                {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...click to see more</button>)}
+                {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...see more</button>)}
             </div>
 
 
@@ -67,7 +67,7 @@ const FavoriteSong = () => {
                     <Modal.Header className='bg-gray-900' closeButton>
                         <Modal.Title className='text-gray-100 '>Favorite Songs</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className='bg-pink-600 '>
+                    <Modal.Body className='bg-pink-900 '>
                         {favoriteSongs.map((favoriteSong) => (
                             <>
 
