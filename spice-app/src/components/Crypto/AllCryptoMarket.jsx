@@ -29,7 +29,7 @@ const AllCryptoMarket = () => {
 
 
                 {
-                    allCryptoMarket.map(crypto => (
+                    allCryptoMarket?.map(crypto => (
                         // <Link to={ }>
 
                         <Row onClick={() => dispatch(getSingleCryptoDetails(crypto.id))} className='my-5 align-items-center border-b border-gray-800 hover:border-gray-500 hover:bg-gray-700 hover:text-gray-200 rounded-lg p-1'>
