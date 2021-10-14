@@ -106,7 +106,7 @@ const PostInputBar = () => {
                         controlId="exampleForm.ControlTextarea1"
                     >
                         <Form.Control
-                            className="text-area rounded-full"
+                            className="text-area"
                             as="textarea"
                             placeholder="Spice up your day!"
                             rows={4}
