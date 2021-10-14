@@ -31,7 +31,7 @@ const CryptoHomePage = () => {
                                     <h3 className='text-center text-gray-300 mx-1'>Crypto Market  </h3>
                                     <span className="text-yellow-500">Live Update</span>
                                 </div>
-                                <div><LiveCryptoWebSocket /> </div>
+                                {/* <div><LiveCryptoWebSocket /> </div> */}
                                 <Row className='mt-5 align-items-center px-5'>
 
                                     <Col md={1} className=''> #</Col>

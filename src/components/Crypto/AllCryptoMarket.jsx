@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchAllCryptoMarket, getSingleCryptoDetails } from '../../redux/actions'
 import { Card, Button, Spinner, Container, Row, Col, Modal } from 'react-bootstrap'
+import moment from 'moment'
+
 
 
 const AllCryptoMarket = () => {
@@ -11,12 +13,26 @@ const AllCryptoMarket = () => {
     const dispatch = useDispatch()
 
     const allCryptoMarket = useSelector(state => state.crypto.all_crypto_market)
+    const newObjKeys = allCryptoMarket.map((crypto, i, arr) => [crypto.current_price])
+    const single = newObjKeys.map((crypto, i, arr) => crypto)
+
+    // console.log(single)
+
+    const dateTimeAgo = moment().fromNow();
+    console.log(dateTimeAgo);
+    const cryptoPrice = allCryptoMarket.map(crypto => crypto.current_price)
+
+    const allCrypto = useSelector(state => state.crypto.all_crypto_market)
+    const btcLastPrice = allCrypto.find(crypto => crypto.id === "bitcoin")
+    const btcCurrentLastPrice = btcLastPrice.current_price
+    // console.log(btcCurrentLastPrice)
 
 
     // console.log(lastPrice)
 
     useEffect(() => {
         dispatch(fetchAllCryptoMarket())
+
     }, [])
 
 

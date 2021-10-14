@@ -1,61 +1,81 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 const LiveCryptoWebSocket = () => {
 
 
+
+
     const [btcPrice, setBTCPrice] = useState(null)
+    // const [btcLastPrice, setBTCLastPrice] = useState(null)
+
     const [ethPrice, setETHPrice] = useState(null)
     const [bnbPrice, setBNBPrice] = useState(null)
     const [adaPrice, setADAPrice] = useState(null)
     const [xrpPrice, setXRPPrice] = useState(null)
     const [solPrice, setSOLPrice] = useState(null)
 
+
+
+
+    // const [lastPrice, setLastPrice] = useState(null)
+
+    const btc = new WebSocket('wss://stream.binance.com:9443/ws/btceur@trade')
+    console.log(btc)
+
+    btc.onmessage = (event) => {
+        let cryptoStock = JSON.parse(event.data)
+        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
+
+        setBTCPrice(cryptoPrice)
+
+    }
+
+
+
+    const eth = new WebSocket('wss://stream.binance.com:9443/ws/etheur@trade')
+    eth.onmessage = (event) => {
+        let cryptoStock = JSON.parse(event.data)
+        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
+        setETHPrice(cryptoPrice)
+    }
+
+    const bnb = new WebSocket('wss://stream.binance.com:9443/ws/bnbeur@trade')
+    bnb.onmessage = (event) => {
+        let cryptoStock = JSON.parse(event.data)
+        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
+        setBNBPrice(cryptoPrice)
+    }
+
+    const ada = new WebSocket('wss://stream.binance.com:9443/ws/adaeur@trade')
+    ada.onmessage = (event) => {
+        let cryptoStock = JSON.parse(event.data)
+        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
+        setADAPrice(cryptoPrice)
+    }
+
+    const xrp = new WebSocket('wss://stream.binance.com:9443/ws/xrpeur@trade')
+    xrp.onmessage = (event) => {
+        let cryptoStock = JSON.parse(event.data)
+        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
+        setXRPPrice(cryptoPrice)
+    }
+
+    const sol = new WebSocket('wss://stream.binance.com:9443/ws/soleur@trade')
+    sol.onmessage = (event) => {
+        let cryptoStock = JSON.parse(event.data)
+        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
+        setSOLPrice(cryptoPrice)
+    }
+
+
+
     useEffect(() => {
-        const btc = new WebSocket('wss://stream.binance.com:9443/ws/btceur@trade')
-        btc.onmessage = (event) => {
-            let cryptoStock = JSON.parse(event.data)
-            let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-            setBTCPrice(cryptoPrice)
-        }
 
-        const eth = new WebSocket('wss://stream.binance.com:9443/ws/etheur@trade')
-        eth.onmessage = (event) => {
-            let cryptoStock = JSON.parse(event.data)
-            let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-            setETHPrice(cryptoPrice)
-        }
 
-        const bnb = new WebSocket('wss://stream.binance.com:9443/ws/bnbeur@trade')
-        bnb.onmessage = (event) => {
-            let cryptoStock = JSON.parse(event.data)
-            let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-            setBNBPrice(cryptoPrice)
-        }
-
-        const ada = new WebSocket('wss://stream.binance.com:9443/ws/adaeur@trade')
-        ada.onmessage = (event) => {
-            let cryptoStock = JSON.parse(event.data)
-            let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-            setADAPrice(cryptoPrice)
-        }
-
-        const xrp = new WebSocket('wss://stream.binance.com:9443/ws/xrpeur@trade')
-        xrp.onmessage = (event) => {
-            let cryptoStock = JSON.parse(event.data)
-            let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-            setXRPPrice(cryptoPrice)
-        }
-
-        const sol = new WebSocket('wss://stream.binance.com:9443/ws/soleur@trade')
-        sol.onmessage = (event) => {
-            let cryptoStock = JSON.parse(event.data)
-            let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-            setSOLPrice(cryptoPrice)
-        }
     }, [])
-
 
 
 
@@ -64,7 +84,7 @@ const LiveCryptoWebSocket = () => {
         <div className='text-gray-200 my-5'>
             <Row>
                 <Col md={2}>
-                    <div className='text-gray-200'>BTC {btcPrice}</div>
+                    {/* <div className='text-gray-200'>BTC <div className={!btcCurrentLastPrice || btcCurrentLastPrice === btcPrice ? "text-gray-200" : btcCurrentLastPrice > btcPrice ? "text-green-500" : "text-red-500"}>{btcPrice}</div></div> */}
                 </Col>
                 <Col md={2}>
                     <div className='text-gray-200'>ETH {ethPrice}</div>

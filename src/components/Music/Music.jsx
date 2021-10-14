@@ -31,7 +31,7 @@ const Music = () => {
 
                     <Row className=' '>
                         <Col md={2} className=' '>
-                            <div className="sticky top-40 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
+                            <div className="sticky top-40  shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
                                 {/* <SideBarLeft /> */}
 

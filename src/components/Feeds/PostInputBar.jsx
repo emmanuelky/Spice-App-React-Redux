@@ -5,12 +5,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns'
 import { useSelector, useDispatch, } from 'react-redux'
 import { fetchPosts, fetchUsers, addPosts, getCurrentUser } from '../../redux/actions'
-
+import moment from 'moment';
 
 const PostInputBar = () => {
 
     const [image, setImage] = useState("")
     const [url, setUrl] = useState("")
+    const [postDateTimeAgo, setPostDateTimeAgo] = useState(null)
+
 
 
 
@@ -53,10 +55,19 @@ const PostInputBar = () => {
     const ID = uuidv4()
     const currentDate = format(new Date(), 'HH:mm b')
 
+    const handleDateTimeAgo = () => {
+
+        return moment().startOf('hour').fromNow()
+        // setPostDateTimeAgo(moment().startOf('hour').fromNow());
+
+    }
+
+
+
 
     const sendNewPost = {
         id: ID,
-        createdAt: currentDate,
+        createdAt: handleDateTimeAgo(),
         text: message,
         postImage: url,
         likes: [],
@@ -80,6 +91,7 @@ const PostInputBar = () => {
             setMessage('')
             setImage('')
             dispatch(fetchPosts())
+            handleDateTimeAgo()
         }
     }
 
