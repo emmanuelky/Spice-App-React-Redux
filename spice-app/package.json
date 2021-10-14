@@ -38,6 +38,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "start_backend": "json-server --watch --port 4300 db.json",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
