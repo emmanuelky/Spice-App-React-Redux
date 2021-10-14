@@ -4,7 +4,7 @@ import { getMusicSearch, addCurrentSong, addFavoriteSong, removeFavoriteSong, ge
 import { Card, Button, Spinner, Container, Row, Col, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
-import { ImPlay2 } from "react-icons/im";
+import { ImMusic } from "react-icons/im";
 import { ImPause2 } from "react-icons/im";
 import { AiOutlineHeart } from "react-icons/ai";
 import { CgCloseR } from "react-icons/cg";
@@ -87,11 +87,11 @@ const MusicList = () => {
 
                                 <Col md={2} >
 
-                                    <button onClick={(e) => handleSongPlay(music, e)} className='text-blue-600 text-3xl cursor-pointer'>{<ImPlay2 />}</button>
+                                    <button onClick={(e) => handleSongPlay(music, e)} className='text-blue-600 text-xl cursor-pointer'>{<ImMusic />}</button>
                                 </Col>
                                 <Col md={2}>
 
-                                    <button onClick={(e) => toggleFavotiteSong(music, e)} className='text-2xl text-blue-100 cursor-pointer'>{songId?.find(s => s === music.id) ? <AiOutlineHeart className='bg-pink-600 rounded-full cursor-pointer' /> : <AiOutlineHeart className='cursor-pointer' />}</button>
+                                    <button onClick={(e) => toggleFavotiteSong(music, e)} className='text-2xl text-blue-100 cursor-pointer'>{songId?.find(s => s === music.id) ? <AiOutlineHeart className='bg-pink-600 rounded-full text-xl cursor-pointer' /> : <AiOutlineHeart className='cursor-pointer text-xl ' />}</button>
                                 </Col>
                                 <Col md={1}>
 
@@ -163,7 +163,7 @@ const MusicList = () => {
 
 
                                         <Col md={2} >
-                                            <button onClick={(e) => handleSongPlay(art, e)} className=" text-gray-100 cursor-pointer" ><ImPlay2 /></button>
+                                            <button onClick={(e) => handleSongPlay(art, e)} className=" text-gray-100 cursor-pointer" ><ImMusic /></button>
 
                                         </Col>
 

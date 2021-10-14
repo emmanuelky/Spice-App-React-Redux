@@ -8,6 +8,8 @@ import MyNavBar from '../Feeds/MyNavBar'
 import SideBarLeft from '../Feeds/SideBarLeft'
 import SideBarRight from '../Feeds/SideBarRight'
 import { Link } from 'react-router-dom'
+import Footer from '../Feeds/Footer'
+import CryptoNews from '../Crypto/CryptoNews'
 
 
 
@@ -54,33 +56,33 @@ const MovieDetails = () => {
                 (<Container fluid>
                     <Row className='sticky-top '>
 
-                        <div className="mb-5 " >
+                        <div className="mb-1 " >
                             <MyNavBar />
                         </div>
                     </Row>
 
                     <Row className=' '>
-                        <Col md={3} className=' '>
+                        {/* <Col md={} className=' '>
                             <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
                                 <SideBarLeft />
 
                             </div>
-                        </Col>
-                        <Col md={6}>
+                        </Col> */}
+                        <Col md={8}>
 
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
-                                <div className="flex flex-wrap justify-center my-5" >
+                                <div className="flex flex-wrap justify-center my-2" >
                                     {
                                         loading
                                             ? (<Spinner animation="border" variant="success" />)
                                             : (
                                                 <Card key={movieDetail[0]?.data.id} className=' mx-4 my-2  hover:border-purple-800 hover:text-gray-200 border-blue-600 border-b-2 hover:bg-blue-800 rounded-full' >
-                                                    <Card.Img variant="top" className="img-fluid" src={IMG_URL + movieDetail[0]?.data.poster_path} />
+                                                    <img variant="top" className="img-fluid " src={IMG_URL + movieDetail[0]?.data.backdrop_path} />
                                                     <Card.Body>
 
-                                                        <Card.Text className='text-center'>
-                                                            {movieDetail[0]?.data.character}
+                                                        <Card.Text className='text-center text-2xl'>
+                                                            {movieDetail[0]?.data.title}
                                                         </Card.Text>
 
                                                     </Card.Body>
@@ -89,6 +91,7 @@ const MovieDetails = () => {
 
                                     }
                                 </div>
+
                                 <div className='mt-4'>
                                     <h6 className='text-center text-gray-300'>Cast</h6>
 
@@ -106,6 +109,16 @@ const MovieDetails = () => {
 
                                     </Card>
                                 </div>
+
+                            </div>
+
+
+
+                        </Col>
+                        <Col md={4}>
+                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
+
+
 
 
                                 {
@@ -139,21 +152,20 @@ const MovieDetails = () => {
 
 
                                     </div>}
-                                <div className='flex justify-center mt-0 mb-4'>
+                                <div className='flex justify-center'>
 
                                     <Link to="/movies">
 
-                                        <div className="text-light text-lg p-2 align-self-center border-blue-600 border-b-2 border-t-2 hover:bg-blue-800 rounded-full">Back</div>
+                                        <div className="text-light text-lg p-2 align-self-center border-blue-600 border-b-2 border-t-2 hover:bg-blue-800 rounded-full">
+                                            Back
+                                        </div>
                                     </Link>
                                 </div>
-
-                            </div>
-
-                        </Col>
-                        <Col md={3}>
-                            <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
-
-                                <SideBarRight />
+                                <div className='my-5'>
+                                    <CryptoNews />
+                                    <Footer />
+                                </div>
+                                {/* <SideBarRight /> */}
 
                             </div>
                         </Col>

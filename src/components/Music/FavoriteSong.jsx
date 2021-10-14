@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineHeart } from "react-icons/ai";
-import { ImPlay2 } from "react-icons/im";
+import { ImMusic } from "react-icons/im";
 import { FcDislike } from "react-icons/fc";
 import { CgCloseR } from "react-icons/cg";
 import { Badge, Button, Modal, Container, Row, Col } from 'react-bootstrap'
@@ -55,7 +55,7 @@ const FavoriteSong = () => {
                 }
             </div>
             <div className=' justify-center p-2  text-sm hidden md:block'>
-                {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...see more</button>)}
+                {favoriteSongs.length > 4 && (<button onClick={handleShow} className="text-gray-300 bg-pink-600 rounded p-1 my-2 "> ...more</button>)}
             </div>
 
 
@@ -91,7 +91,7 @@ const FavoriteSong = () => {
                                         </Col>
 
                                         <Col md={2} >
-                                            <button onClick={(e) => handleSongPlay(favoriteSong, e)} className=" text-gray-100 cursor-pointer" ><ImPlay2 /></button>
+                                            <button onClick={(e) => handleSongPlay(favoriteSong, e)} className=" text-gray-100 cursor-pointer" ><ImMusic /></button>
 
                                         </Col>
                                         <Col md={2}>

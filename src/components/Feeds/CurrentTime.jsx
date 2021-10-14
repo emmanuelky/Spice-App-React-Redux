@@ -36,11 +36,11 @@ const CurrentTime = () => {
         timer()
     }, [timer])
     return (
-        <div className='flex flex-wrap'>
-            <span className='text-gray-300 text-sm mx-1 px-1 rounded-lg bg-indigo-900'><CgTime /></span>
+        <div className='flex flex-wrap justify-start mx-5 pt-3'>
             <div className='text-gray-300 text-xs mx-1 px-1 rounded-lg bg-indigo-900'>{moment().format('ll')}</div>
-            <div className='text-gray-300 text-xs mx-1 px-1 rounded-lg bg-indigo-900'><div>{cTime}</div></div>
 
+            <div className='text-gray-300 text-xs mx-1 px-1 flex rounded-lg bg-indigo-900'><div>{cTime}</div><CgTime /></div>
+            {/* <span className='text-gray-300 text-sm mx-1 px-1 rounded-lg bg-indigo-900'><CgTime /></span> */}
         </div>
     )
 }

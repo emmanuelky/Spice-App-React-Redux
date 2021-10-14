@@ -57,18 +57,18 @@ const Movies = () => {
 
                             </div>
                         </Col>
-                        <Col md={6}>
-                            <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
+                        <Col md={9}>
+                            <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded mx-2 shadow-2xl" >
                                 <MovieSearch />
                                 <MovieList />
                             </div>
                         </Col>
-                        <Col md={3}>
+                        {/* <Col md={3}>
                             <div className=" sticky top-40 shadow-2xl flex-wrap mx-1 bg-indigo-700 border-pink-900 drop-shadow-2xl border-b-2 rounded " >
 
                                 <SideBarRight />
                             </div>
-                        </Col>
+                        </Col> */}
                         {/* </div> */}
                     </Row>
 

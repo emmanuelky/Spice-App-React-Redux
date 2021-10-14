@@ -16,7 +16,7 @@ const CryptoNews = () => {
         <div className=" flex my-4 items-center justify-center md:flex-col">
             <Link to={`/crypto`}>
 
-                <div className='text-gray-200 mx-2'><button className='bg-blue-600 p-2 rounded text-sm'>Crypto? <span className='bg-yellow-400 p-1 text-black rounded-full px-2'>click!</span> </button></div>
+                <div className='text-gray-200 mx-2'><button className='bg-blue-600 p-2 rounded text-sm'>Crypto? <span className='bg-yellow-500 p-1 text-black rounded-full px-2'>click!</span> </button></div>
 
 
             </Link>

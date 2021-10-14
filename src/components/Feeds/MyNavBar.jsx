@@ -133,7 +133,7 @@ const MyNavBar = ({ history }) => {
                     </div>
                 </Row>
             </Container>
-            <div className="my-3"><CurrentTime /></div>
+            <div className=""><CurrentTime /></div>
         </>)
 }
 

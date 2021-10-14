@@ -13,22 +13,11 @@ const AllCryptoMarket = () => {
     const dispatch = useDispatch()
 
     const allCryptoMarket = useSelector(state => state.crypto.all_crypto_market)
-    const newObjKeys = allCryptoMarket.map((crypto, i, arr) => [crypto.current_price])
-    const single = newObjKeys.map((crypto, i, arr) => crypto)
 
-    // console.log(single)
 
     const dateTimeAgo = moment().fromNow();
     console.log(dateTimeAgo);
-    const cryptoPrice = allCryptoMarket.map(crypto => crypto.current_price)
 
-    const allCrypto = useSelector(state => state.crypto.all_crypto_market)
-    const btcLastPrice = allCrypto.find(crypto => crypto.id === "bitcoin")
-    const btcCurrentLastPrice = btcLastPrice.current_price
-    // console.log(btcCurrentLastPrice)
-
-
-    // console.log(lastPrice)
 
     useEffect(() => {
         dispatch(fetchAllCryptoMarket())
@@ -56,9 +45,9 @@ const AllCryptoMarket = () => {
 
                             <Col md={2}  ><div className="flex justify-evenly align-items-center"><div className=''>{crypto.name} </div><span className='text-gray-500'>{crypto.symbol.toUpperCase()}</span></div></Col>
 
-                            <Col md={2} className='text-center'>€{crypto.current_price.toLocaleString()}</Col>
+                            <Col md={2} className='text-center'>€{crypto.current_price}</Col>
 
-                            <Col md={2} className={crypto.price_change_percentage_24h > 0 ? 'text-red-600' : 'text-green-600'}>{crypto.price_change_percentage_24h.toLocaleString()}%</Col>
+                            <Col md={2} className={crypto.price_change_percentage_24h > 0 ? 'text-green-600' : 'text-red-600'}>{crypto.price_change_percentage_24h.toLocaleString()}%</Col>
 
                             <Col md={2} className='text-center'>€{crypto.market_cap.toLocaleString()}</Col>
 
