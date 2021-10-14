@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import AllCryptoMarket from './AllCryptoMarket'
 import Footer from '../Feeds/Footer'
+import LiveCryptoWebSocket from './LiveCryptoWebSocket'
 
 
 
@@ -30,25 +31,7 @@ const CryptoHomePage = () => {
                                     <h3 className='text-center text-gray-300 mx-1'>Crypto Market  </h3>
                                     <span className="text-yellow-500">Live Update</span>
                                 </div>
-                                <Row>
-                                    <Col md={2}>
-
-                                    </Col>
-                                    <Col md={2}>
-
-                                    </Col>
-                                    <Col md={2}>
-
-                                    </Col><Col md={2}>
-
-                                    </Col><Col md={2}>
-
-                                    </Col><Col md={2}>
-
-                                    </Col><Col md={2}>
-
-                                    </Col>
-                                </Row>
+                                <div><LiveCryptoWebSocket /> </div>
                                 <Row className='mt-5 align-items-center px-5'>
 
                                     <Col md={1} className=''> #</Col>

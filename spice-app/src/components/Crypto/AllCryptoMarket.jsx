@@ -6,21 +6,13 @@ import { Card, Button, Spinner, Container, Row, Col, Modal } from 'react-bootstr
 
 const AllCryptoMarket = () => {
 
-    const [lastPrice, setLastPrice] = useState(null)
+
 
     const dispatch = useDispatch()
 
     const allCryptoMarket = useSelector(state => state.crypto.all_crypto_market)
 
-    const ws = new WebSocket('wss://stream.binance.com:9443/ws/btceur@trade')
 
-
-
-    ws.onmessage = (event) => {
-        let cryptoStock = JSON.parse(event.data)
-        let cryptoPrice = parseFloat(cryptoStock.p).toLocaleString()
-        setLastPrice(cryptoPrice)
-    }
     // console.log(lastPrice)
 
     useEffect(() => {
@@ -34,7 +26,7 @@ const AllCryptoMarket = () => {
         <div className='text-gray-300   '>
             <Container fluid className='overflow-x-auto'>
 
-                <div className='text-gray-300'>{lastPrice}</div>
+
 
                 {
                     allCryptoMarket.map(crypto => (
