@@ -44,14 +44,20 @@ const FavoriteSong = () => {
 
             <div className='hidden md:block'>
                 {
-                    favoriteSongs.slice(0, 4).map((favoriteSong) => (
-                        <div key={favoriteSong.id} className="p-2  ' ">
+                    favoriteSongs.length === 0
+                        ? <Row>
 
-                            <span className="bg-gradient-to-tr from-green-800 via-blue-800 to-purple-800 rounded-full p-1  text-xs text-gray-300 ">{favoriteSong.title_short}</span>
+                            <div className='text-gray-200 text-center'><span>  empty list</span> </div>
+                        </Row>
+
+                        : favoriteSongs.slice(0, 4).map((favoriteSong) => (
+                            <div key={favoriteSong.id} className="p-2  ' ">
+
+                                <span className="bg-gradient-to-tr from-green-800 via-blue-800 to-purple-800 rounded-full p-1  text-xs text-gray-300 ">{favoriteSong.title_short}</span>
 
 
-                        </div>
-                    ))
+                            </div>
+                        ))
                 }
             </div>
             <div className=' justify-center p-2  text-sm hidden md:block'>
@@ -68,41 +74,50 @@ const FavoriteSong = () => {
                         <Modal.Title className='text-gray-100 '>Favorite Songs</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='bg-pink-900 '>
-                        {favoriteSongs.map((favoriteSong) => (
-                            <>
 
-                                <Container fluid key={favoriteSong.id}>
-                                    <Row className="p-2 flex justify-between align-items-center border-b border-gray-500 ">
+                        <Container fluid >
+                            {
+                                favoriteSongs.length === 0
+                                    ? <Row>
 
-                                        <Col md={2}>
-                                            <img className='w-10 h-10 rounded-full ' src={favoriteSong.artist.picture} alt="" />
-
-
-                                        </Col>
-                                        <Col md={3}>
-                                            <span className=" rounded-full p-1  text-xs text-gray-300 ">{favoriteSong.title_short}</span>
-
-
-                                        </Col>
-                                        <Col md={3}>
-                                            <span className=" rounded-full p-1  text-xs text-gray-300 ">{favoriteSong.artist.name}</span>
-
-
-                                        </Col>
-
-                                        <Col md={2} >
-                                            <button onClick={(e) => handleSongPlay(favoriteSong, e)} className=" text-gray-100 cursor-pointer" ><ImMusic /></button>
-
-                                        </Col>
-                                        <Col md={2}>
-                                            <button onClick={() => dispatch(removeFavoriteSong(favoriteSong.id))} className='bg-white rounded-full p-1'><FcDislike /></button>
-                                        </Col>
-
-
+                                        <div className='text-gray-200 text-center'><span>  empty list</span> </div>
                                     </Row>
 
-                                </Container>
-                            </>))}
+                                    : favoriteSongs.map((favoriteSong) => (
+                                        <>
+
+                                            <Row key={favoriteSong.id} className="p-2 flex justify-between align-items-center border-b border-gray-500 ">
+
+                                                <Col md={2}>
+                                                    <img className='w-10 h-10 rounded-full ' src={favoriteSong.artist.picture} alt="" />
+
+
+                                                </Col>
+                                                <Col md={3}>
+                                                    <span className=" rounded-full p-1  text-xs text-gray-300 ">{favoriteSong.title_short}</span>
+
+
+                                                </Col>
+                                                <Col md={3}>
+                                                    <span className=" rounded-full p-1  text-xs text-gray-300 ">{favoriteSong.artist.name}</span>
+
+
+                                                </Col>
+
+                                                <Col md={2} >
+                                                    <button onClick={(e) => handleSongPlay(favoriteSong, e)} className=" text-gray-100 cursor-pointer" ><ImMusic /></button>
+
+                                                </Col>
+                                                <Col md={2}>
+                                                    <button onClick={() => dispatch(removeFavoriteSong(favoriteSong.id))} className='bg-white rounded-full p-1'><FcDislike /></button>
+                                                </Col>
+
+
+                                            </Row>
+
+                                        </>))
+                            }
+                        </Container>
                     </Modal.Body>
                     <Modal.Footer className='bg-gray-900'>
                         <Button variant="dark" onClick={handleClose}>

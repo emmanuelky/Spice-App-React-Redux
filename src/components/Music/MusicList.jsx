@@ -27,7 +27,7 @@ const MusicList = () => {
     const musicList = useSelector(state => state.music.music_lists)
 
     const artist = useSelector(state => state.music.artist_details)
-    console.log(artist)
+    // console.log(artist)
 
 
     const loading = useSelector(state => state.music.loading)
@@ -135,11 +135,11 @@ const MusicList = () => {
                             <Card className='mx-auto bg-black text-gray-200'>
                                 <Card.Img variant="top" className='img-fluid' src={musicList[0]?.data.data[0]?.artist?.picture_big} />
                                 <Card.Body>
-                                    <Card.Title >{musicList[0]?.data.data[0]?.artist?.name} </Card.Title>
-                                    <Card.Text className='my-4'>
+                                    <Card.Title className='text-center' >{musicList[0]?.data.data[0]?.artist?.name} </Card.Title>
+                                    <Card.Text className='my-4 text-center'>
                                         Album Title - {artist[0]?.data.data[0]?.album?.title}
                                     </Card.Text>
-                                    <Card.Text>
+                                    <Card.Text className=''>
                                         Tracks:
 
                                     </Card.Text>
@@ -149,24 +149,14 @@ const MusicList = () => {
                         {artist[0]?.data.data.map((art) => (
                             <>
 
-                                <Container fluid key={art.id}>
+                                <Container fluid key={art.id} className=''>
 
 
 
-                                    <Row className="p-2 flex justify-between mt-0 align-items-center border-b border-gray-500 ">
-
-                                        <Col md={3}>
-                                            <span className=" rounded-full p-1  text-xs text-gray-300 ">{art.title_short}</span>
+                                    <Row className="p-2 flex justify-center mt-0 align-items-center border-b border-gray-500 ">
 
 
-                                        </Col>
-
-
-                                        <Col md={2} >
-                                            <button onClick={(e) => handleSongPlay(art, e)} className=" text-gray-100 cursor-pointer" ><ImMusic /></button>
-
-                                        </Col>
-
+                                        <span className=" rounded-full p-1  text-xs text-gray-300 ">{art.title_short}</span>
 
 
                                     </Row>

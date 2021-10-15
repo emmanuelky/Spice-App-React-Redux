@@ -1,7 +1,7 @@
 import React from 'react'
 import CryptoNews from '../Crypto/CryptoNews'
 import Footer from './Footer'
-import Games from './Games'
+import Games from '../Games/Games'
 
 
 const SideBarLeft = () => {

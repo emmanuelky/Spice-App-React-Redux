@@ -55,7 +55,7 @@ const FollowNewUsers = () => {
                             <div key={user.id}>
                                 <div className={followerUserId?.includes(user.id) ? 'hidden' : ' md:text-xs md:flex-col  relative  '}>
                                     <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl  '></div>
-                                    <div className='flex justify-between bg-gray-900  align-items-center rounded-lg  border-1 border-blue-600  text-center text-gray-300  leading-none p-2 relative  '>
+                                    <div className='flex justify-between bg-gray-900  align-items-center rounded-lg  border-1 border-indigo-600  text-center text-gray-300  leading-none p-2 relative  '>
                                         <Col md={3}>
                                             <div className=' cursor-pointer'><img className='h-10 w-10 rounded-full ' src={user.image} alt="" /></div>
                                         </Col>
