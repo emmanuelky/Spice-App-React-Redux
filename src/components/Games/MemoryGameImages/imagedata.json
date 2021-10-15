@@ -2,51 +2,63 @@
     "images": [
         {
             "id": "1",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634194717/gufbwzza4j6vo2patum6.jpg"
-        },
-        {
-            "id": "1",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634194717/gufbwzza4j6vo2patum6.jpg"
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634194717/gufbwzza4j6vo2patum6.jpg",
+            "name": "image1"
         },
         {
             "id": "2",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634198648/chlcf5cvr6yiagkduhms.jpg"
-        },
-        {
-            "id": "2",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634198648/chlcf5cvr6yiagkduhms.jpg"
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634194717/gufbwzza4j6vo2patum6.jpg",
+            "name": "image1"
         },
         {
             "id": "3",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634184202/l8gpud4dbufa9ze7o8ws.jpg"
-        },
-        {
-            "id": "3",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634184202/l8gpud4dbufa9ze7o8ws.jpg"
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634198648/chlcf5cvr6yiagkduhms.jpg",
+            "name": "image2"
         },
         {
             "id": "4",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634186688/pvikkbbp1fz2rkkmlfiw.jpg"
-        },
-        {
-            "id": "4",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634186688/pvikkbbp1fz2rkkmlfiw.jpg"
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634198648/chlcf5cvr6yiagkduhms.jpg",
+            "name": "image2"
         },
         {
             "id": "5",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634180582/zuj0vsrduel3aueg7ldi.jpg"
-        },
-        {
-            "id": "5",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634180582/zuj0vsrduel3aueg7ldi.jpgg"
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634184202/l8gpud4dbufa9ze7o8ws.jpg",
+            "name": "image3"
         },
         {
             "id": "6",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634042031/ovbj68ldbnad7wzcardb.jpg"
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634184202/l8gpud4dbufa9ze7o8ws.jpg",
+            "name": "image3"
         },
         {
-            "id": "6",
-            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634042031/ovbj68ldbnad7wzcardb.jpg"
+            "id": "7",
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634186688/pvikkbbp1fz2rkkmlfiw.jpg",
+            "name": "image4"
+        },
+        {
+            "id": "8",
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634186688/pvikkbbp1fz2rkkmlfiw.jpg",
+            "name": "image4"
+        },
+        {
+            "id": "9",
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634180582/zuj0vsrduel3aueg7ldi.jpg",
+            "name": "image5"
+        },
+        {
+            "id": "10",
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634180582/zuj0vsrduel3aueg7ldi.jpg",
+            "name": "image5"
+        },
+        {
+            "id": "11",
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634042031/ovbj68ldbnad7wzcardb.jpg",
+            "name": "image6"
+        },
+        {
+            "id": "12",
+            "image": "https://res.cloudinary.com/emmanuelky/image/upload/v1634042031/ovbj68ldbnad7wzcardb.jpg",
+            "name": "image6"
         }
     ]
 }

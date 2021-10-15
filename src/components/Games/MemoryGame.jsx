@@ -9,25 +9,27 @@ const MemoryGame = () => {
 
     useEffect(() => {
         setAllImages(cardImages)
+
     }, [])
 
     console.log(allImages)
 
     return (
-        <Container fluid>
+        <div className="flex flex-wrap">
             {
-                allImages?.images?.map((image) => (
-                    <Row>
-                        <Col md={2} className='border rounded-lg'>
-                            <div><img src={image.image} alt="" /></div>
-                        </Col>
+                allImages?.images?.sort((a, b) => 0.5 - Math.random()).map((image) => (
+                    <>
+                        <div className='flex border rounded-lg'>
 
-                    </Row>
-                ))
+                            <img className='w-20 h-20' src={image.image} alt="" />
+
+
+                        </div>
+                    </>))
             }
+        </div>
 
 
-        </Container>
     )
 }
 
