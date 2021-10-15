@@ -48,7 +48,7 @@ const MyNavBar = ({ history }) => {
                             <Col md={3}>
 
                                 <Link to="/">
-                                    <Navbar className="text-light align-self-center text-5xl border-gray-800 border-l-2 border-b-2 border-t-2 p-2"><img className="w-50 h-50" src={logo} alt="" /> </Navbar>
+                                    <Navbar className="text-light align-self-center text-5xl p-2"><img className="w-50 h-50" src={logo} alt="" /> </Navbar>
                                 </Link>
                             </Col>
                             <Col md={9}>

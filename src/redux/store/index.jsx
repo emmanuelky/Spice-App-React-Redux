@@ -30,6 +30,7 @@ export const initialState = {
         getcurrentuser: {},
         loading: false,
         following: [],
+        // toggle_dark_or_light_theme: null,
         // unfollowing_user_list: [],
     },
     movies: {

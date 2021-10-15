@@ -1,3 +1,4 @@
+
 import HomePage from './components/Feeds/HomePage'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ProfilePage from './components/Feeds/ProfilePage';
@@ -10,7 +11,13 @@ import CryptoHomePage from './components/Crypto/CryptoHomePage';
 
 
 
+
 function App() {
+
+
+
+
+
   return (
     <Router>
 

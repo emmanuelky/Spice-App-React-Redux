@@ -28,6 +28,13 @@ export const usersReducer = (state = initialState.users, action) => {
                 getcurrentuser: action.payload,
             }
 
+        // case ' TOGGLE_DARK_OR_LIGHT_THEME':
+        //     return {
+        //         ...state,
+        //         toggle_dark_or_light_theme: !action.payload,
+        //     }
+
+
         case "LOADING":
             return {
                 ...state,

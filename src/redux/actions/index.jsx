@@ -140,6 +140,17 @@ export const getCurrentUser = () => {
     }
 }
 
+
+// export const toggleDarkLightTheme = () => {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: ' TOGGLE_DARK_OR_LIGHT_THEME',
+//             payload: false
+//         })
+//     }
+// }
+
+
 export const addLikes = (likes) => {
     return (dispatch, getState) => {
         dispatch({
