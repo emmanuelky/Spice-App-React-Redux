@@ -17,7 +17,7 @@ const Player = () => {
 
     return (
         <div className='relative'>
-            <div className='absolute fixed-bottom flex justify-center bg-pink-800 align-items-center py-2 rounded-full' >
+            <div className='absolute fixed-bottom flex justify-center opacity-80 bg-pink-800 align-items-center py-1 rounded-full' >
 
 
                 {/* <ReactPlayer url={currentSong?.preview}
@@ -32,7 +32,7 @@ const Player = () => {
                 /> */}
 
                 <div className='flex align-items-center'>
-                    <img className="h-20 w-20 rounded-full mx-2" src={currentSong?.artist.picture} alt="" />
+                    <img className="h-10 w-10 rounded-full mx-2" src={currentSong?.artist.picture} alt="" />
                     <div className='flex flex-col mx-2'>
                         <h6 className='mx-1 text-gray-200'>{currentSong?.title_short}</h6>
                         <span className='mx-auto text-sm text-gray-200'><i>{currentSong?.artist.name}</i></span>

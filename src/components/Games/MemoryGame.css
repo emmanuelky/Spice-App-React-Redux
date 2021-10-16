@@ -1,0 +1,50 @@
+.image-card {
+    height: 100px;
+    width: 100px;
+    border-radius: 2px;
+    background: #000;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  .image-card.flipped .inner {
+    transform: rotateY(180deg);
+  }
+  
+  .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+  }
+  
+  .image-card .front,
+  .image-card .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .image-card .front {
+    transform: rotateY(180deg);
+  }
+  
+  .image-card .back {
+    font-size: 100px;
+    transition: 0.3s ease all;
+  }
+  
+  .image-card .back:hover {
+    transform: scale(1.02);
+  }
+  

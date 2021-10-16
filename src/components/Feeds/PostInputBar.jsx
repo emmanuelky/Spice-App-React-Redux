@@ -29,7 +29,7 @@ const PostInputBar = () => {
         })
             .then(resp => resp.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setUrl(data.url)
 
             })

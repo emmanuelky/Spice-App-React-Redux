@@ -468,3 +468,25 @@ export const getSingleCryptoDetails = (id) => {
     }
 }
 
+
+
+
+
+
+export const selectedCardImage = (cardImage) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'SELECTED_GAME_IMAGE',
+            payload: cardImage
+        })
+    }
+}
+
+export const imageVisibility = () => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'VISIBLE_IMAGE',
+            payload: false
+        })
+    }
+}
