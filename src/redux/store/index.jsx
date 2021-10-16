@@ -57,8 +57,6 @@ export const initialState = {
     }
 }
 
-
-
 const persistConfig = {
     key: 'root',
     storage,

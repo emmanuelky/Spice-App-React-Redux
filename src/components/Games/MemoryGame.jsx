@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
 import allCardImages from '../Games/MemoryGameImages/imagedata.json'
 import { selectedCardImage, imageVisibility } from '../../redux/actions'
 import { useSelector, useDispatch } from 'react-redux'
@@ -14,11 +13,10 @@ const MemoryGame = () => {
     const [matched, setMatched] = useState([]);
 
 
-    // const allImages = [...cardImages?.images, ...cardImages?.images];
 
     useEffect(() => {
         shuffle(cardImages)
-    }, [])
+    }, [cardImages.length])
 
     function flipCard(index) {
         setOpenedCard((opened) => [...opened, index]);
@@ -80,12 +78,12 @@ const MemoryGame = () => {
                 })}
             </div>
 
-            <div className='text-center my-5'>
+            <div className='text-center'>
                 {cardImages.length === 0
                     ?
-                    <button onClick={() => handLoadImage()} className="text-gray-200 bg-indigo-900 text-xl p-2 rounded-lg">START GAME</button>
+                    <button onClick={() => handLoadImage()} className="text-gray-200 bg-indigo-900 text-xl my-5 p-2 rounded-lg">START GAME</button>
                     :
-                    <button onClick={() => handleGameReset()} className="text-gray-200 bg-red-600 text-xl p-2 rounded-lg">End GAME</button>
+                    <button onClick={() => handleGameReset()} className="text-gray-200 bg-red-600 text-xl my-2 p-2 rounded-lg">END GAME</button>
                 }
             </div>
         </>
