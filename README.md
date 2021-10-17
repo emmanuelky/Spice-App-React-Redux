@@ -1,4 +1,6 @@
+
 https://www.loom.com/share/72643c5bedf24c4ab0368f8d2f0a7bf0
+
 
 Stack Used: React, Redux, Javascript, Tailwindcss, HTML5, CSS3.
 
