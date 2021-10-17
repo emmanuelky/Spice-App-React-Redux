@@ -10,6 +10,7 @@ import SideBarRight from '../Feeds/SideBarRight'
 import { Link } from 'react-router-dom'
 import Footer from '../Feeds/Footer'
 import CryptoNews from '../Crypto/CryptoNews'
+import Player from '../Music/Player'
 
 
 
@@ -113,7 +114,7 @@ const MovieDetails = () => {
                             </div>
 
 
-
+                            <Player />
                         </Col>
                         <Col md={4}>
                             <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >

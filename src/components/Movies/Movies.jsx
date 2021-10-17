@@ -15,6 +15,7 @@ import CrytoNews from '../Crypto/CryptoNews'
 import FollowNewUsers from '../Feeds/FollowNewUsers'
 
 import MovieCatalog from './MovieCatalog'
+import Player from '../Music/Player'
 
 
 
@@ -61,6 +62,7 @@ const Movies = () => {
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded mx-2 shadow-2xl" >
                                 <MovieSearch />
                                 <MovieList />
+                                <Player />
                             </div>
                         </Col>
                         {/* <Col md={3}>

@@ -55,19 +55,19 @@ const PostInputBar = () => {
     const ID = uuidv4()
     const currentDate = format(new Date(), 'HH:mm b')
 
-    const handleDateTimeAgo = () => {
+    // const handleDateTimeAgo = () => {
 
-        return moment().startOf('hour').fromNow()
-        // setPostDateTimeAgo(moment().startOf('hour').fromNow());
+    //     return moment().startOf('hour').fromNow()
+    //     setPostDateTimeAgo(moment().startOf('hour').fromNow());
 
-    }
+    // }
 
 
 
 
     const sendNewPost = {
         id: ID,
-        createdAt: handleDateTimeAgo(),
+        createdAt: currentDate,
         text: message,
         postImage: url,
         likes: [],
@@ -91,7 +91,7 @@ const PostInputBar = () => {
             setMessage('')
             setImage('')
             dispatch(fetchPosts())
-            handleDateTimeAgo()
+            // handleDateTimeAgo()
         }
     }
 

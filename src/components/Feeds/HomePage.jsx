@@ -6,6 +6,7 @@ import Feeds from './Feeds'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { useSelector, useDispatch } from 'react-redux'
+import Player from '../Music/Player'
 
 
 
@@ -38,7 +39,7 @@ const HomePage = () => {
                             <div className=" border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <Feeds />
 
-
+                                <Player />
                             </div>
                         </Col>
                         <Col md={3}>

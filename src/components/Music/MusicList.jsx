@@ -15,6 +15,8 @@ import { CgCloseR } from "react-icons/cg";
 
 
 
+
+
 const MusicList = () => {
 
     const [show, setShow] = useState(false);
@@ -45,6 +47,7 @@ const MusicList = () => {
         console.log(song.id, e)
         if (song) {
             dispatch(addCurrentSong(song))
+
         }
 
     }

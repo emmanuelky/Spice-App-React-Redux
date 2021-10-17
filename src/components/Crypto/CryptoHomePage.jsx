@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import AllCryptoMarket from './AllCryptoMarket'
 import Footer from '../Feeds/Footer'
 import LiveCryptoWebSocket from './LiveCryptoWebSocket'
+import Player from '../Music/Player'
 
 
 
@@ -67,7 +68,7 @@ const CryptoHomePage = () => {
                                 <AllCryptoMarket />
 
                                 <Footer />
-
+                                <Player />
                             </div>
                         </Col>
                         {/* <Col md={3} className='mx-auto'>
