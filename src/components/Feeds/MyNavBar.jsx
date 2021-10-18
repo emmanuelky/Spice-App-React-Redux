@@ -17,7 +17,7 @@ const MyNavBar = ({ history }) => {
     const dispatch = useDispatch()
 
     const currentUser = useSelector(state => state.users.getcurrentuser)
-    const currentUserObj = Object.keys(currentUser).length
+    const currentUserObjLength = Object.keys(currentUser).length
     // console.log(currentUser.following)
 
 
@@ -35,7 +35,7 @@ const MyNavBar = ({ history }) => {
     }, [])
 
     // const checkLoginUser = () => {
-    //     currentUserObj < 0 ? (history.push('/login')) : history.push('/')
+    //     currentUserObjLength < 0 ? (history.push('/login')) : history.push('/')
     // }
     // checkLoginUser()
 
@@ -91,19 +91,19 @@ const MyNavBar = ({ history }) => {
                                         <Nav.Link className="text-light text-xs align-self-center ">
                                             <div className='flex bg-gray-200 rounded-full  px-1 border-blue-600 border-b-2'>
                                                 <div className='align-self-center p-1 text-xs mx-2 '>
-                                                    <Link to='/profile'>
-                                                        {<img className=" w-5 h-5 rounded-full" src={currentUserObj > 0 ? currentUser?.image : (history.push('/login'))} alt="" />}
-                                                        <span className='no-underline'>{currentUserObj > 0 ? currentUser?.firstName : (history.push('/login'))}</span>
+                                                    <Link to={`/profile/${currentUser.id}`}>
+                                                        {<img className=" w-5 h-5 rounded-full" src={currentUserObjLength > 0 ? currentUser?.image : (history.push('/login'))} alt="" />}
+                                                        <span className='no-underline'>{currentUserObjLength > 0 ? currentUser?.firstName : (history.push('/login'))}</span>
                                                     </Link>
                                                 </div>
                                                 <div className='align-self-center '>
                                                     <NavDropdown title="" id="basic-nav-dropdown" className="text-light align-self-center text-purple-50">
-                                                        <Link to='/profile'>
+                                                        <Link to={`/profile/${currentUser.id}`}>
                                                             <NavDropdown.Item href="#action/3.1" >Profile</NavDropdown.Item>
+                                                            <NavDropdown.Item href="#action/3.2"  >Following {`(${totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0})`}</NavDropdown.Item>
+                                                            {/* <NavDropdown.Item href="#action/3.2"  >Unfollowing {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</NavDropdown.Item> */}
+                                                            <NavDropdown.Item href="#action/3.3">Followers</NavDropdown.Item>
                                                         </Link>
-                                                        <NavDropdown.Item href="#action/3.2"  >Following {`(${totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0})`}</NavDropdown.Item>
-                                                        {/* <NavDropdown.Item href="#action/3.2"  >Unfollowing {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</NavDropdown.Item> */}
-                                                        <NavDropdown.Item href="#action/3.3">Followers</NavDropdown.Item>
                                                         <NavDropdown.Divider />
                                                         <Link to='/login'>
                                                             <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
@@ -115,9 +115,14 @@ const MyNavBar = ({ history }) => {
                                         </Nav.Link>
 
                                         <Nav.Link className="text-light text-xs align-self-center"></Nav.Link>
-                                        <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-green-900 border-b-2 rounded-full hover:bg-blue-800">Following  <Badge className=" bg-blue-600"> {totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0}</Badge> </Nav.Link>
-                                        {/* <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Unfollowing  {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</Nav.Link> */}
-                                        <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-green-900 border-b-2 rounded-full hover:bg-blue-800">Followers <Badge className=" bg-blue-600"> 0 </Badge></Nav.Link>
+                                        <Link to={`/profile/${currentUser.id}`}>
+                                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-green-900 border-b-2 rounded-full hover:bg-blue-800">Following  <Badge className=" bg-blue-600"> {totalNumOfMyFollowers > 0 ? totalNumOfMyFollowers : 0}</Badge> </Nav.Link>
+                                        </Link>
+                                        <Link to={`/profile/${currentUser.id}`}>
+
+                                            {/* <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-blue-600 border-b-2 rounded-full hover:bg-blue-800">Unfollowing  {`(${totalNumOfUnfollowingUsers > 0 ? totalNumOfUnfollowingUsers : 0})`}</Nav.Link> */}
+                                            <Nav.Link href="/profile" className="mx-1 text-light text-xs align-self-center border-green-900 border-b-2 rounded-full hover:bg-blue-800">Followers <Badge className=" bg-blue-600"> 0 </Badge></Nav.Link>
+                                        </Link>
                                         <Nav.Link>
                                             <div className='mb-10 border-b-2 block md:hidden  border-gray-600'>
                                                 <Footer />
