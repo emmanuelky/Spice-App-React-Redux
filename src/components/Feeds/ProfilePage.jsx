@@ -11,14 +11,18 @@ const ProfilePage = () => {
 
     const allUsers = useSelector(state => state.users.users)
     const currentUser = useSelector(state => state.users.getcurrentuser)
+    const allPosts = useSelector(state => state.posts.posts)
+
 
     const { id } = useParams()
 
     const userProfile = allUsers.find(user => user.id === id)
 
+    const userPostImages = allPosts.filter(post => post.user.id === id)
 
 
-    console.log(allUsers)
+
+    console.log(userPostImages)
 
     return (
         <>
@@ -35,18 +39,11 @@ const ProfilePage = () => {
                         </Row>
 
                         <Row className=' justify-center '>
-                            <Col md={3} className=' '>
-                                <div className="sticky top-40 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
-                                    <h5 className='text-center text-gray-200 py-5'>Uploaded Images</h5>
 
-
-
-                                </div>
-                            </Col>
 
                             <Col md={6}>
-                                <div className=" border-blue-600 drop-shadow-2xl border-l-2 border-r-2 rounded my-2 mx-2 shadow-2xl" >
-                                    <h3 className='text-center text-gray-200 py-5 underline'>User Profile</h3>
+                                <div className=" border-blue-600 drop-shadow-2xl border-l-2 border-r-2 rounded my-2 px-4 shadow-2xl" >
+                                    <h3 className='text-center text-gray-200 py-5'>Profile</h3>
                                     <div className='flex flex-wrap justify-around '>
                                         <div className=" my-2" ><img src={userProfile.image} className="rounded-full w-80 h-80" alt="" /></div>
 
@@ -55,21 +52,43 @@ const ProfilePage = () => {
                                             <div>Email: {userProfile.email}</div>
                                             <div>Location: {userProfile.city}</div>
                                         </div>
+
+
+                                    </div>
+                                    <div className='flex flex-wrap justify-around mx-auto my-4 py-3'>
+                                        <span className='text-center text-gray-200'>Following</span>
+                                        <span className='text-center text-gray-200'>Liked Songs</span>
                                     </div>
 
                                     {/* <Player /> */}
                                 </div>
                             </Col>
-                            <Col md={3}>
-                                <div className=" sticky top-40 shadow-2xl flex flex-wrap flex-col mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
+                            <Col md={6} className=' '>
+                                <div className="sticky top-40 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
+                                    <h5 className='text-center text-gray-200 py-5'>My Photos</h5>
 
-                                    <h5 className='text-center text-gray-200 py-5'>Liked Songs</h5>
-                                    <h5 className='text-center text-gray-200 py-5'>Following</h5>
+                                    <div className='flex flex-wrap'>
+                                        {
+                                            userPostImages.map(post => (
 
+                                                <div><img className='w-20 h-20 mx-2 rounded-lg my-1' src={post.postImage} alt="" /></div>
+                                            ))
+
+                                        }
+                                    </div>
 
                                 </div>
                             </Col>
-                            {/* </div> */}
+
+                            {/* <Col md={1} className=' '>
+                                <div className="sticky top-40 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
+                                    <h5 className='text-center text-gray-200 py-5'></h5>
+
+
+
+                                </div>
+                            </Col> */}
+
                         </Row>
 
                     </Container>)}
