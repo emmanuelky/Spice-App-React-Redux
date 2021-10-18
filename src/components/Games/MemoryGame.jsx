@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import allCardImages from '../Games/MemoryGameImages/imagedata.json'
-import { selectedCardImage, imageVisibility } from '../../redux/actions'
+import { selectedCardImage, imageVisibility, memoryGameTotalScore } from '../../redux/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { shuffle } from 'lodash'
 import { ImImages } from 'react-icons/im'
@@ -12,7 +12,7 @@ const MemoryGame = () => {
     const [openedCard, setOpenedCard] = useState([]);
     const [matched, setMatched] = useState([]);
 
-
+    const dispatch = useDispatch()
 
     useEffect(() => {
         shuffle(cardImages)
@@ -24,6 +24,7 @@ const MemoryGame = () => {
 
     const handLoadImage = () => {
         setCardImages([...allCardImages?.images, ...allCardImages?.images])
+        dispatch(memoryGameTotalScore([]))
 
     }
 
@@ -31,11 +32,20 @@ const MemoryGame = () => {
         setCardImages([])
         setOpenedCard([])
         setMatched([])
-
+        dispatch(memoryGameTotalScore([]))
 
     }
 
+    let counter = 0
+    const gameScore = matched?.map((matched, index) => index + 1 ? counter + 5 : counter)
+
+    console.log(matched.length)
+
+    console.log(gameScore)
+
     useEffect(() => {
+
+
         if (openedCard < 2) return;
 
         const firstMatched = cardImages[openedCard[0]];
@@ -46,7 +56,16 @@ const MemoryGame = () => {
         }
 
         if (openedCard.length === 2) setTimeout(() => setOpenedCard([]), 1000);
+
+
+        dispatch(memoryGameTotalScore(gameScore))
+
+
+
     }, [openedCard]);
+
+
+
 
     return (
         <>

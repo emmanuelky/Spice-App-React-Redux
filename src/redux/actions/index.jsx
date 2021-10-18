@@ -473,11 +473,11 @@ export const getSingleCryptoDetails = (id) => {
 
 
 
-export const selectedCardImage = (cardImage) => {
+export const memoryGameTotalScore = (score) => {
     return (dispatch, getState) => {
         dispatch({
-            type: 'SELECTED_GAME_IMAGE',
-            payload: cardImage
+            type: 'MEMORY_GAME_SCORE',
+            payload: score
         })
     }
 }

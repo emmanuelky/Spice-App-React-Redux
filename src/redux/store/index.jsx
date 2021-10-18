@@ -52,7 +52,7 @@ export const initialState = {
         single_crypto_detail: {},
     },
     games: {
-        selected_card_images: [],
+        memory_game_total_score: [],
         visible: null,
     }
 }
