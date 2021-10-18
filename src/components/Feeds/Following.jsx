@@ -4,6 +4,8 @@ import { IoMdRemoveCircleOutline } from "react-icons/io";
 import { useSelector, useDispatch } from 'react-redux'
 import { addUser, addUnfollowingUserBackToUsersList, removeFromFollowingList } from '../../redux/actions'
 import { Container, Row, Col, Spinner } from 'react-bootstrap'
+import { Link, withRouter } from 'react-router-dom'
+
 
 
 
@@ -49,7 +51,10 @@ const Following = () => {
                                     <div className='absolute -inset-0.5 opacity-50 bg-blue-600 rounded-lg blur-xl  '></div>
                                     <div className='flex justify-between bg-gray-900 rounded-lg align-items-center  border-1 border-indigo-600  text-center text-gray-300 leading-none p-2 relative  '>
                                         <Col md={3}>
-                                            <div className=' cursor-pointer'><img className='h-10 w-10 rounded-full ' src={user.image} alt="" /></div>
+                                            <Link to={`/profile/${user.id}`}>
+
+                                                <div className=' cursor-pointer'><img className='h-10 w-10 rounded-full ' src={user.image} alt="" /></div>
+                                            </Link>
                                         </Col>
                                         <Col md={3}>
                                             <div className=' cursor-pointer text-sm'><span className=' '>{user.firstName}</span></div>
@@ -71,4 +76,4 @@ const Following = () => {
     )
 }
 
-export default Following
+export default withRouter(Following)
