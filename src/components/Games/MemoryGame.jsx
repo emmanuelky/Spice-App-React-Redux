@@ -5,12 +5,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { shuffle } from 'lodash'
 import { ImImages } from 'react-icons/im'
 import './MemoryGame.css'
+import { Alert } from 'react-bootstrap'
 
 
 const MemoryGame = () => {
     const [cardImages, setCardImages] = useState([])
     const [openedCard, setOpenedCard] = useState([]);
     const [matched, setMatched] = useState([]);
+
 
     const dispatch = useDispatch()
 
@@ -26,6 +28,8 @@ const MemoryGame = () => {
         setCardImages([...allCardImages?.images, ...allCardImages?.images])
         dispatch(memoryGameTotalScore([]))
 
+
+
     }
 
     const handleGameReset = () => {
@@ -34,25 +38,35 @@ const MemoryGame = () => {
         setMatched([])
         dispatch(memoryGameTotalScore([]))
 
+
     }
 
     let counter = 0
+
+    // const checkDuplicates = [...new Set(matched)]
+
     const gameScore = matched?.map((matched, index) => index + 1 ? counter + 5 : counter)
 
-    console.log(matched.length)
 
-    console.log(gameScore)
+    console.log(matched)
+
+
+    // console.log(gameScore)
 
     useEffect(() => {
 
 
+        openedCard.filter((item, index) => openedCard.indexOf(item) === index)
         if (openedCard < 2) return;
 
         const firstMatched = cardImages[openedCard[0]];
         const secondMatched = cardImages[openedCard[1]];
 
         if (secondMatched && firstMatched.id === secondMatched.id) {
-            setMatched([...matched, firstMatched.id]);
+            setMatched([...matched.filter((item, index) => matched.indexOf(item) === index), firstMatched.id]);
+            //    check duplicates, only pass unique image id to matched array
+            // matched.filter((item, index) => matched.indexOf(item) === index)
+
         }
 
         if (openedCard.length === 2) setTimeout(() => setOpenedCard([]), 1000);
@@ -67,9 +81,31 @@ const MemoryGame = () => {
 
 
 
+
+
+
     return (
         <>
+            {
+
+
+
+                matched.length === 21 ? <Alert variant="success" className="text-center">
+                    <Alert.Heading>Congratulations! You WON!!!</Alert.Heading>
+
+                    <hr />
+                    <button onClick={() => handleGameReset()} className="text-gray-200 bg-green-600 text-xl my-2 p-2 rounded-lg">Play again!</button>
+
+                </Alert>
+
+
+                    : ''
+
+
+            }
             <div className="flex flex-wrap">
+
+
                 {cardImages?.map((img, index) => {
 
                     let isFlipped = false;
@@ -96,6 +132,7 @@ const MemoryGame = () => {
                     );
                 })}
             </div>
+
 
             <div className='text-center'>
                 {cardImages.length === 0
