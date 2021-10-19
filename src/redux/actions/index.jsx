@@ -453,6 +453,14 @@ export const fetchAllCryptoMarket = () => {
     }
 }
 
+export const fetchSearchedCrypto = (singleCrytoData) => {
+    return async (dispatch, getState) => {
+        dispatch({
+            type: 'SINGLE_CRYPTO_DETAIL',
+            payload: singleCrytoData
+        })
+    }
+}
 
 
 export const getSingleCryptoDetails = (id) => {

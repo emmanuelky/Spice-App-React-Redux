@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import MyNavBar from '../Feeds/MyNavBar'
-
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import AllCryptoMarket from './AllCryptoMarket'
 import Footer from '../Feeds/Footer'
 import LiveCryptoWebSocket from './LiveCryptoWebSocket'
 import Player from '../Music/Player'
+import CryptoSearch from './CryptoSearch'
 
 
 
@@ -33,7 +33,11 @@ const CryptoHomePage = () => {
                                     <span className="text-yellow-500">Live Update</span>
                                 </div>
                                 {/* <div><LiveCryptoWebSocket /> </div> */}
-                                <Row className='mt-5 align-items-center px-5'>
+                                <Row>
+                                    <CryptoSearch />
+
+                                </Row>
+                                <Row className='mt-2 align-items-center px-5'>
 
                                     <Col md={1} className=''> #</Col>
 

@@ -93,7 +93,7 @@ const MyNavBar = ({ history }) => {
                                                 <div className='align-self-center p-1 text-xs mx-2 '>
                                                     <Link to={`/profile/${currentUser.id}`}>
                                                         {<img className=" w-5 h-5 rounded-full" src={currentUserObjLength > 0 ? currentUser?.image : (history.push('/login'))} alt="" />}
-                                                        <span className='no-underline'>{currentUserObjLength > 0 ? currentUser?.firstName : (history.push('/login'))}</span>
+                                                        <span className='no-underline text-blue-600'>{currentUserObjLength > 0 ? currentUser?.firstName : (history.push('/login'))}</span>
                                                     </Link>
                                                 </div>
                                                 <div className='align-self-center '>
