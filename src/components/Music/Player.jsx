@@ -61,7 +61,7 @@ const Player = () => {
 
                         <ReactAudioPlayer
                             src={currentSong?.preview}
-                            // autoPlay
+                            autoPlay
                             controls
                             className="mx-auto text-blue-600"
                             loop={true}

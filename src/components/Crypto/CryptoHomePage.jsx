@@ -66,7 +66,7 @@ const CryptoHomePage = () => {
                                 <AllCryptoMarket />
 
                                 <Footer />
-                                <Player />
+                                {/* <Player /> */}
                             </div>
                         </Col>
 

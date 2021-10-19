@@ -64,21 +64,21 @@ const AllCryptoMarket = () => {
                         (
                             // <Link to={ }>
 
-                            <Row onClick={() => dispatch(getSingleCryptoDetails(singleCrypto.id))} className='my-5 align-items-center border-b border-gray-800 hover:border-gray-500 hover:bg-gray-700 hover:text-gray-200 rounded-lg p-1'>
+                            <Row onClick={() => dispatch(getSingleCryptoDetails(singleCrypto?.id))} className='my-5 align-items-center border-b border-gray-800 hover:border-gray-500 hover:bg-gray-700 hover:text-gray-200 rounded-lg p-1'>
 
-                                <Col md={1} className=''> {singleCrypto.market_cap_rank}</Col>
+                                <Col md={1} className=''> {singleCrypto?.market_cap_rank}</Col>
 
-                                <Col md={1} className='text-center'> <div><img className="w-10 h-10" src={singleCrypto.image} alt="" /> </div></Col>
+                                <Col md={1} className='text-center'> <div><img className="w-10 h-10" src={singleCrypto?.image} alt="" /> </div></Col>
 
-                                <Col md={2}  ><div className="flex justify-evenly align-items-center"><div className=''>{singleCrypto.name} </div><span className='text-gray-500'>{singleCrypto.symbol.toUpperCase()}</span></div></Col>
+                                <Col md={2}  ><div className="flex justify-evenly align-items-center"><div className=''>{singleCrypto?.name} </div><span className='text-gray-500'>{singleCrypto?.symbol.toUpperCase()}</span></div></Col>
 
-                                <Col md={2} className='text-center'>€{singleCrypto.current_price}</Col>
+                                <Col md={2} className='text-center'>€{singleCrypto?.current_price}</Col>
 
-                                <Col md={2} className={singleCrypto.price_change_percentage_24h > 0 ? 'text-green-600' : 'text-red-600'}>{singleCrypto.price_change_percentage_24h.toLocaleString()}%</Col>
+                                <Col md={2} className={singleCrypto?.price_change_percentage_24h > 0 ? 'text-green-600' : 'text-red-600'}>{singleCrypto?.price_change_percentage_24h.toLocaleString()}%</Col>
 
-                                <Col md={2} className='text-center'>€{singleCrypto.market_cap.toLocaleString()}</Col>
+                                <Col md={2} className='text-center'>€{singleCrypto?.market_cap.toLocaleString()}</Col>
 
-                                <Col md={2} className='text-center'>€{singleCrypto.total_volume.toLocaleString()}</Col>
+                                <Col md={2} className='text-center'>€{singleCrypto?.total_volume.toLocaleString()}</Col>
 
                             </Row>
                             // </Link>
