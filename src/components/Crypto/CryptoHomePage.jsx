@@ -56,13 +56,7 @@ const CryptoHomePage = () => {
                     </Row>
 
                     <Row className=' justify-center '>
-                        {/* <Col md={} className=' '>
-                            <div className="sticky top-20 shadow-2xl flex flex-wrap mx-1 drop-shadow-2xl  rounded " >
 
-                                <SideBarLeft />
-
-                            </div>
-                        </Col> */}
                         <Col md={12}>
                             <div className=" sticky top-20  border-blue-600 drop-shadow-2xl border-b-2 rounded my-2 mx-2 shadow-2xl" >
                                 <AllCryptoMarket />
@@ -71,13 +65,7 @@ const CryptoHomePage = () => {
                                 <Player />
                             </div>
                         </Col>
-                        {/* <Col md={3} className='mx-auto'>
-                            <div className=" sticky top-20  shadow-2xl flex flex-wrap border-blue-900 drop-shadow-2xl border-b-2 rounded " >
-                                <Games />
 
-                            </div>
-                        </Col> */}
-                        {/* </div> */}
                     </Row>
 
                 </Container>)}
