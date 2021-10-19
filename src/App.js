@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename='/'>
 
       <div className=" bg-gray-900 min-h-screen ">
         <Route path="/" exact component={HomePage} />
