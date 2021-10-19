@@ -114,7 +114,7 @@ const MovieDetails = () => {
                             </div>
 
 
-                            <Player />
+                            {/* <Player /> */}
                         </Col>
                         <Col md={4}>
                             <div className=" sticky top-20 shadow-2xl flex flex-wrap mx-1 border-blue-900 drop-shadow-2xl border-b-2 rounded " >
