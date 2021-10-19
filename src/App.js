@@ -19,18 +19,20 @@ function App() {
 
 
   return (
-    <Router basename='/'>
+    <Router basename='/React'>
 
       <div className=" bg-gray-900 min-h-screen ">
-        <Route path="/" exact component={HomePage} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/signup" exact component={SignUp} />
-        <Route path="/music" exact component={Music} />
-        <Route path="/crypto" exact component={CryptoHomePage} />
-        <Route path="/movies" exact component={Movies} />
-        <Route path="/profile/:id" exact component={ProfilePage} />
-        <Route path="/movie/:id/credits" exact component={MovieDetails} />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={SignUp} />
+          <Route path="/music" exact component={Music} />
+          <Route path="/crypto" exact component={CryptoHomePage} />
+          <Route path="/movies" exact component={Movies} />
+          <Route path="/profile/:id" exact component={ProfilePage} />
+          <Route path="/movie/:id/credits" exact component={MovieDetails} />
 
+        </Switch>
 
 
 
