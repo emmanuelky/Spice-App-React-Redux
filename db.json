@@ -2084,6 +2084,30 @@
         "followers": []
       },
       "comments": {}
+    },
+    {
+      "id": "d33a00ea-5d07-483b-8215-6c3d989d42b3",
+      "createdAt": "05:13 AM",
+      "text": "cool\n",
+      "postImage": "http://res.cloudinary.com/emmanuelky/image/upload/v1634699589/ymq1kuxcolo2gvsuy1ae.jpg",
+      "likes": [],
+      "updatedAt": "05:13 AM",
+      "user": {
+        "id": "7d6df540-9999-4ced-b53e-a5dcb76da07e",
+        "firstName": "Emmanuel",
+        "lastName": "Iyere",
+        "email": "iyereemmanuel.akhere@gmail.com",
+        "username": "emmanuelky",
+        "password": "111",
+        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQHuySEO7BoL9A/profile-displayphoto-shrink_800_800/0/1634547288903?e=1640217600&v=beta&t=FL0XQFzlvgjF2HlB47Q1mnIfohrMUIQBnQGVF_kPZ5Y",
+        "bio": "cool",
+        "city": "Cottbus",
+        "createdAt": "14:28 PM",
+        "updatedAt": "14:28 PM",
+        "following": [],
+        "followers": []
+      },
+      "comments": {}
     }
   ],
   "comments": [
