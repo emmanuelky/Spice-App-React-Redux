@@ -65,7 +65,7 @@ const Player = () => {
                             controls
                             className="mx-auto text-blue-600"
                             loop={true}
-
+                            volume={0.2}
                         />
                     </div>
                 </div>

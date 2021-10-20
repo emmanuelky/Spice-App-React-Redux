@@ -31,7 +31,7 @@ function App() {
           <Route path="/movies" exact component={Movies} />
           <Route path="/profile/:id" exact component={ProfilePage} />
           <Route path="/movie/:id/credits" exact component={MovieDetails} />
-
+          <Route render={() => <h2>404 No Page Found!</h2>} />
         </Switch>
 
 
