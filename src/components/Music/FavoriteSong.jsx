@@ -18,7 +18,6 @@ const FavoriteSong = () => {
     const dispatch = useDispatch()
 
     const favoriteSongs = useSelector(state => state.music.favorite_songs)
-    // console.log(favoriteSongs)
 
 
     const handleSongPlay = (song, e) => {
@@ -66,7 +65,7 @@ const FavoriteSong = () => {
 
 
 
-
+            {/* MODAL */}
 
             <div >
                 <Modal show={show} onHide={handleClose}>

@@ -7,15 +7,9 @@ import { format } from 'date-fns'
 import { SiGooglemessages } from "react-icons/si";
 
 
-
-
-
 const CommentInput = () => {
 
     const [message, setMessage] = useState('')
-
-
-
     const dispatch = useDispatch()
     const currentLoginUser = useSelector(state => state.users.getcurrentuser)
     const fetchAllComments = useSelector(state => state.posts.all_comments)

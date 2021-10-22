@@ -1,34 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import ReactPlayer from 'react-player'
 import { useSelector, useDispatch } from 'react-redux'
 import ReactAudioPlayer from 'react-audio-player';
-import { CgCloseR } from "react-icons/cg";
 import Moveable from "react-moveable";
 import { Badge } from 'react-bootstrap';
 import { ImMusic } from "react-icons/im";
 
 
-
-
 const Player = () => {
-
     const [closePlayer, setClosePlayer] = useState(null)
-    // const [showPlayer, setShowPlayer] = useState(null)
-
     const [frame, setFrame] = useState({})
 
 
     const currentSong = useSelector(state => state.music.current_song)
-    // console.log(currentSong)
 
 
     const handleClosePlayer = () => {
         setClosePlayer(true)
     }
 
-    // const handleShowPlayer = () => {
-    //     setShowPlayer(true)
-    // }
+
 
     useEffect(() => {
         setFrame({
@@ -38,13 +28,7 @@ const Player = () => {
     }, [])
 
 
-
-
-    console.log(closePlayer)
-
-
     return (
-
         <div className={closePlayer ? 'hidden' : 'block'}>
 
             <div className={currentSong === null ? 'hidden' : 'fixed-bottom flex justify-center '} >
@@ -71,22 +55,10 @@ const Player = () => {
                 </div>
 
 
-
-                {/* <div >
-                    <Badge pill onClick={() => handleShowPlayer()} className={" bg-pink-900 cursor-pointer"}>Show Player <ImMusic /></Badge>
-
-                </div> */}
-
                 <div >
                     <Badge pill onClick={() => handleClosePlayer()} className={" bg-pink-900 cursor-pointer  "}>Hide Player <ImMusic /></Badge>
 
                 </div>
-
-
-
-
-
-
 
 
             </div>
@@ -107,13 +79,6 @@ const Player = () => {
                     console.log("onDragEnd", target, isDrag);
                 }}
             />
-
-
-
-
-
-
-
         </div>
 
     )

@@ -1,4 +1,3 @@
-
 import HomePage from './components/Feeds/HomePage'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ProfilePage from './components/Feeds/ProfilePage';
@@ -9,15 +8,7 @@ import SignUp from './components/Feeds/SignUp';
 import MovieDetails from './components/Movies/MovieDetails';
 import CryptoHomePage from './components/Crypto/CryptoHomePage';
 
-
-
-
 function App() {
-
-
-
-
-
   return (
     <Router>
 
@@ -33,9 +24,6 @@ function App() {
           <Route path="/movie/:id/credits" exact component={MovieDetails} />
           <Route render={() => <h2>404 No Page Found!</h2>} />
         </Switch>
-
-
-
       </div>
     </Router>
   );

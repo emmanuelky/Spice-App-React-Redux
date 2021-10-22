@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import MyNavBar from '../Feeds/MyNavBar'
-import SideBarLeft from '../Feeds/SideBarLeft'
-import SideBarRight from '../Feeds/SideBarRight'
-
 import { Container, Row, Col } from 'react-bootstrap'
-
 import { useSelector, useDispatch } from 'react-redux'
 import MovieList from './MovieList'
 import MovieSearch from './MovieSearch'
 import { fetchMovies, } from '../../redux/actions'
 import Footer from '../Feeds/Footer'
 import CrytoNews from '../Crypto/CryptoNews'
-
-import FollowNewUsers from '../Feeds/FollowNewUsers'
-
 import MovieCatalog from './MovieCatalog'
 import Player from '../Music/Player'
 

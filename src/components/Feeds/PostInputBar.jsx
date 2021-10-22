@@ -13,11 +13,6 @@ const PostInputBar = () => {
     const [url, setUrl] = useState("")
     const [postDateTimeAgo, setPostDateTimeAgo] = useState(null)
 
-
-
-
-    // console.log(image)
-
     const uploadImage = () => {
         const data = new FormData()
         data.append("file", image)
@@ -54,16 +49,6 @@ const PostInputBar = () => {
 
     const ID = uuidv4()
     const currentDate = format(new Date(), 'HH:mm b')
-
-    // const handleDateTimeAgo = () => {
-
-    //     return moment().startOf('hour').fromNow()
-    //     setPostDateTimeAgo(moment().startOf('hour').fromNow());
-
-    // }
-
-
-
 
     const sendNewPost = {
         id: ID,

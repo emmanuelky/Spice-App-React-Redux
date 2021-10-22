@@ -57,15 +57,6 @@ export const postsReducer = (state = initialState.posts, action) => {
                 post_id: action.payload,
             }
 
-        // case "GET_TOTAL_POST_COMMENTS":
-        //     return {
-        //         ...state,
-        //         total_post_comments: action.payload,
-        //     }
-
-
-
-
         default:
             return state
 

@@ -3,7 +3,6 @@ import allCardImages from '../Games/MemoryGameImages/imagedata.json'
 import { selectedCardImage, imageVisibility, memoryGameTotalScore } from '../../redux/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { shuffle } from 'lodash'
-import { ImImages } from 'react-icons/im'
 import './MemoryGame.css'
 import { Alert } from 'react-bootstrap'
 

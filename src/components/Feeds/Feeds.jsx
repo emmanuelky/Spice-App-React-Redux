@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import PostInputBar from './PostInputBar'
 import { Card, Spinner, Button } from 'react-bootstrap'
-import { RiWalkFill } from "react-icons/ri";
 import { FcLike, FcSms } from "react-icons/fc";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch, } from 'react-redux'
@@ -22,18 +21,7 @@ const Feeds = () => {
 
 
     const totalPosts = allPosts.length
-    // const loading = useSelector(state => state.posts.loading)
-
     const loggedInCurrentUser = useSelector(state => state.users.getcurrentuser)
-
-    // const getUserPostId = allPosts.filter(p => p.user.id === loggedInCurrentUser?.id)
-
-    // console.log(allPosts)
-
-
-
-
-    // console.log(postLikes)
 
     const scrollTop = () => {
         window.scrollTo(0, 0);

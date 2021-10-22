@@ -22,7 +22,6 @@ export const initialState = {
         all_comments: [],
         comments: [],
         post_id: '',
-        // total_post_comments: [],
 
     },
     users: {
@@ -31,8 +30,7 @@ export const initialState = {
         getcurrentuser: {},
         loading: false,
         following: [],
-        // toggle_dark_or_light_theme: null,
-        // unfollowing_user_list: [],
+
     },
     movies: {
         all_movies: [],
@@ -57,6 +55,7 @@ export const initialState = {
     }
 }
 
+// LOCAL STORAGE
 const persistConfig = {
     key: 'root',
     storage,
@@ -67,7 +66,7 @@ const persistConfig = {
     ],
 }
 
-
+//COMBINE ALL REDUCERS
 const allReducers = combineReducers({
     posts: postsReducer,
     users: usersReducer,
@@ -77,6 +76,8 @@ const allReducers = combineReducers({
     games: gameReducer,
 })
 
+
+//PERSIST REDUX STORE
 const persistAllReducers = persistReducer(
     persistConfig, allReducers
 )

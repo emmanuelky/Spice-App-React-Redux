@@ -18,26 +18,14 @@ const MyNavBar = ({ history }) => {
 
     const currentUser = useSelector(state => state.users.getcurrentuser)
     const currentUserObjLength = Object.keys(currentUser).length
-    // console.log(currentUser.following)
-
 
     const myAddedFollowers = useSelector(state => state.users.following)
     const totalNumOfMyFollowers = myAddedFollowers?.length
-
-    // console.log(totalNumOfMyFollowers)
-
-
-    // const unFollowingUserList = useSelector(state => state.users.unfollowing_user_list)
-    // const totalNumOfUnfollowingUsers = unFollowingUserList?.length
 
     useEffect(() => {
         dispatch(fetchUsers())
     }, [])
 
-    // const checkLoginUser = () => {
-    //     currentUserObjLength < 0 ? (history.push('/login')) : history.push('/')
-    // }
-    // checkLoginUser()
 
     return (
         <>

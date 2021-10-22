@@ -30,7 +30,6 @@ const MovieDetails = () => {
 
     const IMG_URL = 'https://image.tmdb.org/t/p/original'
 
-    // const movie_URL = 'https://api.themoviedb.org/3/search/movie/'
 
     const shortTitle = (title) => {
 
@@ -47,9 +46,9 @@ const MovieDetails = () => {
         scrollTop()
     }, [])
 
+
+
     return (
-
-
         <div className='mx-5'>
 
             {

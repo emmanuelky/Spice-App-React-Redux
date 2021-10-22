@@ -12,11 +12,6 @@ import { CgCloseR } from "react-icons/cg";
 
 
 
-
-
-
-
-
 const MusicList = () => {
 
     const [show, setShow] = useState(false);
@@ -29,7 +24,7 @@ const MusicList = () => {
     const musicList = useSelector(state => state.music.music_lists)
 
     const artist = useSelector(state => state.music.artist_details)
-    // console.log(artist)
+
 
 
     const loading = useSelector(state => state.music.loading)
@@ -104,10 +99,6 @@ const MusicList = () => {
                             </Row>
 
                         </Container>
-
-
-
-
                     </div>)
                     )
             }

@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Form } from 'react-bootstrap'
 import { getMusicSearch } from '../../redux/actions'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 
 const MusicSearch = () => {
 
-
     const dispatch = useDispatch()
-
-
 
     return (
         <div className='sticky top-40 z-40 bg-gray-900  focus:ring-2 focus:ring-blue-600'>

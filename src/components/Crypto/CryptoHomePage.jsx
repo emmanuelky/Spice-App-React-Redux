@@ -14,7 +14,6 @@ import CryptoSearch from './CryptoSearch'
 const CryptoHomePage = () => {
 
 
-
     return (
         <div className='mx-5'>
 

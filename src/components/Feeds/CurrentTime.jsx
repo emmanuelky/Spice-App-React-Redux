@@ -4,11 +4,8 @@ import { CgTime } from "react-icons/cg";
 
 
 
-
-
 const CurrentTime = () => {
     const [cTime, setCTime] = useState()
-
 
     const timer = () => {
         let currentTime = new Date()

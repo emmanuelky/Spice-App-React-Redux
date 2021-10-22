@@ -7,9 +7,7 @@ const CryptoNews = () => {
 
 
     const [modalShow, setModalShow] = React.useState(false);
-    // <Button variant="primary" onClick={() => setModalShow(true)}>
-    //     Launch vertically centered modal
-    //   </Button>
+
 
     return (
 

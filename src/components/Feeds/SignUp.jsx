@@ -9,10 +9,6 @@ import { Button } from 'react-bootstrap'
 import { AiOutlineDingding } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 
-
-
-
-
 const SignUp = ({ history }) => {
 
     const [image, setImage] = useState("")

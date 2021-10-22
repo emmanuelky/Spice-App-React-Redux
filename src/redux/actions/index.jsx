@@ -1,6 +1,11 @@
 import axios from 'axios'
 require('dotenv').config()
 
+
+
+////////////////////////////////////////// POST FETCH FROM JSON SERVER LOCAL DB ////////////////////////////////////////////
+
+
 export const fetchPosts = () => {
     return async (dispatch, getState) => {
 
@@ -46,7 +51,49 @@ export const addPosts = (post) => {
 }
 
 
+export const getSinglePostComment = (post) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'SINGLE_POST_COMMENT',
+            payload: post
+        })
+    }
+}
 
+
+
+
+export const postComments = (comment) => {
+    return async (dispatch, getState) => {
+
+        const newComment = await axios.post(`${process.env.REACT_APP_BASE_URL}/comments/`, comment)
+
+        dispatch({
+            type: 'POST_COMMENTS',
+            payload: newComment
+        })
+    }
+}
+
+
+
+
+export const getPostId = (postId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'GET_POST_ID',
+            payload: postId
+        })
+    }
+}
+
+
+
+
+
+
+
+////////////////////////////////////////// USER FETCH FROM JSON SERVER LOCAL DB ////////////////////////////////////////////
 
 export const fetchUsers = () => {
     return async (dispatch, getState) => {
@@ -73,7 +120,6 @@ export const fetchUsers = () => {
 
 
 
-
 export const addUser = (user) => {
     return async (dispatch, getState) => {
 
@@ -93,9 +139,6 @@ export const addUser = (user) => {
         })
     }
 }
-
-
-
 
 
 export const currentUser = (newuser) => {
@@ -141,15 +184,6 @@ export const getCurrentUser = () => {
 }
 
 
-// export const toggleDarkLightTheme = () => {
-//     return (dispatch, getState) => {
-//         dispatch({
-//             type: ' TOGGLE_DARK_OR_LIGHT_THEME',
-//             payload: false
-//         })
-//     }
-// }
-
 
 export const addLikes = (likes) => {
     return (dispatch, getState) => {
@@ -170,6 +204,45 @@ export const removeLikes = (likes) => {
     }
 }
 
+
+
+export const addFollowers = (user) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'ADD_FOLLOWERS',
+            payload: user
+        })
+    }
+}
+
+
+export const addUnfollowingUserBackToUsersList = (user) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'ADD_UNFOLLOWING_USER_BACK_TO_USERS',
+            payload: user
+        })
+    }
+}
+
+
+export const removeFromFollowingList = (userId) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'REMOVE_FROM_FOLLOWING_LIST',
+            payload: userId
+        })
+    }
+}
+
+
+
+
+
+
+
+
+////////////////////////////////////////// MOVIE FETCH ////////////////////////////////////////////////////////////////
 
 const TRENDING_MOVIE_BASE_URL = 'https://api.themoviedb.org/3/' + 'trending/all/week?' + process.env.REACT_APP_MOVIE_API_KEY
 const Search_URL = 'https://api.themoviedb.org/3/search/movie?' + process.env.REACT_APP_MOVIE_API_KEY + '&query='
@@ -272,6 +345,14 @@ export const getMovieDetails = (id) => {
     }
 }
 
+
+
+
+
+
+////////////////////////////////////////// MUSIC FETCH FROM DEEZER API ////////////////////////////////////////////
+
+
 const music_BASE_URL = 'https://striveschool-api.herokuapp.com/api/deezer'
 
 export const getMusicSearch = (query) => {
@@ -338,77 +419,6 @@ export const getArtistDetails = (id) => {
 
 
 
-
-
-export const addFollowers = (user) => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'ADD_FOLLOWERS',
-            payload: user
-        })
-    }
-}
-
-
-export const addUnfollowingUserBackToUsersList = (user) => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'ADD_UNFOLLOWING_USER_BACK_TO_USERS',
-            payload: user
-        })
-    }
-}
-
-
-export const removeFromFollowingList = (userId) => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'REMOVE_FROM_FOLLOWING_LIST',
-            payload: userId
-        })
-    }
-}
-
-
-export const getSinglePostComment = (post) => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'SINGLE_POST_COMMENT',
-            payload: post
-        })
-    }
-}
-
-
-
-
-export const postComments = (comment) => {
-    return async (dispatch, getState) => {
-
-        const newComment = await axios.post(`${process.env.REACT_APP_BASE_URL}/comments/`, comment)
-
-        dispatch({
-            type: 'POST_COMMENTS',
-            payload: newComment
-        })
-    }
-}
-
-
-
-
-export const getPostId = (postId) => {
-    return (dispatch, getState) => {
-        dispatch({
-            type: 'GET_POST_ID',
-            payload: postId
-        })
-    }
-}
-
-
-
-
 export const addCurrentSong = (song) => {
     return (dispatch, getState) => {
         dispatch({
@@ -438,6 +448,7 @@ export const removeFavoriteSong = (songId) => {
 }
 
 
+////////////////////////////////////////// CRYPTO FETCH ////////////////////////////////////////////
 
 
 export const fetchAllCryptoMarket = () => {
@@ -480,6 +491,9 @@ export const getSingleCryptoDetails = (id) => {
 
 
 
+
+
+////////////////////////////////////////// GAMES ////////////////////////////////////////////
 
 export const memoryGameTotalScore = (score) => {
     return (dispatch, getState) => {

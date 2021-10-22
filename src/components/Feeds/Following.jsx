@@ -12,8 +12,6 @@ import { Link, withRouter } from 'react-router-dom'
 
 const Following = () => {
 
-
-
     const dispatch = useDispatch()
     const myAddedFollowers = useSelector(state => state.users.following)
     // console.log(myAddedFollowers)
@@ -21,9 +19,6 @@ const Following = () => {
     const unfollowingUsers = useSelector(state => state.users.unfollowing_user_list)
     // console.log(unfollowingUsers)
     const unfollowingUserId = unfollowingUsers?.map(user => user.id)
-
-    // const loading = useSelector(state => state.posts.loading)
-
 
 
     const handleUnfollowing = (user) => {

@@ -6,9 +6,6 @@ import AllCryptoMarket from './AllCryptoMarket'
 
 const MyVerticallyCenteredModal = (props) => {
 
-
-
-
     return (
         <Modal
             {...props}

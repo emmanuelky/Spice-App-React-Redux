@@ -10,8 +10,6 @@ import { Link, withRouter } from 'react-router-dom'
 
 const FollowNewUsers = () => {
 
-
-
     const dispatch = useDispatch()
 
     const allUsers = useSelector(state => state.users.users)
@@ -20,12 +18,6 @@ const FollowNewUsers = () => {
 
     const copyOfAllUsers = [...allUsers]
     const newUsersToFollow = copyOfAllUsers.filter(user => user.id !== currentLoginUser.id)
-
-
-
-    // console.log(copyOfAllUsers, currentLoginUser)
-
-    // const loading = useSelector(state => state.posts.loading)
 
 
     const myAddedFollowers = useSelector(state => state.users.following)

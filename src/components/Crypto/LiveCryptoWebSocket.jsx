@@ -6,10 +6,8 @@ import { useSelector, useDispatch } from 'react-redux'
 const LiveCryptoWebSocket = () => {
 
 
-
-
     const [btcPrice, setBTCPrice] = useState(null)
-    // const [btcLastPrice, setBTCLastPrice] = useState(null)
+
 
     const [ethPrice, setETHPrice] = useState(null)
     const [bnbPrice, setBNBPrice] = useState(null)
@@ -17,10 +15,6 @@ const LiveCryptoWebSocket = () => {
     const [xrpPrice, setXRPPrice] = useState(null)
     const [solPrice, setSOLPrice] = useState(null)
 
-
-
-
-    // const [lastPrice, setLastPrice] = useState(null)
 
     const btc = new WebSocket('wss://stream.binance.com:9443/ws/btceur@trade')
     console.log(btc)
