@@ -16,6 +16,7 @@
     "bootstrap": "^5.1.1",
     "concurrently": "^6.3.0",
     "date-fns": "^2.24.0",
+    "firebase": "^9.4.1",
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
     "lowdb": "^3.0.0",
